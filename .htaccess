@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteBase /tormetais/
+RewriteCond $1 !^(index\.php|system|images)
+RewriteRule ^(.*)$ index.php/$1

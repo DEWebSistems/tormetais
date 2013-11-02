@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<meta charset="utf-8">
+		<title>Food Shop</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Everaldo" >
+		
+		<!-- Styles -->
+                <link rel="stylesheet" href="assets/css/layout.css" type="text/css"/>
+                <link rel="stylesheet" href="assets/bootstrap/3.0.0/css/bootstrap.css" type="text/css">
+
+
+
+
+		
+		<!-- Java Script -->
+		<script type="text/javascript" src="assets/jquery/jquery203/jquery-2.0.3.js"></script>
+		<script type="text/javascript" src="assets/bootstrap/3.0.0/js/bootstrap.js"></script>
+	</head>
+	
+	<body>
+	<div class="content">
+
+		<!-- <CABECALHO> -->
+		<div class="header">
+			<div class="container">
+				<div class="row header-content">
+					<div class="col-md-6">
+						<h2>Food Shop Delivery</h2>
+					</div>
+					
+					
+
+					<div class="col-md-2 col-md-offset-4">
+						<button class="btn btn-primary btn-block" data-toggle="modal" onclick="openModalLogin();">Entrar</button>
+						<button class="btn btn-primary btn-block">Cadastrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+                <br/>
+
+		<!-- </CABECALHO> -->
+
+		<div class="menu">
+			<div class="navbar navbar-default">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="navbar-ex1-collapse navbar-collapse collapse">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="#" style="font-size: 16px; color: #ffffff;"><span>Início</span></a></li>
+								<li><a href="#" style="font-size: 16px; color: #000000;"><span>Como Funciona</span></a></li>
+								<li><a href="#" style="font-size: 16px; color: #000000;"><span>Anuncie Aqui</span></a></li>
+								<li><a href="#" style="font-size: 16px; color: #000000;"><span>Quem Somos</span></a></li>
+							</ul>
+							<form class="navbar-form navbar-right" role="search">
+								<div class="form-group">
+									<input class="form-control" type="text" value="Espumoso" placeholder="Informe a sua cidade" style="width: 280px;"/>
+								</div>
+							</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="main">
+			
+				<div class="row"><div class="container">
+					<div class="col-md-3">
+						<div class="row">
+							<div class="panel-group" id="accordion2">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<a id="collapse" class="accordion-toggle" data-toggle="collapse"
+											data-parent="#accordion2" href="#collapseFiltro"> Filtro
+										</a>
+									</div>
+									<div id="collapseFiltro" class="panel-collapse collapse">
+										<div class="accordion-inner">
+											<div class="row" style="margin: 10px 5px 10px 5px;">
+												<div class="col-lg-12">
+													<input class="form-control" type="text" placeholder="Pratos com:">
+												</div>
+											</div>
+											<div class="row" style="margin: 10px 5px 10px 5px;">
+												<div class="col-lg-12">
+													<input class="form-control" type="text" placeholder="Estabelecimentos de:">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<a class="accordion-toggle" data-toggle="collapse"
+											data-parent="#accordion2" href="#collapseServico">
+											Serviços</a>
+									</div>
+									<div id="collapseServico" class="panel-collapse collapse">
+										<div class="accordion-inner">
+											<div style="margin-left: 15px;">
+												<label class="checkbox">
+													<input type="checkbox" id="Pagamento_Online" value="Pagamento_Online"/>
+													Pagamento Online (109)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="Pagamento_Entrega" value="Pagamento_Entrega"/>
+													Pagamento Na Entrega (2)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="Tele_Entrega" value="Tele_Entrega"/>
+													Tele Entrega (101)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="Retirada_Local" value="Retirada_Local"/>
+													Retirada No Local (109)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="Somente_Abertos" value="Somente_Abertos"/>
+													Somente Abertos (57)
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<a class="accordion-toggle" data-toggle="collapse"
+											data-parent="#accordion2" href="#collapseCulinaria">
+											Culinária </a>
+									</div>
+									<div id="collapseCulinaria" class="panel-collapse collapse">
+										<div class="accordion-inner">
+											<div style="margin-left: 15px;">
+												<label class="checkbox">
+													<input type="checkbox" id="lanche" value="lanche"/>
+													Lanche (33)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="italiana" value="italiana"/>
+													Italiana (20)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="chinesa" value="chinesa"/>
+													Chinesa (10)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="alema" value="alema"/>
+													Alemã (5)
+												</label>
+												<label class="checkbox">
+													<input type="checkbox" id="frutos_mar" value="frutos_mar"/>
+													Frutos Do Mar (2)
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<!--<div class="container">-->
+							<div class="row main-filter">
+								<div class="col-md-6">
+									<input type="text" class="form-control"	placeholder="O que você deseja?" />
+								</div>
+								<div class="col-md-3">
+								<div class="btn-group" data-toggle="buttons-radio">
+									<button type="button" class="btn btn-default">Maior</button>
+									<button type="button" class="btn btn-default">Menor</button>
+								</div>
+								</div>
+								<div class="col-md-3">
+									<select class="form-control">
+										<option>Preço</option>
+										<option>Visitas</option>
+										<option>Notas</option>
+										<option>Recomentação</option>
+									</select>
+								</div>
+							</div>
+							<div class="row main-content">
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div class="row main-content">
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div class="row main-content">
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4">
+									<div class="thumbnail">
+										<img src="../resources/img/260x180.gif" alt="">
+										<div class="caption">
+											<h3>Oferta</h3>
+											<p>25 min. R$ 10,00</p>
+											<p>
+												<a href="#" class="btn btn-block btn-primary">Comprar</a>
+											</p>
+										</div>
+									</div>
+								</div>								
+							</div>
+						<!--</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- <RODAPÉ> -->
+
+
+		<div class="footer">
+			<div class="container">
+				<div class="row footer-content">
+					<div class="col-md-4">1</div>
+					<div class="col-md-4">2</div>
+					<div class="col-md-4">3</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	</body>
+</html>
