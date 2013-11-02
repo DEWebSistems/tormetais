@@ -19,7 +19,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+            $this->load->database();
+            $results = $this->db->query('select * from dadosempresa');
+            echo '<pre>';
+            //print_r($results);
+            //echo '<br/>';
+            print_r($results->result());
+            echo '</pre>';
+            $this->load->view('welcome_message');
 	}
 }
 
