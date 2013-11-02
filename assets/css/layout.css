@@ -1,61 +1,163 @@
 @CHARSET "UTF-8";
 
 body {
-
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    color: #777;
 }
 
 .content {
-
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dddddd;
 }
 
-.header {
-	width: 100%;
-	height: auto;
+.top-line{
+    /*        margin-left:15%;
+            margin-right:15%;*/
+    width: 100%;
+    height: 5px;
+    background: #398439;
 }
 
-.header-content {
-	
-	margin-top:1%;
+.header {	
+    /*	margin-left:15%;
+            margin-right:15%;*/
+    width: 100%;
+    height: auto;
 }
 
-.menu {
-	
-	width: 100%;
-	height: auto;
+
+
+.site-header-logo {
+    padding: 2%;
 }
 
-.content-carousel {
-	
-	width: 100%;
-	height: auto;
+.site-header-desc {
+    text-align: left;
+    padding: 34px 0px;
+    font-size: 12px;
+}
+
+.site-header-contato {
+    padding: 34px 0px;
+}
+
+.header-contato-fone {
+    width: 50%;
+}
+
+.header-contato-email {
+    width: 50%;   
+}
+
+.site-header-menu {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+}
+
+.site-carousel {
+
+    width: 100%;
+    height: auto;
+}
+
+.site-carousel-saiba-mais {
+    
+    padding: 17px 0px;
+    width: 100%;
+    height: auto;
+    background-color: #333;
+    font-size: 14px;
+}
+
+.site-carousel-saiba-mais > strong {
+    
+    font-size: 16px;
 }
 
 .main {
-	
-	width: 96%;
-	height: auto;
-	margin-left: 2%;
-	margin-right: 2%;
+
+    margin-left:5%;
+    margin-right:5%;
+    width: 90%;
+    height: auto;
+}
+
+.sub-footer {
+    background-color: #222;
+    width: 100%;
+    height: 50px;
+    text-align:center;
 }
 
 .footer {
-	
-	width: 100%;
-	height: auto;
+
+    background-color: #333;
+    width: 100%;
+    height: auto;
+    text-align:center;
 }
 
-.thumbnail > * {
-	text-align: center;
+.footer > h3{
+    color: #fff !important;
+}
+
+.footer-sobre {
+    width: 100%;
+    float: left;
+}
+
+.footer-sobre > p {
+    text-align: left;
+}
+
+.footer-atendimento {
+	width: 100%;
+	float: left;	
+}
+
+.footer-contato {
+	width: 100%;
+	float: left;
+	background-image: url(/tormetais/assets/images/footer-contato-mapa.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+.footer-lista ul {
+	width: 100%;
+	float: left;
+}
+.footer-lista ul li {
+	width: auto;
+	float: left;
+	margin-bottom: 20px;
+        list-style: none;
+}
+.footer-lista li.li1 {
+	color: #fff;
+	width: 30%;
+	text-transform: capitalize;
+}
+.footer-lista ul li.li2 {
+	width: 70%;
+}
+
+.thumbnail .caption > p {
+    text-align: left;
+}
+
+.thumbnail .caption > h3 {
+    text-align: center;
 }
 
 .main-filter {
-	/*margin-top: 1%;*/
+    /*margin-top: 1%;*/
 }
 
 .main-content {
-	margin-top: 1%;
+    margin-top: 0%;
 }
 
 
