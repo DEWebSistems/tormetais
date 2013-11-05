@@ -8,23 +8,23 @@
     **/
     class MDadosEmpresa extends CI_Model
     {
-        private $id;
-        private $nomeFantasia;
-        private $razaoSocial;
-        private $cnpj;
-        private $ie;
-        private $estado;
-        private $cidade;
-        private $bairro;
-        private $endereco;
-        private $numero;
-        private $complemento;
-        private $telefonePrincipal;
-        private $telefoneSecundario;
-        private $emailPrincipal;
-        private $emailSecundario;
-        private $linkLocalizacaoGoogleMaps;
-        private $descricaoEmpresa;
+        public $id;
+        public $nomeFantasia;
+        public $razaoSocial;
+        public $cnpj;
+        public $ie;
+        public $estado;
+        public $cidade;
+        public $bairro;
+        public $endereco;
+        public $numero;
+        public $complemento;
+        public $telefonePrincipal;
+        public $telefoneSecundario;
+        public $emailPrincipal;
+        public $emailSecundario;
+        public $linkLocalizacaoGoogleMaps;
+        public $descricaoEmpresa;
 
         function __construct()
         {
@@ -199,23 +199,6 @@
         public function setDescricaoEmpresa($descricaoEmpresa)
         {
             $this->descricaoEmpresa = $descricaoEmpresa;
-        }
-        
-        public function gravar()
-        {
-            $this->load->database();
-            $dados = array(
-                'nomefantasia' => $this->getNomeFantasia(),
-                'razaosocial' => $this->getNomeFantasia(),
-                'estado' => $this->getNomeFantasia(),
-                'cidade' => $this->getNomeFantasia(),
-                'bairro' => $this->getNomeFantasia(),
-                'endereco' => $this->getNomeFantasia(),
-                'numero' => $this->getNomeFantasia(),
-                'telefoneprincipal' => $this->getNomeFantasia(),
-                'emailsecundario' => $this->getNomeFantasia()
-            );
-            $this->db->insert('dadosempresa', $dados);
         }
     }
 ?>
