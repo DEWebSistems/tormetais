@@ -6,7 +6,7 @@
     *@subpackage producao
     *@author DanielRL
     **/
-    class DadosEmpresa extends CI_Model
+    class MDadosEmpresa extends CI_Model
     {
         private $id;
         private $nomeFantasia;
@@ -199,6 +199,23 @@
         public function setDescricaoEmpresa($descricaoEmpresa)
         {
             $this->descricaoEmpresa = $descricaoEmpresa;
+        }
+        
+        public function gravar()
+        {
+            $this->load->database();
+            $dados = array(
+                'nomefantasia' => $this->getNomeFantasia(),
+                'razaosocial' => $this->getNomeFantasia(),
+                'estado' => $this->getNomeFantasia(),
+                'cidade' => $this->getNomeFantasia(),
+                'bairro' => $this->getNomeFantasia(),
+                'endereco' => $this->getNomeFantasia(),
+                'numero' => $this->getNomeFantasia(),
+                'telefoneprincipal' => $this->getNomeFantasia(),
+                'emailsecundario' => $this->getNomeFantasia()
+            );
+            $this->db->insert('dadosempresa', $dados);
         }
     }
 ?>
