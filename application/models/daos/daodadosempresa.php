@@ -58,7 +58,19 @@
             );
             $this->db->trans_start();
             $this->db->insert('dadosempresa', $this->MDadosEmpresa);
+            $numbersErrors = $this->db->_error_number();
+            //echo $this->db->affected_rows();
+            //echo $this->db->_error_number();
+            //echo $this->db->_error_message();
             $this->db->trans_complete();
+            if($numbersErrors == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         
         public function alterar($mDadosEmpresa)
@@ -66,7 +78,16 @@
             $this->MDadosEmpresa = $mDadosEmpresa;
             $this->db->trans_start();
             $this->db->update('dadosempresa', $this->MDadosEmpresa, 'id = ' . $this->MDadosEmpresa->getId());
+            $numbersErrors = $this->db->_error_number();
             $this->db->trans_complete();
+            if($numbersErrors == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 ?>

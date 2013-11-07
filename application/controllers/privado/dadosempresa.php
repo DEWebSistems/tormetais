@@ -9,13 +9,30 @@
         public function index()
         {
             $dadosPost = $this->input->post();
+            $messages = array();
+            $messages['isErrors'] = false;
+            $messages['messagesErrors'] = '';
+            $messages['isSuccess'] = false;
+            $messages['messagesSuccess'] = '';
             if(isset($dadosPost['bsGravar']))
             {
                 //echo '<pre>';
                 //print_r($dadosPost);
                 //echo '</pre>';
-                $this->gravar($dadosPost);
+                $returns = $this->gravar($dadosPost);
+                if($returns == false)
+                {
+                    $messages['isErrors'] = true;
+                    $messages['messagesErrors'] = 'Occoreu um erro com o banco de dados. Não foi possível gravar os dados da empresa.';
+                }
+                else
+                {
+                    $messages['isSuccess'] = true;
+                    $messages['messagesSuccess'] = 'Os dados da empresa foram salvos com sucesso';
+                }
             }
+            $datasBody = array();
+            $datasBody['messages'] = $messages;
             $datasBody['estados'] = $this->getEstados();
             $this->load->model('daos/DAODadosEmpresa');
             $this->load->model('producao/MDadosEmpresa');
@@ -48,12 +65,13 @@
             $this->load->model('daos/DAODadosEmpresa');
             if($this->DAODadosEmpresa->existsRegisterIdOne() == false)
             {
-                $this->DAODadosEmpresa->inserir($this->MDadosEmpresa);
+                $returns = $this->DAODadosEmpresa->inserir($this->MDadosEmpresa);
             }
             else if($this->DAODadosEmpresa->existsRegisterIdOne() == true)
             {
-                $this->DAODadosEmpresa->alterar($this->MDadosEmpresa);
+                $returns = $this->DAODadosEmpresa->alterar($this->MDadosEmpresa);
             }
+            return $returns;
         }
         
         private function getEstados()

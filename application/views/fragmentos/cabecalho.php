@@ -17,6 +17,7 @@
         <script type="text/javascript" src="/tormetais/assets/bootstrap/3.0.0/js/bootstrap.js"></script>        
         <script type="text/javascript" src="/tormetais/assets/bootstrap/3.0.0/js/transition.js"></script>
         <script type="text/javascript" src="/tormetais/assets/bootstrap/3.0.0/js/carousel.js"></script>
+        <script type="text/javascript" src="/tormetais/assets/js/genericsfunctions.js"></script>
 
     </head>
 

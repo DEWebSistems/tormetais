@@ -1,5 +1,33 @@
+<script type="text/javascript" src="/tormetais/assets/plugins/jquerymask/jquerymask1.3.1.min.js"></script>
+<script type="text/javascript" src="/tormetais/assets/js/dadosempresa.js"></script>
+<script>
+    $(function(){
+        $(".maskCNPJ").mask("99.999.999/9999-99");
+        $(".maskTelefone").mask("(99) 9999-9999");
+        $(".maskCEP").mask("99999-999");
+    });
+</script>
 <br/>
 <br/>
+<?php
+    if($messages['isErrors'] == true)
+    {
+        echo '<div class="alert alert-danger alertcol-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
+        echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+        echo '<h4>Erro</h4>';
+        echo $messages['messagesErrors'];
+        echo '</div>';
+    }
+    if($messages['isSuccess'] == true)
+    {
+        echo '<div class="alert alert-success alertcol-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
+        echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+        echo '<h4>' . $messages['messagesSuccess'] . '</h4>';
+        echo '</div>';
+    }
+?>
+<div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+</div>
 <form action="" method="post" class="form-horizontal" role="form">
     <div class="form-group">
         <label for="itNomeFantasia" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Nome Fantasia:</label>
@@ -16,7 +44,7 @@
     <div class="form-group">
         <label for="itCNPJ" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">CNPJ:</label>
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
-            <input id="itCNPJ" name="itCNPJ" type="text" maxlength="20" value="<?php echo $dadosEmpresa['cnpj'];?>" class="form-control"/>
+            <input id="itCNPJ" name="itCNPJ" type="text" maxlength="18" value="<?php echo $dadosEmpresa['cnpj'];?>" class="form-control maskCNPJ"/>
         </div>
     </div>
     <div class="form-group">
@@ -29,6 +57,7 @@
         <label for="seEstado" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Estado:</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
             <select id="seEstado" name="seEstado" class="form-control">
+                <option value="">--Selecione um estado--</option>
                 <?php
                     foreach($estados as $sigla => $nome)
                     {
@@ -79,13 +108,13 @@
     <div class="form-group">
         <label for="itTelefonePrincipal" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Telefone Principal:</label>
         <div class="col-xs-7 col-sm-4 col-md-3 col-lg-2">
-            <input id="itTelefonePrincipal" name="itTelefonePrincipal" type="tel" maxlength="20" value="<?php echo $dadosEmpresa['telefoneprincipal'];?>" class="form-control"/>
+            <input id="itTelefonePrincipal" name="itTelefonePrincipal" type="tel" maxlength="14" value="<?php echo $dadosEmpresa['telefoneprincipal'];?>" class="form-control maskTelefone"/>
         </div>
     </div>
     <div class="form-group">
         <label for="itTelefoneSecundario" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Telefone Secundário:</label>
         <div class="col-xs-7 col-sm-4 col-md-3 col-lg-2">
-            <input id="itTelefoneSecundario" name="itTelefoneSecundario" type="tel" maxlength="20" value="<?php echo $dadosEmpresa['telefonesecundario'];?>" class="form-control"/>
+            <input id="itTelefoneSecundario" name="itTelefoneSecundario" type="tel" maxlength="14" value="<?php echo $dadosEmpresa['telefonesecundario'];?>" class="form-control maskTelefone"/>
         </div>
     </div>
     <div class="form-group">
@@ -114,7 +143,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button id="bsGravar" name="bsGravar" type="submit" class="btn btn-primary">Gravar</button>
+            <button id="bsGravar" name="bsGravar" type="submit" class="btn btn-primary" onclick="return validateBeforeSubmitRecord();">Gravar</button>
             <button id="bsCancelar" name="bsCancelar" type="submit" class="btn btn-default">Cancelar</button>
         </div>
     </div>
