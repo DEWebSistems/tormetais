@@ -37,9 +37,9 @@
             $this->load->model('daos/DAODadosEmpresa');
             $this->load->model('producao/MDadosEmpresa');
             $datasBody['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
-            $this->load->view('fragmentos/cabecalho');
+            $this->load->view('fragmentos/cabecalhoprivado', $datasBody);
             $this->load->view('privado/producao/dadosempresa', $datasBody);
-            $this->load->view('fragmentos/rodape');
+            $this->load->view('fragmentos/rodape', $datasBody);
         }
         
         private function gravar($dadosPost)

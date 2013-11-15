@@ -1,53 +1,74 @@
 <div class="footer">
-            <div class="container">
-                <div class="row footer-content">
-                    <div class="col-md-4">
-                        
-                        <div class="footer-sobre">
-                            <img src="/tormetais/assets/images/logo.png" alt="" width="107" height="53"><strong>Tor Metais</strong>
-                            <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id 
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h3><span class="glyphicon glyphicon-user"> Atendimento</span></h3>
-                        <div class="footer-atendimento footer-lista">
-                            <ul>
-                                <li class="li1">Segunda a Sexta:</li>
-                                <li class="li2">8h às 12h e das 13h30 às 18h</li>
-                                <li class="li1">Sábado:</li>                                
-                                <li class="li2">8h às 12h</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h3><i class="glyphicon glyphicon-phone-alt"></i>Contato</h3>
-                        <address>                                                    
-
-                            <div class="footer-contato footer-lista">
-                                <ul>
-                                    <li class="li1">Endereço:</li>
-                                    <li class="li2">Avenida Ângelo Macalos, 1939
-                                        Bairro Brasil, Espumoso - RS</li>
-                                    <li class="li1">Telefone:</li>
-                                    <li class="li2">(54) 3383-2222</li>
-                                    <li class="li1">E-mail:</li>
-                                    <li class="li2"><a href="">atendimento@tormetais.com.br</a></li>
-                                </ul>
-                            </div>                                                                                   
-                        </address>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-content">
+                <div class="footer-sobre">
+                    <img src="/tormetais/assets/images/logo.png" alt="" width="107" height="53"><strong><?php echo $dadosEmpresa['nomefantasia'];?></strong>
+                    <p>
+                        <span><?php echo $dadosEmpresa['descricaoempresa'];?></span>
+                    </p>
                 </div>
-
             </div>
-        </div>
-
-        <div class="sub-footer">           
-            <div class="row footer-content">
-                <div class="col-md-6">©2013. Tor Metais. Todos os direitos reservados.</div>
-                <div class="col-md-6"><a href="#">ServiTI</a></div>
+            <div class="col-md-4 footer-content">                
+                <h3><i class="glyphicon glyphicon-user"></i> Atendimento</span></h3>
+                <div class="footer-atendimento">
+                    <table>
+                        <tr>
+                            <td class="contato-coluna-um"><strong>Manhã:</strong></td>
+                            <td class="contato-coluna-dois"><span>08:00 as 12:00</span></td>
+                        </tr>
+                        <tr>
+                            <td class="contato-coluna-um"><strong>Tarde:</strong></td>
+                            <td class="contato-coluna-dois"><span>13:30 as 18:00</span></td>
+                        </tr>
+                        <tr>
+                            <td class="contato-coluna-um"><strong>Sábado:</strong></td>
+                            <td class="contato-coluna-dois"><span>08:00 as 12:00</span></td>
+                        </tr>
+                    </table>           
+                </div>
             </div>
-        </div> 
-    </body>
+            <div class="col-md-4 footer-content">
+                <h3><i class="glyphicon glyphicon-phone-alt"></i> Contato</h3>
+                <address>                                                    
+                    <div class="footer-contato dadosEmpresaContato">                            
+                        <table>
+                            <tr>
+                                <td rowspan="3" class="contato-coluna-um"><strong>Endereço: </strong></td>
+                                <td><span><?php echo $dadosEmpresa['endereco'];?></span></td>
+                            </tr>
+                            <tr>                        
+                                <td class="contato-coluna-dois"><span><?php echo $dadosEmpresa['bairro'];?></span> - <span><?php echo $dadosEmpresa['numero'];?></span></td>
+                            </tr>
+                            <tr>
+                                <td class="contato-coluna-dois"><span><?php echo $dadosEmpresa['estado'];?></span> - <span><?php echo $dadosEmpresa['cidade'];?></span></td>
+                            </tr>                                
+                            <tr>
+                                <td class="contato-coluna-um"><strong>Telefone: </strong></td>
+                                <td><span><?php echo $dadosEmpresa['telefoneprincipal'];?></span></td>
+                            </tr>
+                            <tr>
+                                <td class="contato-coluna-um"><strong>E-mail: </strong></td>
+                                <td><span><?php echo $dadosEmpresa['emailprincipal'];?></span></td>
+                            </tr>
+
+                        </table>          
+                    </div>                                                                                 
+                </address>
+            </div>
+        </div>        
+    </div>        
+</div>
+<div class="row sub-footer">
+    <div class="col-md-6" style="padding-top: 20px;">
+        <p>©2013. Tor Metais. Todos os direitos reservados.</p>
+    </div>
+    <div class="col-md-6" style="padding-top: 20px;">
+        <p><a href="#">ServiTI</a></p>
+    </div>
+</div>
+
+
+   
+</body>
 </html>
