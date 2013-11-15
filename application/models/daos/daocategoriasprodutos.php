@@ -67,7 +67,7 @@
         {
             $this->MCategoriasProdutos = $object;
             $this->db->trans_start();
-            $this->db->insert('categoriasprodutos', $this->MCategoriasProdutos);
+            $this->db->update('categoriasprodutos', $this->MCategoriasProdutos, 'id = ' . $this->MCategoriasProdutos->getId());
             $numbersErrors = $this->db->_error_number();
             //echo $this->db->affected_rows();
             //echo $this->db->_error_number();

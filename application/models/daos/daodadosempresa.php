@@ -40,7 +40,7 @@
         public function inserir($mDadosEmpresa)
         {
             $this->MDadosEmpresa = $mDadosEmpresa;
-            $dados = array(
+            /*$dados = array(
                 'nomefantasia' => $this->MDadosEmpresa->getNomeFantasia(),
                 'razaosocial' => $this->MDadosEmpresa->getRazaoSocial(),
                 'cnpj' => $this->MDadosEmpresa->getCNPJ(),
@@ -55,7 +55,7 @@
                 'telefonesecundario' => $this->MDadosEmpresa->getTelefoneSecundario(),
                 'emailprincipal' => $this->MDadosEmpresa->getEMailPrincipal(),
                 'emailsecundario' => $this->MDadosEmpresa->getEMailSecundario()
-            );
+            );*/
             $this->db->trans_start();
             $this->db->insert('dadosempresa', $this->MDadosEmpresa);
             $numbersErrors = $this->db->_error_number();

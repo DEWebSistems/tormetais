@@ -1,7 +1,7 @@
 <?php
     /**
     *Documentação
-    *@name DadosEmpresa
+    *@name MDadosEmpresa
     *@package models
     *@subpackage producao
     *@author DanielRL

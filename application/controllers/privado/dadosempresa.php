@@ -4,6 +4,8 @@
         function __construct()
         {
             parent::__construct();
+            $this->load->model('producao/MDadosEmpresa');
+            $this->load->model('daos/DAODadosEmpresa');
         }
         
         public function index()
@@ -34,8 +36,8 @@
             $datasBody = array();
             $datasBody['messages'] = $messages;
             $datasBody['estados'] = $this->getEstados();
-            $this->load->model('daos/DAODadosEmpresa');
-            $this->load->model('producao/MDadosEmpresa');
+            //$this->load->model('daos/DAODadosEmpresa');
+            //$this->load->model('producao/MDadosEmpresa');
             $datasBody['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalho');
             $this->load->view('privado/producao/dadosempresa', $datasBody);
@@ -44,7 +46,7 @@
         
         private function gravar($dadosPost)
         {
-            $this->load->model('producao/MDadosEmpresa');
+            //$this->load->model('producao/MDadosEmpresa');
             $this->MDadosEmpresa->setId(1);
             $this->MDadosEmpresa->setNomeFantasia($dadosPost['itNomeFantasia']);
             $this->MDadosEmpresa->setRazaoSocial($dadosPost['itRazaoSocial']);
@@ -62,7 +64,7 @@
             $this->MDadosEmpresa->setEmailSecundario($dadosPost['iemEMailSecundario']);
             $this->MDadosEmpresa->setLinkLocalizacaoGoogleMaps($dadosPost['iurlLinkLocalizacaoGoogleMaps']);
             $this->MDadosEmpresa->setDescricaoEmpresa($dadosPost['taDescricaoEmpresa']);
-            $this->load->model('daos/DAODadosEmpresa');
+            //$this->load->model('daos/DAODadosEmpresa');
             if($this->DAODadosEmpresa->existsRegisterIdOne() == false)
             {
                 $returns = $this->DAODadosEmpresa->inserir($this->MDadosEmpresa);
