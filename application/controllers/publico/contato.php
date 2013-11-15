@@ -40,7 +40,7 @@
             $datasBody['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalho');
             $this->load->view('publico/contato', $datasBody);
-            $this->load->view('fragmentos/rodape');
+            $this->load->view('fragmentos/rodape', $datasBody);
         }
         
         public function enviar($dadosPost)

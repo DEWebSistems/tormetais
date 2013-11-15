@@ -54,10 +54,10 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="seEstado" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Estado:</label>
+        <label for="seCategoriaProduto" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Categoria do Produto:</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
             <select id="seEstado" name="seEstado" class="form-control">
-                <option value="">--Selecione um estado--</option>
+                <option value="">--Selecione uma categoria--</option>
                 <?php
                     foreach($estados as $sigla => $nome)
                     {

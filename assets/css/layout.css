@@ -6,28 +6,16 @@ body {
     color: #777;
 }
 
-.content {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #dddddd;
-}
-
 .top-line{
-    /*        margin-left:15%;
-            margin-right:15%;*/
     width: 100%;
     height: 5px;
     background: #398439;
 }
 
 .header {	
-    /*	margin-left:15%;
-            margin-right:15%;*/
     width: 100%;
     height: auto;
 }
-
-
 
 .site-header-logo {
     padding: 2%;
@@ -35,12 +23,12 @@ body {
 
 .site-header-desc {
     text-align: left;
-    padding: 34px 0px;
+    padding: 38px 0px;
     font-size: 12px;
 }
 
 .site-header-contato {
-    padding: 34px 0px;
+    padding: 38px 0px;
 }
 
 .header-contato-fone {
@@ -85,22 +73,11 @@ body {
     height: auto;
 }
 
-.sub-footer {
-    background-color: #222;
-    width: 100%;
-    height: 50px;
-    text-align:center;
-}
-
 .footer {
 
     background-color: #333;
     width: 100%;
     height: auto;
-    text-align:center;
-}
-
-.footer > h3{
     color: #fff !important;
 }
 
@@ -121,27 +98,19 @@ body {
 .footer-contato {
 	width: 100%;
 	float: left;
-	background-image: url(/tormetais/assets/images/footer-contato-mapa.png);
-	background-size: 100% auto;
-	background-repeat: no-repeat;
+	/*background-image: url(/tormetais/assets/images/footer-contato-mapa.png);*/
+	/*background-size: 100% auto;*/
+	/*background-repeat: no-repeat;*/
 }
-.footer-lista ul {
-	width: 100%;
-	float: left;
-}
-.footer-lista ul li {
-	width: auto;
-	float: left;
-	margin-bottom: 20px;
-        list-style: none;
-}
-.footer-lista li.li1 {
-	color: #fff;
-	width: 30%;
-	text-transform: capitalize;
-}
-.footer-lista ul li.li2 {
-	width: 70%;
+
+.sub-footer {
+    background-color: #222;
+    width: 100%;
+    text-align:center;
+    height: auto;
+    color: #fff !important;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .thumbnail .caption > p {
@@ -150,10 +119,6 @@ body {
 
 .thumbnail .caption > h3 {
     text-align: center;
-}
-
-.main-filter {
-    /*margin-top: 1%;*/
 }
 
 .main-content {
@@ -171,6 +136,8 @@ body {
     width: 90%;
     height: auto;
 }
+
+/* Tabela de Contato */
 
 .contato-coluna-um {
     vertical-align: top;
