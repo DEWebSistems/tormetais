@@ -37,6 +37,12 @@
             return $results;
         }
         
+        public function getCategoriasProdutos()
+        {
+            $results = $this->db->get('categoriasprodutos');
+            return $results;
+        }
+        
         public function insert($object)
         {
             $this->MCategoriasProdutos = $object;
