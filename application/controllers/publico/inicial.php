@@ -2,9 +2,17 @@
 
     class Inicial extends CI_Controller
     {
+        
+        function __construct()
+        {
+            parent::__construct();            
+            $this->load->helper('url');            
+        }
+        
         public function index()
         {
             $this->load->view('fragmentos/cabecalho');
+            $this->load->view('publico/inicial');
             $this->load->view('fragmentos/rodape');
         }
     }
