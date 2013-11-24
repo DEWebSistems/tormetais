@@ -8,11 +8,8 @@
             $this->load->model('producao/MDadosEmpresa');
             $this->load->model('producao/MCategoriasProdutos');
             $this->load->model('daos/DAOCategoriasProdutos');
-<<<<<<< HEAD
             $this->load->helper('url');
-=======
-            $this->load->helper('url');            
->>>>>>> 06dd79118e16ff470b63e40211a41bc9d3747b7d
+            //$this->load->helper('url');
         }
         
         public function index()
