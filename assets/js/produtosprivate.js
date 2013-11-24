@@ -16,6 +16,27 @@ function validations()
         isErrors = true;
         messagesHTML += '<br/>O campo "Nome" é de preenchimento obrigatório.';
     }
+    
+    if(allTrim($('#taDescricao').val()) === '')
+    {
+        if(isErrors === false)
+        {
+            $('#taDescricao').focus();
+        }
+        isErrors = true;
+        messagesHTML += '<br/>O campo "Descrição" é de preenchimento obrigatório.';
+    }
+    
+    if(allTrim($('#seCategoriaProduto').val()) === '')
+    {
+        if(isErrors === false)
+        {
+            $('#seCategoriaProduto').focus();
+        }
+        isErrors = true;
+        messagesHTML += '<br/>O campo "Categoria do Produto" é de seleção obrigatória.';
+    }
+    
     messagesHTML += '</div>';
     if(isErrors === true)
     {

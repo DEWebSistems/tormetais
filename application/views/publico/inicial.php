@@ -1,4 +1,4 @@
-<div class="content-carousel">
+        <div class="content-carousel">
             <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
@@ -7,13 +7,28 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="item">
-                        <img src="/tormetais/assets/images/carreto abastecedor 13tn.png" data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide">
+                        <img src="/tormetais/assets/images/carreto abastecedor 13tn.png" style="width: 100%; height: 550px;" alt="First slide">
+                        <div class="carousel-caption">
+                            <h3>...</h3>
+                            <p>...</p>
+                            <p></p>
+                        </div>  
                     </div>
                     <div class="item active">
-                        <img src="/tormetais/assets/images/carretor basculante 7tn.png" data-src="holder.js/900x500/auto/#666:#444/text:Second slide" alt="Second slide">
+                        <img src="/tormetais/assets/images/carretor basculante 7tn.png" style="width: 100%; height: 550px;" alt="Second slide">
+                        <div class="carousel-caption">
+                            <h3>...</h3>
+                            <p>...</p>
+                            <p></p>
+                        </div>  
                     </div>
                     <div class="item">
-                        <img src="/tormetais/assets/images/img2.png" data-src="holder.js/900x500/auto/#555:#333/text:Third slide" alt="Third slide">
+                        <img src="/tormetais/assets/images/img2.png" style="width: 100%; height: 550px;" alt="Third slide">
+                        <div class="carousel-caption">
+                            <h3>...</h3>
+                            <p>...</p>
+                            <p></p>
+                        </div>  
                     </div>
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -23,28 +38,13 @@
                     <span class="icon-next"></span>
                 </a>
             </div>
-        </div>
-        <div class="site-carousel-saiba-mais">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <p><strong>Carreto basculante 5TN:</strong></p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    </div>
-                    <div class="col-md-2 col-md-offset-2">
-                        <button type="button" class="btn btn-info btn-lg btn-block">Saiba Mais</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div>        
+                          
         <br/>
 
         <div class="main">
 
-            <div class="main-content">
-                <br/>   
-                <hr/>
-                <br/>
+            <div class="main-content">                
                 <div class="row">
                     <div class="col-md-4">	                        
                         <div class="thumbnail">                            

@@ -55,7 +55,7 @@
                         echo '<td>' . $categoriaProduto['id'] . '</td>';
                         echo '<td>' . $categoriaProduto['nome'] . '</td>';
                         echo '<td>';
-                        echo '<a href=" '. site_url("privado/categoriasprodutos/alterar") . $categoriaProduto['id'] . '" class="btn btn-default btn-sm">Alterar</a>';
+                        echo '<a href=" '. site_url("privado/categoriasprodutos/alterar/". $categoriaProduto['id'])  . '" class="btn btn-default btn-sm">Alterar</a>';
                         echo '&nbsp;&nbsp;&nbsp;';
                         echo '<button name="bsExcluir" type="submit" value="' . $categoriaProduto['id'] . '" class="btn btn-default btn-sm" onclick="return confirmaExclusao();">Excluir</button>';
                         echo '</td>';

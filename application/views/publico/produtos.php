@@ -37,7 +37,7 @@
            
             
             <?php
-                $i = 0;
+                $i = 0;                                
                 foreach ($produtos as $produto)
                 { 
                     if($i == 3) 

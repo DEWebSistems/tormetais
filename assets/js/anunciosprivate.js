@@ -1,4 +1,4 @@
-function validateBeforeSubmitRecord()
+function validations()
 {
     var isErrors;
     var messagesHTML;
@@ -16,25 +16,16 @@ function validateBeforeSubmitRecord()
         isErrors = true;
         messagesHTML += '<br/>O campo "Nome" é de preenchimento obrigatório.';
     }
-    if(allTrim($('#itDescricao').val()) === '')
-    {
-        if(isErrors === false)
-        {
-            $('#itDescricao').focus();
-        }
-        isErrors = true;
-        messagesHTML += '<br/>O campo "Descricao" é de preenchimento obrigatório.';
-    }
     
-    if(allTrim($('#seCategoriaProduto').val()) === '')
+    if(allTrim($('#taDescricao').val()) === '')
     {
         if(isErrors === false)
         {
-            $('#seCategoriaProduto').focus();
+            $('#taDescricao').focus();
         }
         isErrors = true;
-        messagesHTML += '<br/>O campo "Categoria do Produto" é de seleção obrigatória.';
-    }    
+        messagesHTML += '<br/>O campo "Descrição" é de preenchimento obrigatório.';
+    }
     
     messagesHTML += '</div>';
     if(isErrors === true)

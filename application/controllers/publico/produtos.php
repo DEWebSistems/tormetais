@@ -38,7 +38,7 @@
         {          
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
             $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
-            $datasBody['produtos']              = $this->DAOProdutos->getProdutos();
+            $datasBody['produtos']              = $this->DAOProdutos->getProdutos()->result_array();
             
             $this->load->view('fragmentos/cabecalho',   $dadosEmpresa);
             $this->load->view('publico/produtos',       $datasBody);

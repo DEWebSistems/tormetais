@@ -4,6 +4,10 @@
         function __construct()
         {
             parent::__construct();
+            
+            $this->load->model('daos/DAODadosEmpresa');
+            $this->load->model('producao/MDadosEmpresa');   
+            
             $this->load->model('producao/MCategoriasProdutos');
             $this->load->model('daos/DAOCategoriasProdutos');
             $this->load->helper('url');
@@ -68,9 +72,10 @@
             $config['per_page'] = $this->DAOCategoriasProdutos->getLimitPage();
             $this->pagination->initialize($config);
             $datasBody['paginations'] = $this->pagination->create_links();
-            $this->load->view('fragmentos/cabecalho');
+            $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
+            $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/categoriasprodutoslist', $datasBody);
-            $this->load->view('fragmentos/rodape');
+            $this->load->view('fragmentos/rodape', $dadosEmpresa);
         }
         
         public function adicionar()

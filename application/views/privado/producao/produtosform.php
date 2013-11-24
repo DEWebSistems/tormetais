@@ -1,37 +1,27 @@
 <div class="page-header-form-list">
     <strong>Cadastro de Produtos</strong>
 </div>
-<script type="text/javascript" src="/tormetais/assets/js/produto.js"></script>
-<?php
-    if($messages['isErrors'] == true)
-    {        
-        echo '<div class="alert alert-danger alert col-md-12" style="margin-top: 10px;">';
-        echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-        echo '<h4>Erro</h4>';
-        echo $messages['messagesErrors'];
-        echo '</div>';
-    }
-    if($messages['isSuccess'] == true)
-    {
-        echo '<div class="alert alert-success alert col-md-12" style="margin-top: 10px;">';
-        echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-        echo '<h4>' . $messages['messagesSuccess'] . '</h4>';
-        echo '</div>';
-    }
-?>
+<script type="text/javascript" src="/tormetais/assets/js/produtosprivate.js"></script>
+
 <div id="divResultsValidations" class="col-md-12">
 </div>
-<form action="" method="post" class="form-horizontal" style="margin-top: 20px;" role="form">       
+<form action="lista" method="post" class="form-horizontal" role="form">       
     <div class="form-group">
-        <label for="itNome" class="col-sm-2 control-label">Nome do Produto:</label>
-        <div class="col-sm-6">
-            <input id="itNome" name="itNome" type="text" maxlength="90" value="" class="form-control"/>
+        <label for="itId" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Código:</label>
+        <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
+            <input id="itId" name="itId" type="text" maxlength="90" value="<?php echo $dadosProduto['id'];?>" class="form-control" readonly=""/>
         </div>
     </div>
     <div class="form-group">
-        <label for="taDescricao" class="col-sm-2 control-label">Descricao:</label>
+        <label for="itNome" class="col-sm-2 control-label">Nome do Produto:</label>
         <div class="col-sm-6">
-            <textarea id="taDescricao" name="taDescricao" maxlength="255" value="" class="form-control"></textarea>
+            <input id="itNome" name="itNome" type="text" maxlength="90" value="<?php echo $dadosProduto['nome'];?>" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="taDescricao" class="col-sm-2 control-label">Descrição:</label>
+        <div class="col-sm-6">
+            <textarea id="taDescricao" name="taDescricao" maxlength="255" value="<?php echo $dadosProduto['descricao'];?>" class="form-control"></textarea>
         </div>
     </div>
     <div class="form-group">
@@ -58,12 +48,8 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button id="bsGravar" name="bsGravar" type="submit" class="btn btn-primary" onclick="return validateBeforeSubmitRecord();">Gravar</button>
+            <button id="bsGravar" name="bsGravar" type="submit" value="<?php echo $operation; ?>" class="btn btn-primary" onclick="return validations();">Gravar</button>
             <button id="bsCancelar" name="bsCancelar" type="submit" class="btn btn-default">Cancelar</button>
         </div>
-    </div>
-    
-    <script type="text/javascript">CKEDITOR.replace( 'taDescricao' );</script>
-    
-    
+    </div>              
 </form>
