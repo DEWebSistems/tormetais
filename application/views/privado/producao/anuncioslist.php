@@ -18,9 +18,9 @@
             </thead>
             <tbody>
                 <?php
-                    //echo '<pre>';
-                    //print_r($categoriasProdutos);
-                    //echo '</pre>';
+                    echo '<pre>';
+                    print_r($anuncios);
+                    echo '</pre>';
                     if(empty($anuncios))
                     {
                         echo '<tr>';
@@ -35,7 +35,7 @@
                         echo '<td>' . $anuncio['id'] . '</td>';
                         echo '<td>' . $anuncio['nome'] . '</td>';
                         echo '<td>';
-                        echo '<a href=" '. site_url("privado/anuncios/alterar") . $anuncio['id'] . '" class="btn btn-default btn-sm">Alterar</a>';
+                        echo '<a href=" '. site_url("privado/anuncios/alterar/". $anuncio['id'])  . '" class="btn btn-default btn-sm">Alterar</a>';
                         echo '&nbsp;&nbsp;&nbsp;';
                         echo '<button name="bsExcluir" type="submit" value="' . $anuncio['id'] . '" class="btn btn-default btn-sm" onclick="return confirmaExclusao();">Excluir</button>';
                         echo '</td>';
@@ -58,4 +58,3 @@
     <li><a>></a></li>
     <li><a>>></a></li>
 </ul>
-</div>

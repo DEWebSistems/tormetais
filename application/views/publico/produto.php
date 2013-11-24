@@ -5,10 +5,7 @@
                 <h4>Categorias</h4>
             </div>
             <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                <?php
-//                    echo '<pre>';
-//                    print_r($categoriasProdutos);
-//                    echo '</pre>';
+                <?php                    
                     foreach ($categoriasProdutos as $categoriaProduto)
                     {
                         echo '<li><a href="filtro/'.$categoriaProduto['id'].'">'. $categoriaProduto['nome'].'</a></li>';                                
@@ -42,7 +39,22 @@
                     <h4>Vídeos</h4>
                 </div>
                 <div class="col-md-12">
-                    
+                    <div class="row">
+                        <?php                                                                 
+                            foreach ($videosproduto as $videoproduto => $url)
+                            {
+                                echo $url;
+                                ?>                            
+                                <div class="col-md-4">   
+<!--                                    <iframe width="320" height="240" 
+                                            src="" -->
+<!--                                            frameborder="0" allowfullscreen>
+                                    </iframe>-->
+                                </div>
+                        <?php
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

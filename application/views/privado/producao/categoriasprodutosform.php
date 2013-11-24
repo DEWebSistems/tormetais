@@ -5,7 +5,7 @@
 </div>
 <div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 </div>
-<form action="lista" method="post" class="form-horizontal" role="form">
+<form action="<?php echo site_url("privado/categoriasprodutos/lista"); ?>" method="post" class="form-horizontal" role="form">
     <div class="form-group">
         <label for="itId" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Código:</label>
         <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
