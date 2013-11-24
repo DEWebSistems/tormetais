@@ -4,20 +4,16 @@
         function __construct()
         {
             parent::__construct();
-            
             $this->load->model('daos/DAODadosEmpresa');
-            $this->load->model('producao/MDadosEmpresa');   
-            
+            $this->load->model('producao/MDadosEmpresa');
             $this->load->model('producao/MCategoriasProdutos');
             $this->load->model('daos/DAOCategoriasProdutos');
             $this->load->helper('url');
-            echo anchor('privado/categoriasprodutos/lista') . '<a href="' . site_url('/privado/categoriasprodutos/lista') . '">Tests Links</a>';
         }
         
         public function index()
         {
             $this->lista(1);
-            //header('location:lista');
         }
         
         public function lista($numberPage = 1)
@@ -86,7 +82,7 @@
             $dadosCP['nome'] = '';
             $datasBody['operation'] = 'i';
             $datasBody['dadosCP'] = $dadosCP;
-            $this->load->view('fragmentos/cabecalho');
+            $this->load->view('fragmentos/cabecalhoprivado', $datasBody);
             $this->load->view('privado/producao/categoriasprodutosform', $datasBody);
             $this->load->view('fragmentos/rodape');
         }

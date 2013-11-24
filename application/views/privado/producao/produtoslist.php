@@ -10,7 +10,7 @@
                 <tr>
                     <th style="width: 100px;">Código</th>
                     <th>Nome</th>
-                    <th style="width: 200px;">
+                    <th style="width: 300px;">
                         Opções
                         <a href="<?php echo site_url('privado/produtos/adicionar') ?>" class="btn btn-primary">Adicionar</a>
                     </th>
@@ -35,9 +35,11 @@
                         echo '<td>' . $produto['id'] . '</td>';
                         echo '<td>' . $produto['nome'] . '</td>';
                         echo '<td>';
-                        echo '<a href=" '. site_url("privado/produtos/alterar") . $produto['id'] . '" class="btn btn-default btn-sm">Alterar</a>';
+                        echo '<a href=" '. site_url("privado/produtos/alterar/" . $produto['id']) . '" class="btn btn-default btn-sm">Alterar</a>';
                         echo '&nbsp;&nbsp;&nbsp;';
                         echo '<button name="bsExcluir" type="submit" value="' . $produto['id'] . '" class="btn btn-default btn-sm" onclick="return confirmaExclusao();">Excluir</button>';
+                        echo '&nbsp;&nbsp;&nbsp;';
+                        echo '<a href=" '. site_url("privado/produtos/multimidias/" . $produto['id']) . '" class="btn btn-default btn-sm">Fotos</a>';
                         echo '</td>';
                         echo '</tr>';
                     }
