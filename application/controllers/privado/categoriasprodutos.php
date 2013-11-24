@@ -10,8 +10,7 @@
             
             $this->load->model('producao/MCategoriasProdutos');
             $this->load->model('daos/DAOCategoriasProdutos');
-            $this->load->helper('url');
-            echo anchor('privado/categoriasprodutos/lista') . '<a href="' . site_url('/privado/categoriasprodutos/lista') . '">Tests Links</a>';
+            $this->load->helper('url');            
         }
         
         public function index()

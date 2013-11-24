@@ -45,8 +45,11 @@
             
             
             $datasBody['messages'] = $messages;
-            $returns = $this->DAOAnuncios->listPagination($numberPage);            
-            $datasBody['anuncios'] = $returns->result_array();
+            $returns = $this->DAOAnuncios->getAnuncios()->result_array();   
+            echo "<pre>";
+            print_r($returns);
+            echo "</pre>";
+            $datasBody['anuncios'] = $returns;
             $this->load->library('pagination');
             $config['use_page_numbers'] = TRUE;
             $config['base_url'] = 'anuncios/index/';
