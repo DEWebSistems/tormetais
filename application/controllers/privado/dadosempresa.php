@@ -4,6 +4,7 @@
         function __construct()
         {
             parent::__construct();
+            $this->load->helper(array('form', 'url'));
             $this->load->model('producao/MDadosEmpresa');
             $this->load->model('daos/DAODadosEmpresa');
         }
@@ -27,6 +28,11 @@
                     $messages['isErrors'] = true;
                     $messages['messagesErrors'] = 'Occoreu um erro com o banco de dados. Não foi possível gravar os dados da empresa.';
                 }
+                else if($returns['messages'] != '')
+                {
+                    $messages['isErrors'] = true;
+                    $messages['messagesErrors'] = $returns['messages'];
+                }
                 else
                 {
                     $messages['isSuccess'] = true;
@@ -46,12 +52,13 @@
         
         private function gravar($dadosPost)
         {
-            //$this->load->model('producao/MDadosEmpresa');
+            $dadosEmpresa = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->MDadosEmpresa->setId(1);
             $this->MDadosEmpresa->setNomeFantasia($dadosPost['itNomeFantasia']);
             $this->MDadosEmpresa->setRazaoSocial($dadosPost['itRazaoSocial']);
             $this->MDadosEmpresa->setCNPJ($dadosPost['itCNPJ']);
             $this->MDadosEmpresa->setIE($dadosPost['itIE']);
+            $this->MDadosEmpresa->setCEP($dadosPost['itCEP']);
             $this->MDadosEmpresa->setEstado($dadosPost['seEstado']);
             $this->MDadosEmpresa->setCidade($dadosPost['itCidade']);
             $this->MDadosEmpresa->setBairro($dadosPost['itBairro']);
@@ -64,7 +71,39 @@
             $this->MDadosEmpresa->setEmailSecundario($dadosPost['iemEMailSecundario']);
             $this->MDadosEmpresa->setLinkLocalizacaoGoogleMaps($dadosPost['iurlLinkLocalizacaoGoogleMaps']);
             $this->MDadosEmpresa->setDescricaoEmpresa($dadosPost['taDescricaoEmpresa']);
-            //$this->load->model('daos/DAODadosEmpresa');
+            $this->MDadosEmpresa->setDescricaoProdutos($dadosPost['taDescricaoProdutos']);
+            $this->MDadosEmpresa->setDescricaoServicos($dadosPost['taDescricaoServicos']);
+            if(($dadosPost['ihUpdateImage'] == 's') and ($_FILES['ifLogoSite']['name'] != ''))
+            {
+                $configsUploads['upload_path'] = "C:/xampp/htdocs/tormetais/assets/images/";
+                $configsUploads['allowed_types'] = 'gif|jpg|png|jpeg';
+                $configsUploads['max_size'] = '1000';
+                $configsUploads['max_width'] = '2000';
+                $configsUploads['max_height'] = '2000';
+                $configsUploads['encrypt_name'] = false;
+                $this->load->library('upload', $configsUploads);
+                if(!$this->upload->do_upload('ifLogoSite'))
+                {
+                    $errorsUploads = $this->upload->display_errors();
+                    //echo '<pre>';
+                    //print_r($errorsUploads);
+                    //echo '</pre>';
+                    $errors['messages'] = 'Erro a gravar a imagem de logo do site.<br/>Detalhes: ' . $errorsUploads;
+                    return $errors;
+                }
+                else
+                {
+                    $datasUploads = $this->upload->data();
+                    //echo '<pre>';
+                    //print_r($datasUploads);
+                    //echo '</pre>';
+                    $this->MDadosEmpresa->setLogoSite('/tormetais/assets/images/' . $datasUploads['file_name']);
+                }
+            }
+            else
+            {
+                $this->MDadosEmpresa->setLogoSite($dadosEmpresa['logosite']);
+            }
             if($this->DAODadosEmpresa->existsRegisterIdOne() == false)
             {
                 $returns = $this->DAODadosEmpresa->inserir($this->MDadosEmpresa);

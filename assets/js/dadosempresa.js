@@ -104,3 +104,18 @@ function validateBeforeSubmitRecord()
         return true;
     }
 }
+
+function bbAlterarImagemOnClick()
+{
+    $('#divImageLogoSite').hide(100);
+    $('#divFieldLogoSite').show(100);
+    $('#ihUpdateImage').val('s');
+    $('#ifLogoSite').click();
+}
+
+function bbVoltarImagemOriginalOnClick()
+{
+    $('#divImageLogoSite').show(100);
+    $('#divFieldLogoSite').hide(100);
+    $('#ihUpdateImage').val('n');
+}

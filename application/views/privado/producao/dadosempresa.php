@@ -1,10 +1,27 @@
 <script type="text/javascript" src="/tormetais/assets/plugins/jquerymask/jquerymask1.3.1.min.js"></script>
 <script type="text/javascript" src="/tormetais/assets/js/dadosempresa.js"></script>
-<script>
+<script type="text/javascript">
     $(function(){
         $(".maskCNPJ").mask("99.999.999/9999-99");
         $(".maskTelefone").mask("(99) 9999-9999");
         $(".maskCEP").mask("99999-999");
+        <?php
+            if($dadosEmpresa['logosite'] == '')
+            {
+                echo '$("#divFieldLogoSite").show();';
+                echo '$("#divImageLogoSite").hide();';
+                echo '$("#ihUpdateImage").val("s");';
+                echo '$("#bbVoltarImagemOriginal").hide();';
+            }
+            else
+            {
+                echo '$("#divFieldLogoSite").hide();';
+                echo '$("#divImageLogoSite").show();';
+                echo '$("#ihUpdateImage").val("n");';
+                echo '$("#bbVoltarImagemOriginal").show();';
+                //bbVoltarImagemOriginal
+            }
+        ?>
     });
 </script>
 <br/>
@@ -28,7 +45,8 @@
 ?>
 <div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 </div>
-<form action="" method="post" class="form-horizontal" role="form">
+<!--<form action="" method="post" class="form-horizontal" role="form">-->
+<?php echo form_open_multipart('privado/dadosempresa', array('class' => 'form-horizontal', 'role' => 'form')); ?>
     <div class="form-group">
         <label for="itNomeFantasia" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Nome Fantasia:</label>
         <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
@@ -54,7 +72,13 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="seCategoriaProduto" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Categoria do Produto:</label>
+        <label for="itCEP" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">CEP:</label>
+        <div class="col-xs-5 col-sm-3 col-md-2 col-lg-2">
+            <input id="itCEP" name="itCEP" type="text" maxlength="10" value="<?php echo $dadosEmpresa['cep'];?>" class="form-control maskCEP"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="seEstado" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Estado:</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
             <select id="seEstado" name="seEstado" class="form-control">
                 <option value="">--Selecione uma categoria--</option>
@@ -142,6 +166,37 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="taDescricaoProdutos" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Descrição dos Produtos:</label>
+        <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
+            <textarea id="taDescricaoProdutos" name="taDescricaoProdutos" maxlength="5000" rows="10" class="form-control"><?php echo $dadosEmpresa['descricaoprodutos'];?></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="taDescricaoServicos" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Descrição dos Serviços:</label>
+        <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
+            <textarea id="taDescricaoServicos" name="taDescricaoServicos" maxlength="5000" rows="10" class="form-control"><?php echo $dadosEmpresa['descricaoservicos'];?></textarea>
+        </div>
+    </div>
+    <input id="ihUpdateImage" name="ihUpdateImage" value="" type="hidden"/>
+    <div id="divFieldLogoSite" class="form-group">
+        <label for="ifLogoSite" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Logo do Site:</label>
+        <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
+            <input id="ifLogoSite" name="ifLogoSite" type="file" class="form-control"/>
+            <br/>
+            <button id="bbVoltarImagemOriginal" name="bbVoltarImagemOriginal" type="button" class="btn btn-sm" onclick="bbVoltarImagemOriginalOnClick();">Voltar Imagem Original</button>
+        </div>
+    </div>
+    <div id="divImageLogoSite" class="form-group">
+        <label for="" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Logo do Site:</label>
+        <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
+            <img src="<?php echo $dadosEmpresa['logosite']; ?>" width="300" heigth="110"/>
+            <br/>
+            <br/>
+            <button id="bbAlterarImagem" name="bbAlterarImagem" type="button" class="btn btn-sm" onclick="bbAlterarImagemOnClick();">Alterar Imagem</button>
+        </div>
+    </div>
+    <br/>
+    <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button id="bsGravar" name="bsGravar" type="submit" class="btn btn-primary" onclick="return validateBeforeSubmitRecord();">Gravar</button>
             <button id="bsCancelar" name="bsCancelar" type="submit" class="btn btn-default">Cancelar</button>
@@ -150,3 +205,8 @@
 </form>
 <br/>
 <br/>
+<script type="text/javascript">
+    CKEDITOR.replace('taDescricaoEmpresa');
+    CKEDITOR.replace('taDescricaoProdutos');
+    CKEDITOR.replace('taDescricaoServicos');
+</script>

@@ -13,6 +13,7 @@
         public $razaoSocial;
         public $cnpj;
         public $ie;
+        public $cep;
         public $estado;
         public $cidade;
         public $bairro;
@@ -25,6 +26,9 @@
         public $emailSecundario;
         public $linkLocalizacaoGoogleMaps;
         public $descricaoEmpresa;
+        public $descricaoProdutos;
+        public $descricaoServicos;
+        public $logoSite;
 
         function __construct()
         {
@@ -80,7 +84,17 @@
         {
             $this->ie = $ie;
         }
-
+        
+        public function getCep()
+        {
+            return $this->cep;
+        }
+        
+        public function setCep($cep)
+        {
+            $this->cep = $cep;
+        }
+        
         public function getEstado()
         {
             return $this->estado;
@@ -199,6 +213,36 @@
         public function setDescricaoEmpresa($descricaoEmpresa)
         {
             $this->descricaoEmpresa = $descricaoEmpresa;
+        }
+        
+        public function getDescricaoProdutos()
+        {
+            return $this->descricaoProdutos;
+        }
+        
+        public function setDescricaoProdutos($descricaoProdutos)
+        {
+            $this->descricaoProdutos = $descricaoProdutos;
+        }
+        
+        public function getDescricaoServicos()
+        {
+            return $this->descricaoServicos;
+        }
+        
+        public function setDescricaoServicos($descricaoServicos)
+        {
+            $this->descricaoServicos = $descricaoServicos;
+        }
+        
+        public function getLogoSite()
+        {
+            return $this->logoSite;
+        }
+        
+        public function setLogoSite($logoSite)
+        {
+            $this->logoSite = $logoSite;
         }
     }
 ?>
