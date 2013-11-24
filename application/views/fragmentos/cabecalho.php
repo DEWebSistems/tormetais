@@ -24,63 +24,66 @@
 
     <body>
         <div class="content">
-
+            
             <!-- <CABECALHO> -->
             <div class="top-line"></div>
-            <div class="container">               
-                <div class="row header-content">                        
-                    <div class="col-md-6">      
+                <div class="header">
+                    <div class="container">               
+                        <div class="row header-content">                        
+                            <div class="col-md-6">      
 
 
-                        <div class="row">      
-                            <!-- HEADER LOGO -->
-                            <div class="col-md-6 site-header-logo">
-                                <img src="/tormetais/assets/images/logo.png" alt="">
-                            </div>                        
-                            <!-- / HEADER LOGO -->
+                                <div class="row">      
+                                    <!-- HEADER LOGO -->
+                                    <div class="col-md-6 site-header-logo">
+                                        <img src="/tormetais/assets/images/logo.png" alt="">
+                                    </div>                        
+                                    <!-- / HEADER LOGO -->
 
-                            <!-- HEADER DESCRICAO SITE-->
-                            <div class="col-md-6 site-header-desc">
-                                Tor Metais Agrícola - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </div>
-                            <!-- / HEADER DESCRICAO SITE --> 
-                        </div>                                                                                                                                                                                             
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-2">
-
-                                <!-- HEADER CONTATO -->
-                                <div class="site-header-contato row">                                    
-                                    <div class="col-md-6">
-                                        <span class="header-contato-fone">Telefone: </span>
-                                        <strong>(54) 3383-2222</strong>
+                                    <!-- HEADER DESCRICAO SITE-->
+                                    <div class="col-md-6 site-header-desc">
+                                        Tor Metais Agrícola - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     </div>
-                                    <div class="col-md-6">
-                                        <span class="header-contato-email">E-mail: </span>
-                                        <a href="#">contato@tormetais.com.br</a>                                    
+                                    <!-- / HEADER DESCRICAO SITE --> 
+                                </div>                                                                                                                                                                                             
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-2">
+
+                                        <!-- HEADER CONTATO -->
+                                        <div class="site-header-contato row">                                    
+                                            <div class="col-md-6">
+                                                <span class="header-contato-fone">Telefone: </span>
+                                                <strong>(54) 3383-2222</strong>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span class="header-contato-email">E-mail: </span>
+                                                <a href="#">contato@tormetais.com.br</a>                                    
+                                            </div>
+                                        </div>
+                                        <!-- / HEADER CONTATO -->
+
+                                        <!-- HEADER MENU -->
+                                        <div class="site-header-menu">
+                                            <ul class="nav nav-justified menu-superior">
+                                                <li><a class="active link-menu-superior" href="<?php echo site_url('publico/inicial'); ?> ">Inicial</a></li>
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/produtos/lista'); ?> ">Produtos</a></li>
+                                                <li><a class="link-menu-superior" href="#">Serviços</a></li>
+                                                <li><a class="link-menu-superior" href="#">Sobre</a></li>
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/contato'); ?>">Contato</a></li>
+                                            </ul>	
+                                        </div>                                
+                                        <!-- / HEADER CONTATO -->
+
                                     </div>
                                 </div>
-                                <!-- / HEADER CONTATO -->
-
-                                <!-- HEADER MENU -->
-                                <div class="site-header-menu">
-                                    <ul class="nav nav-justified menu-superior">
-                                        <li class="active"><a href="#">Inicial</a></li>
-                                        <li><a href="#">Produtos</a></li>
-                                        <li><a href="#">Serviços</a></li>
-                                        <li><a href="#">Sobre</a></li>
-                                        <li><a href="#">Contato</a></li>
-                                    </ul>	
-                                </div>                                
-                                <!-- / HEADER CONTATO -->
-
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>               
+                    </div>  
+
+            </div>
         </div>
 
         

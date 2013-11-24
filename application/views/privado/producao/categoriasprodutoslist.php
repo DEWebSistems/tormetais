@@ -23,7 +23,7 @@
             <h3>Categorias de Produtos</h3>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="text-align: right;">
-            <a href="adicionar" class="btn btn-primary">Adicionar</a>
+            <a href="<?php echo site_url('privado/categoriasprodutos/adicionar') ?>" class="btn btn-primary">Adicionar</a>
         </div>
     </div>
     <br/>
@@ -55,7 +55,7 @@
                         echo '<td>' . $categoriaProduto['id'] . '</td>';
                         echo '<td>' . $categoriaProduto['nome'] . '</td>';
                         echo '<td>';
-                        echo '<a href="alterar/' . $categoriaProduto['id'] . '" class="btn btn-default btn-sm">Alterar</a>';
+                        echo '<a href=" '. site_url("privado/categoriasprodutos/alterar") . $categoriaProduto['id'] . '" class="btn btn-default btn-sm">Alterar</a>';
                         echo '&nbsp;&nbsp;&nbsp;';
                         echo '<button name="bsExcluir" type="submit" value="' . $categoriaProduto['id'] . '" class="btn btn-default btn-sm" onclick="return confirmaExclusao();">Excluir</button>';
                         echo '</td>';

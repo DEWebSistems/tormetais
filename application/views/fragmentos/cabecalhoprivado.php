@@ -25,8 +25,9 @@
     <body>
             <!-- <CABECALHO> -->
             <div class="top-line"></div>
+            <div class="header">
             <div class="container">               
-                <div class="row header-content">                        
+                <div class="row">                        
                     <div class="col-md-6">      
                         <div class="row">      
                             <!-- HEADER LOGO -->
@@ -63,12 +64,12 @@
                                 <!-- HEADER MENU -->
                                 <div class="site-header-menu">
                                     <ul class="nav nav-justified menu-superior">
-                                        <li><a href="dadosempresa">Empresa</a></li>
+                                        <li class="active" ><a href="dadosempresa">Empresa</a></li>
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="#">Anúncios</a></li>
-                                                <li><a href="#">Categoria dos Produtos</a></li>
+                                                <li><a href="categoriasprodutos/lista">Categoria dos Produtos</a></li>
                                                 <li><a href="#">Categoria dos Serviços</a></li>                                                
                                                 <li><a href="#">Notícias</a></li>   
                                                 <li><a href="produtoform">Produtos</a></li>
@@ -83,6 +84,7 @@
                     </div>
                 </div>
             </div>               
+            </div>
  
 
         

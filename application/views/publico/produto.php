@@ -1,6 +1,9 @@
 <div class="main">
     <div class="row">
         <div class="col-md-3">
+            <div class="page-header">
+                <h4>Categorias</h4>
+            </div>
             <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
                 <?php
 //                    echo '<pre>';
@@ -15,7 +18,7 @@
         </div>
         <div class="col-md-9">
             <div class="page-header">
-                <h1><?php echo $dadosProduto['nome'];?></h1>
+                <h4><?php echo $dadosProduto['nome'];?></h4>
             </div>
             <div class="row">
                 <div class="col-md-4">  
@@ -23,11 +26,12 @@
                 </div>
                 <div class="col-md-8">
                     <p><?php echo $dadosProduto['descricao'];?></p>
+                    <p><a class="btn btn-primary" href="<?php echo site_url('publico/produtos/lista/'); ?>">Voltar</a></p>
                 </div>
             </div>
             <div class="row">
                 <div class="page-header">
-                    <h3>Imagens</h3>
+                    <h4>Imagens</h4>
                 </div>
                 <div class="col-md-12">
                     
@@ -35,7 +39,7 @@
             </div>
             <div class="row">
                 <div class="page-header">
-                    <h3>Vídeos</h3>
+                    <h4>Vídeos</h4>
                 </div>
                 <div class="col-md-12">
                     

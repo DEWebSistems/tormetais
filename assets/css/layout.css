@@ -9,16 +9,16 @@ body {
 .top-line{
     width: 100%;
     height: 5px;
-    background: #398439;
+    background-color: #3d4a31;
 }
 
-.header {	
-    width: 100%;
-    height: auto;
+.header {	    
+    background: #DFE5DF;
+    /*border-bottom: 1px solid #3d4a31;*/
 }
 
 .site-header-logo {
-    padding: 2%;
+    padding: 2%;    
 }
 
 .site-header-desc {
@@ -28,7 +28,7 @@ body {
 }
 
 .site-header-contato {
-    padding: 38px 0px;
+    padding: 38px 0px;    
 }
 
 .header-contato-fone {
@@ -43,6 +43,16 @@ body {
     width: 100%;
     height: auto;
     margin-bottom: 0px;
+    background-color: #3d4a31;
+    border-bottom: 1px solid #3d4a31;    
+}
+
+.site-menu-lateral {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+    background-color: #3d4a31;
+    /*border-bottom: 1px solid #3d4a31;*/    
 }
 
 .site-carousel {
@@ -66,11 +76,17 @@ body {
 }
 
 .main {
-
+    margin-top: 5px;
+    margin-bottom: 5px;
     margin-left:5%;
     margin-right:5%;
     width: 90%;
     height: auto;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    padding: 2px;
+    background-image: linear-gradient(to bottom, white, #DFE5DF);
+    
 }
 
 .footer {
@@ -78,10 +94,11 @@ body {
     background-color: #333;
     width: 100%;
     height: auto;
-    color: #fff !important;
+    color: #fff !important;   
 }
 
 .footer-sobre {
+    margin-top: 20px;
     width: 100%;
     float: left;
 }
@@ -91,8 +108,8 @@ body {
 }
 
 .footer-atendimento {
-	width: 100%;
-	float: left;	
+    width: 100%;
+    float: left;	
 }
 
 .footer-contato {
@@ -101,6 +118,10 @@ body {
 	/*background-image: url(/tormetais/assets/images/footer-contato-mapa.png);*/
 	/*background-size: 100% auto;*/
 	/*background-repeat: no-repeat;*/
+}
+
+.footer-content {
+    margin-bottom: 20px;
 }
 
 .sub-footer {
@@ -151,4 +172,28 @@ body {
     padding-left: 5px;
 }
 
+.form-horizontal .form-group {
+    margin-left: 0px;
+    margin-right: 0px;    
+}
+
+.page-header-form-list {
+    text-align: center;   
+    background: #398439;
+    color: #fff;
+    font-size: 24px;
+}
+
+.page-header {
+       
+    border-bottom: 1px solid #3d4a31;
+}
+
+.link-menu-superior {
+  color: #fff;
+}
+
+a:hover, a:focus {
+  color: #000;
+}
 

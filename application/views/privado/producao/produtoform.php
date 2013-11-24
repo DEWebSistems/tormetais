@@ -1,10 +1,11 @@
+<div class="page-header-form-list">
+    <strong>Cadastro de Produtos</strong>
+</div>
 <script type="text/javascript" src="/tormetais/assets/js/produto.js"></script>
-<br/>
-<br/>
 <?php
     if($messages['isErrors'] == true)
-    {
-        echo '<div class="alert alert-danger alertcol-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
+    {        
+        echo '<div class="alert alert-danger alert col-md-12" style="margin-top: 10px;">';
         echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
         echo '<h4>Erro</h4>';
         echo $messages['messagesErrors'];
@@ -12,20 +13,15 @@
     }
     if($messages['isSuccess'] == true)
     {
-        echo '<div class="alert alert-success alertcol-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
+        echo '<div class="alert alert-success alert col-md-12" style="margin-top: 10px;">';
         echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
         echo '<h4>' . $messages['messagesSuccess'] . '</h4>';
         echo '</div>';
     }
 ?>
-<div id="divResultsValidations" class="col-md-6 col-md-offset-2 col-lg-6 col-lg-offset-2">
+<div id="divResultsValidations" class="col-md-12">
 </div>
-<form action="" method="post" class="form-horizontal" role="form">   
-    <div class="form-group">
-        <div class="col-sm-6 col-sm-offset-2" style="text-align: center;">
-            <h3>Cadastro de Produtos</h3>
-        </div>
-    </div>
+<form action="" method="post" class="form-horizontal" style="margin-top: 20px;" role="form">       
     <div class="form-group">
         <label for="itNome" class="col-sm-2 control-label">Nome do Produto:</label>
         <div class="col-sm-6">

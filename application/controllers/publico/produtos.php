@@ -6,6 +6,8 @@
         {
             parent::__construct();
             
+            $this->load->helper('url');
+            
             $this->load->model('daos/DAODadosEmpresa');
             $this->load->model('producao/MDadosEmpresa');            
             

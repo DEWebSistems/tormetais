@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="container">
-        <div class="row">
+        <div class="row"></div>
             <div class="col-md-4 footer-content">
                 <div class="footer-sobre">
                     <img src="/tormetais/assets/images/logo.png" alt="" width="107" height="53"><strong><?php echo $dadosEmpresa['nomefantasia'];?></strong>
