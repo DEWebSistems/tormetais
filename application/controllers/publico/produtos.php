@@ -45,18 +45,19 @@
             $this->load->view('fragmentos/rodape',      $dadosEmpresa);
         }
         
-        function detalhe($idProduto)
+        public function detalhe($idProduto)
         {            
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
             $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
             $datasBody['dadosProduto']          = $this->DAOProdutos->getProdutoById($idProduto);
+            $datasBody['videosproduto']         = $this->getVideosProduto($idProduto);
             
             $this->load->view('fragmentos/cabecalho',   $dadosEmpresa);
             $this->load->view('publico/produto',        $datasBody);
             $this->load->view('fragmentos/rodape',      $dadosEmpresa);            
         }
                   
-        function filtro($idCategoriaProduto) {
+        public function filtro($idCategoriaProduto) {
             
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
             $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
@@ -65,6 +66,16 @@
             $this->load->view('fragmentos/cabecalho',   $dadosEmpresa);
             $this->load->view('publico/produtos',       $datasBody);
             $this->load->view('fragmentos/rodape',      $dadosEmpresa);
+        }
+        
+        private function getVideosProduto($produtoId){
+            
+            $videosProduto = array(
+                1 => '//www.youtube.com/KnZCc1TdU6Y',
+                2 => '//www.youtube.com/embed/w7WBHph4pbs',
+                3 => '//www.youtube.com/KnZCc1TdU6Y'
+            );
+            return $videosProduto;
         }
     }
 ?>
