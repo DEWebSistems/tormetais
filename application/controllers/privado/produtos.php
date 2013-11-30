@@ -4,18 +4,16 @@
         function __construct()
         {
             parent::__construct();
-            
-            parent::__construct();
             $this->load->model('producao/MProdutos');
-            $this->load->model('daos/DAOProdutos');            
+            $this->load->model('daos/DAOProdutos');
             
             $this->load->model('daos/DAODadosEmpresa');
-            $this->load->model('producao/MDadosEmpresa');   
+            $this->load->model('producao/MDadosEmpresa');
             
             $this->load->model('daos/DAOCategoriasProdutos');
-            $this->load->model('producao/MCategoriasProdutos');   
+            $this->load->model('producao/MCategoriasProdutos');
             
-            $this->load->helper(array('form', 'url'));
+            $this->load->helper(array('url', 'form'));
         }
         
         public function index()
@@ -27,9 +25,9 @@
         {
             $dadosPost = $this->input->post();
             
-            echo '<pre>';
-                print_r($dadosPost);
-                echo '</pre>';
+            //echo '<pre>';
+            //print_r($dadosPost);
+            //echo '</pre>';
             if(isset($dadosPost['bsGravar']))
             {
                 if($this->gravar($dadosPost) == true)
@@ -75,10 +73,11 @@
             $dadosProduto = array();
             $dadosProduto['id'] = '';
             $dadosProduto['nome'] = '';
-            $dadosProduto['descricao'] = '';            
+            $dadosProduto['descricao'] = '';
+            $dadosProduto['categoriaprodutoid'] = '';
             $datasBody['operation'] = 'i';
             $datasBody['dadosProduto'] = $dadosProduto;
-            $datasBody['categoriasProduto'] = $this->getCategoriasProdutos();
+            $datasBody['categoriasProduto'] = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);            
             $this->load->view('privado/producao/produtosform', $datasBody);
@@ -89,10 +88,10 @@
         {
             $datasBody = array();
             $dadosProduto = array();
-            $returns = $this->DAOProdutos->getProdutoById($id);            
+            $returns = $this->DAOProdutos->getProdutoById($id);
             $datasBody['operation'] = 'u';
             $datasBody['dadosProduto'] = $returns;
-            $datasBody['categoriasProduto'] = $this->getCategoriasProdutos();
+            $datasBody['categoriasProduto'] = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/produtosform', $datasBody);
@@ -129,15 +128,29 @@
             return $categoriasProdutos;
         }
         
-        public function multimidias()
+        public function multimidias($produtoId)
         {
+            echo date('Ymdhms');
+            $datasBody['messages']['messagesErrors'] = '';
+            $datasBody['messages']['messagesSuccess'] = '';
             $dadosPost = $this->input->post();
             if(isset($dadosPost['bsGravarImagem']))
             {
-                $this->gravarImagem();
+                $resultsRecording = $this->gravarImagem($produtoId);
+                if($resultsRecording == true)
+                {
+                    $datasBody['messages']['messagesSuccess'] = 'A imagem foi salva com sucesso.';
+                }
+                else
+                {
+                    $datasBody['messages']['messagesErrors'] = $resultsRecording['messages'];
+                }
             }
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
-            $datasBody = '';
+            $returnsProdutos = $this->DAOProdutos->getProdutoById($produtoId);
+            $datasBody['dadosProduto'] = $returnsProdutos;
+            $returnsImagens = $this->DAOProdutos->getImagens($returnsProdutos['id']);
+            $datasBody['dadosImagens'] = $returnsImagens->result_array();
             
             
             
@@ -146,36 +159,42 @@
             $this->load->view('fragmentos/rodape', $dadosEmpresa);
         }
         
-        private function gravarImagem()
+        private function gravarImagem($produtoId)
         {
             if($_FILES['ifImage']['name'] == '')
             {
-                $errors['messages'] = 'A foto não foi adicionada.';
+                $errors['messages'] = 'A foto não foi selecionada.';
                 return $errors;
             }
-            $configsUploads['upload_path'] = "C:/xampp/htdocs/tormetais/assets/images/";
+            $configsUploads['upload_path'] = "C:/xampp/htdocs/tormetais/assets/imagesproductions/";
             $configsUploads['allowed_types'] = 'gif|jpg|png|jpeg';
             $configsUploads['max_size'] = '1000';
             $configsUploads['max_width'] = '2000';
             $configsUploads['max_height'] = '2000';
-            $configsUploads['encrypt_name'] = false;
+            $configsUploads['encrypt_name'] = true;
             $this->load->library('upload', $configsUploads);
             if(!$this->upload->do_upload('ifImage'))
             {
                 $errorsUploads = $this->upload->display_errors();
-                echo '<pre>';
-                print_r($errorsUploads);
-                echo '</pre>';
-                $errors['messages'] = 'Erro a gravar a imagem de logo do site.<br/>Detalhes: ' . $errorsUploads;
+                $errors['messages'] = 'Erro ao fazer o upload da imagem.<br/>Detalhes: ' . $errorsUploads;
                 return $errors;
             }
             else
             {
                 $datasUploads = $this->upload->data();
-                echo '<pre>';
-                print_r($datasUploads);
-                echo '</pre>';
-                //$this->MDadosEmpresa->setLogoSite('/tormetais/assets/images/' . $datasUploads['file_name']);
+                $this->MArquivosMultimidias->setNomeOriginal($datasUploads['orig_name']);
+                $this->MArquivosMultimidias->setLocalizacao('/tormetais/assets/imagesproductions/' . $datasUploads['file_name']);
+                $this->MArquivosMultimidias->setExtensao($datasUploads['file_ext']);
+                $this->MArquivosMultimidias->setTipoArquivo(0);
+                if($this->DAOProdutos->insertAM($produtoId, $this->MArquivosMultimidias, false))
+                {
+                    return true;
+                }
+                else
+                {
+                    $errors['messages'] = 'Erro ao gravar a imagem no banco de dados.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
+                    return $errors;
+                }
             }
         }
     }

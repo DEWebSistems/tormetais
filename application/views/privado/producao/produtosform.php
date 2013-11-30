@@ -5,7 +5,7 @@
 
 <div id="divResultsValidations" class="col-md-12">
 </div>
-<form action="lista" method="post" class="form-horizontal" role="form">       
+<form action="<?php echo site_url('privado/produtos/lista'); ?>" method="post" class="form-horizontal" role="form">       
     <div class="form-group">
         <label for="itId" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Código:</label>
         <div class="col-xs-8 col-sm-4 col-md-4 col-lg-2">
@@ -21,7 +21,7 @@
     <div class="form-group">
         <label for="taDescricao" class="col-sm-2 control-label">Descrição:</label>
         <div class="col-sm-6">
-            <textarea id="taDescricao" name="taDescricao" maxlength="255" value="<?php echo $dadosProduto['descricao'];?>" class="form-control"></textarea>
+            <textarea id="taDescricao" name="taDescricao" maxlength="255" class="form-control"><?php echo $dadosProduto['descricao'];?></textarea>
         </div>
     </div>
     <div class="form-group">
@@ -29,17 +29,17 @@
         <div class="col-sm-6">
             <select id="seCategoriaProduto" name="seCategoriaProduto" class="form-control">
                 <option value="">--Selecione uma Categoria--</option>
-                <?php                              
-                    foreach($categoriasProduto as $idCategoria => $nome)
-                    {                        
+                <?php
+                    foreach($categoriasProduto as $categoriaProduto)
+                    {
                         echo '<option ';
-                        echo 'value="' . $idCategoria . '"';
-//                        if($idCategoria == $produto['categoriaProdutoId'])
-//                        {
-//                            echo ' selected=""';
-//                        }
+                        echo 'value="' . $categoriaProduto['id'] . '"';
+                        if($categoriaProduto['id'] == $dadosProduto['categoriaprodutoid'])
+                        {
+                            echo ' selected=""';
+                        }
                         echo '>';
-                        echo $nome;
+                        echo $categoriaProduto['nome'];
                         echo '</option>';
                     }
                 ?>

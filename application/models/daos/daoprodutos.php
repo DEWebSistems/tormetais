@@ -4,12 +4,18 @@
         
         private $limitPage;
         private $numberRecords;
+        private $numbersErrors;
+        private $rowsAffecteds;
+        private $messagesErros;
         
         function __construct()
         {
             parent::__construct();
             $this->load->database();
             $this->load->model('producao/MProdutos');
+            $this->load->model('producao/MArquivosMultimidias');
+            $this->load->model('daos/DAOArquivosMultimidias');
+            $this->load->model('producao/MProdutosAM');
             $this->setLimitPage(20);
         }
 
@@ -28,6 +34,18 @@
 
         public function setNumberRecords($numberRecords) {
             $this->numberRecords = $numberRecords;
+        }
+        
+        public function getNumbersErrors() {
+            return $this->numbersErrors;
+        }
+        
+        public function getRowsAffecteds() {
+            return $this->rowsAffecteds;
+        }
+
+        public function getMessagesErros() {
+            return $this->messagesErros;
         }
         
         public function listPagination($numberPage = 1)
@@ -76,7 +94,7 @@
             else
             {
                 return false;
-            }            
+            }
         }
         
         public function update($object)
@@ -113,6 +131,49 @@
             {
                 return false;
             }
+        }
+        
+        public function insertAM($produtoId, $objectAM, $arquivoPrincipal)
+        {
+            //echo $produtoId;
+            $this->db->trans_start();
+            if(!$this->DAOArquivosMultimidias->insert($objectAM))
+            {
+                return false;
+            }
+            else
+            {
+                $this->MProdutosAM->setProdutoId($produtoId);
+                echo $this->DAOArquivosMultimidias->getLastId();
+                $this->MProdutosAM->setArquivoMultimidiaId($this->DAOArquivosMultimidias->getLastId());
+                $this->MProdutosAM->setArquivoPrincipal($arquivoPrincipal);
+                $this->db->insert('produtosarquivosmultimidias', $this->MProdutosAM);
+            }
+            $this->numbersErrors = $this->db->_error_number();
+            $this->rowsAffecteds = $this->db->affected_rows();
+            $this->messagesErros = $this->db->_error_message();
+            $this->db->trans_complete();
+            if($this->numbersErrors == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+        public function getImagens($produtoId)
+        {
+            $this->db->select('*');
+            $this->db->from('produtosarquivosmultimidias pam');
+            $this->db->join('arquivosmultimidias am', 'am.id = pam.arquivomultimidiaid');
+            $this->db->where(array('pam.produtoid' => $produtoId, 'am.tipoarquivo' => false));
+            $returns = $this->db->get();
+            //echo '<pre>';
+            //print_r($returns->result_array());
+            //echo '</pre>';
+            return $returns;
         }
     }
 ?>
