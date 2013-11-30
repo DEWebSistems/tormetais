@@ -83,9 +83,10 @@
             $dadosCP['nome'] = '';
             $datasBody['operation'] = 'i';
             $datasBody['dadosCP'] = $dadosCP;
-            $this->load->view('fragmentos/cabecalhoprivado', $datasBody);
+            $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
+            $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/categoriasprodutosform', $datasBody);
-            $this->load->view('fragmentos/rodape');
+            $this->load->view('fragmentos/rodape', $dadosEmpresa);
         }
         
         public function alterar($id)
@@ -96,9 +97,10 @@
             $returns = $returns->result_array()[0];
             $datasBody['operation'] = 'u';
             $datasBody['dadosCP'] = $returns;
-            $this->load->view('fragmentos/cabecalho');
+            $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
+            $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/categoriasprodutosform', $datasBody);
-            $this->load->view('fragmentos/rodape');
+            $this->load->view('fragmentos/rodape', $dadosEmpresa);
         }
         
         public function gravar($dadosPost)

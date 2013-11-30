@@ -17,15 +17,15 @@ function validations()
         messagesHTML += '<br/>O campo "Nome" é de preenchimento obrigatório.';
     }
     
-    if(allTrim($('#taDescricao').val()) === '')
-    {
-        if(isErrors === false)
-        {
-            $('#taDescricao').focus();
-        }
-        isErrors = true;
-        messagesHTML += '<br/>O campo "Descrição" é de preenchimento obrigatório.';
-    }
+//    if(allTrim($('#taDescricao').val()) === '')
+//    {
+//        if(isErrors === false)
+//        {
+//            $('#taDescricao').focus();
+//        }
+//        isErrors = true;
+//        messagesHTML += '<br/>O campo "Descrição" é de preenchimento obrigatório.';
+//    }
     
     if(allTrim($('#seCategoriaProduto').val()) === '')
     {

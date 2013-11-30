@@ -41,22 +41,10 @@
                 $messages['isErrors'] = false;
                 $messages['isSuccess'] = false;
             }
-            $datasBody = array();
-            
-            
+            $datasBody = array();                        
             $datasBody['messages'] = $messages;
-            $returns = $this->DAOAnuncios->getAnuncios()->result_array();   
-            echo "<pre>";
-            print_r($returns);
-            echo "</pre>";
-            $datasBody['anuncios'] = $returns;
-            $this->load->library('pagination');
-            $config['use_page_numbers'] = TRUE;
-            $config['base_url'] = 'anuncios/index/';
-            $config['total_rows'] = $this->DAOAnuncios->getNumberRecords();
-            $config['per_page'] = $this->DAOAnuncios->getLimitPage();
-            $this->pagination->initialize($config);
-            $datasBody['paginations'] = $this->pagination->create_links();
+            $returns = $this->DAOAnuncios->getAnuncios()->result_array();               
+            $datasBody['anuncios'] = $returns;                        
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/anuncioslist', $datasBody);
@@ -86,9 +74,12 @@
             $returns = $returns->result_array()[0];
             $datasBody['operation'] = 'u';
             $datasBody['dadosAnuncio'] = $returns;
+            echo '<pre>';
+            print_r($datasBody);
+            echo '</pre>';
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
-            $this->load->view('privado/producao/anuncioslist', $datasBody);
+            $this->load->view('privado/producao/anunciosform', $datasBody);
             $this->load->view('fragmentos/rodape', $dadosEmpresa);
         }
         

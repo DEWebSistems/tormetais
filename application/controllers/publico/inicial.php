@@ -20,10 +20,14 @@
         public function index()
         {
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
-            $dadosInicial['anuncios']           = $this->DAOAnuncios->getAnuncios()->result_array();
+//            $dadosInicial['anuncios']           = $this->DAOAnuncios->getAnuncios()->result_array();
+//            $dadosInicial['dadosEmpresa']       = $dadosEmpresa;
             
-            $this->load->view('fragmentos/cabecalho');
-            $this->load->view('publico/inicial', $dadosInicial);
+//            echo '<pre>';
+//            print_r($dadosInicial);
+//            echo '</pre>';
+            $this->load->view('fragmentos/cabecalho');            
+            $this->load->view('publico/inicial', $dadosEmpresa);
             $this->load->view('fragmentos/rodape', $dadosEmpresa);
         }
     }

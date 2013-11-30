@@ -51,6 +51,7 @@
             $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
             $datasBody['dadosProduto']          = $this->DAOProdutos->getProdutoById($idProduto);
             $datasBody['videosproduto']         = $this->getVideosProduto($idProduto);
+            $datasBody['imagensproduto']         = $this->getImagensProduto($idProduto);
             
             $this->load->view('fragmentos/cabecalho',   $dadosEmpresa);
             $this->load->view('publico/produto',        $datasBody);
@@ -68,12 +69,22 @@
             $this->load->view('fragmentos/rodape',      $dadosEmpresa);
         }
         
+        private function getImagensProduto($produtoId){
+            
+            $imagensProduto = array(
+                1 => '/tormetais/assets/images/DSC02564.JPG',
+                2 => '/tormetais/assets/images/DSC02565.JPG',
+                3 => '/tormetais/assets/images/DSC02567.JPG'
+            );
+            return $imagensProduto;
+        }
+        
         private function getVideosProduto($produtoId){
             
             $videosProduto = array(
-                1 => '//www.youtube.com/KnZCc1TdU6Y',
+                1 => '//www.youtube.com/embed/1dC7aya_XnM?rel=0',
                 2 => '//www.youtube.com/embed/w7WBHph4pbs',
-                3 => '//www.youtube.com/KnZCc1TdU6Y'
+                3 => '//www.youtube.com/embed/Z-4v4I7Gzk0?rel=0'
             );
             return $videosProduto;
         }

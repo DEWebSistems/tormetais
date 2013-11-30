@@ -11,6 +11,10 @@
         
         <link href="/tormetais/assets/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
         <link href="/tormetais/assets/css/layout.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/tormetais/assets/bootstrap-image-gallery-3.1.0/css/blueimp-gallery.min.css">
+        <link rel="stylesheet" href="/tormetais/assets/bootstrap-image-gallery-3.1.0/css/netdna.bootstrapcdn.min.css">
+        <link rel="stylesheet" href="/tormetais/assets/bootstrap-image-gallery-3.1.0/css/bootstrap-image-gallery.min.css">
 
         <!-- Java Script -->
         <script type="text/javascript" src="/tormetais/assets/jquery/jquery203/jquery-2.0.3.js"></script>

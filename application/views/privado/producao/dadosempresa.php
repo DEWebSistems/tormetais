@@ -24,8 +24,7 @@
         ?>
     });
 </script>
-<br/>
-<br/>
+
 <?php
     if($messages['isErrors'] == true)
     {
@@ -43,6 +42,9 @@
         echo '</div>';
     }
 ?>
+<div class="page-header-form-list">
+    <strong>Dados da Empresa</strong>
+</div>
 <div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 </div>
 <!--<form action="" method="post" class="form-horizontal" role="form">-->

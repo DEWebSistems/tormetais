@@ -3626,8 +3626,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 .nav .caret {
-  border-top-color: #428bca;
-  border-bottom-color: #428bca;
+  border-top-color: #FFF;
+  border-bottom-color: #FFF;
 }
 .nav a:hover .caret {
   border-top-color: #2a6496;

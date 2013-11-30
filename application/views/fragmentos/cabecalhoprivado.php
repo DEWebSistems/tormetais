@@ -64,16 +64,16 @@
                                 <!-- HEADER MENU -->
                                 <div class="site-header-menu">
                                     <ul class="nav nav-justified menu-superior">
-                                        <li class="active" ><a href="<?php echo site_url('privado/dadosempresa'); ?>">Empresa</a></li>
+                                        <li class="active" ><a class="link-menu-superior" href="<?php echo site_url('privado/dadosempresa'); ?>">Empresa</a></li>
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
+                                            <a href="#" class="dropdown-toggle link-menu-superior" data-toggle="dropdown">Cadastros <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="<?php echo site_url('privado/anuncios/lista'); ?>">Anúncios</a></li>
-                                                <li><a href="<?php echo site_url('privado/categoriasprodutos/lista'); ?>">Categoria dos Produtos</a></li>
-                                                <li><a href="#">Categoria dos Serviços</a></li>                                                
-                                                <li><a href="#">Notícias</a></li>   
-                                                <li><a href="<?php echo site_url('privado/produtos/adicionar'); ?>">Produtos</a></li>
-                                                <li><a href="#">Serviços</a></li>             
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('privado/anuncios/lista'); ?>">Anúncios</a></li>
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('privado/categoriasprodutos/lista'); ?>">Categoria dos Produtos</a></li>
+                                                <li><a class="link-menu-superior" href="#">Categoria dos Serviços</a></li>                                                
+                                                <li><a class="link-menu-superior" href="#">Notícias</a></li>   
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('privado/produtos/lista'); ?>">Produtos</a></li>
+                                                <li><a class="link-menu-superior" href="#">Serviços</a></li>             
                                             </ul>
                                         </li>                                                                                                        
                                     </ul>	

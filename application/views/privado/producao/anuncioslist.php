@@ -18,9 +18,9 @@
             </thead>
             <tbody>
                 <?php
-                    echo '<pre>';
-                    print_r($anuncios);
-                    echo '</pre>';
+//                    echo '<pre>';
+//                    print_r($anuncios);
+//                    echo '</pre>';
                     if(empty($anuncios))
                     {
                         echo '<tr>';
@@ -29,17 +29,19 @@
                         echo '</td>';
                         echo '</tr>';
                     }
-                    foreach($anuncios as $anuncio)
-                    {
-                        echo '<tr>';
-                        echo '<td>' . $anuncio['id'] . '</td>';
-                        echo '<td>' . $anuncio['nome'] . '</td>';
-                        echo '<td>';
-                        echo '<a href=" '. site_url("privado/anuncios/alterar/". $anuncio['id'])  . '" class="btn btn-default btn-sm">Alterar</a>';
-                        echo '&nbsp;&nbsp;&nbsp;';
-                        echo '<button name="bsExcluir" type="submit" value="' . $anuncio['id'] . '" class="btn btn-default btn-sm" onclick="return confirmaExclusao();">Excluir</button>';
-                        echo '</td>';
-                        echo '</tr>';
+                    if(count($anuncios) > 0) {
+                        foreach($anuncios as $anuncio)
+                        {
+                            echo '<tr>';
+                            echo '<td>' . $anuncio['id'] . '</td>';
+                            echo '<td>' . $anuncio['nome'] . '</td>';
+                            echo '<td>';
+                            echo '<a href=" '. site_url("privado/anuncios/alterar/". $anuncio['id'])  . '" class="btn btn-default btn-sm">Alterar</a>';
+                            echo '&nbsp;&nbsp;&nbsp;';
+                            echo '<button name="bsExcluir" type="submit" value="' . $anuncio['id'] . '" class="btn btn-default btn-sm" onclick="return confirmaExclusao();">Excluir</button>';
+                            echo '</td>';
+                            echo '</tr>';
+                        }
                     }
                 ?>
             </tbody>
@@ -48,13 +50,3 @@
 <div>
     Exibindo 10 de 10 registros.
 </div>
-<?php
-    echo $paginations;
-?>
-<ul class="pagination">
-    <li><a><<</a></li>
-    <li><a><</a></li>
-    <li><a>1</a></li>
-    <li><a>></a></li>
-    <li><a>>></a></li>
-</ul>
