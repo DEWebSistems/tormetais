@@ -143,8 +143,14 @@
             }
             else
             {
+                if($arquivoPrincipal == true)
+                {
+                    if(!$this->unsetArquivosPrincipals($produtoId))
+                    {
+                        return false;
+                    }
+                }
                 $this->MProdutosAM->setProdutoId($produtoId);
-                echo $this->DAOArquivosMultimidias->getLastId();
                 $this->MProdutosAM->setArquivoMultimidiaId($this->DAOArquivosMultimidias->getLastId());
                 $this->MProdutosAM->setArquivoPrincipal($arquivoPrincipal);
                 $this->db->insert('produtosarquivosmultimidias', $this->MProdutosAM);
@@ -174,6 +180,85 @@
             //print_r($returns->result_array());
             //echo '</pre>';
             return $returns;
+        }
+        
+        private function unsetArquivosPrincipals($produtoId)
+        {
+            $this->db->where('produtoid', $produtoId);
+            $this->db->update('produtosarquivosmultimidias', array('arquivoprincipal' => false));
+            if($this->db->_error_number() == 0)
+            {
+                return true;
+            }
+            else
+            {
+                $this->numbersErrors = $this->db->_error_number();
+                $this->rowsAffecteds = $this->db->affected_rows();
+                $this->messagesErros = $this->db->_error_message();
+                return false;
+            }
+        }
+        
+        public function setArquivoPrincipal($produtoId, $arquivoMultimidiaId)
+        {
+            $this->db->trans_start();
+            if(!$this->unsetArquivosPrincipals($produtoId))
+            {
+                $this->db->trans_complete();
+                return false;
+            }
+            $this->db->where('produtoid', $produtoId);
+            $this->db->where('arquivomultimidiaid', $arquivoMultimidiaId);
+            $this->db->update('produtosarquivosmultimidias', array('arquivoprincipal' => true));
+            if($this->db->affected_rows() > 0)
+            {
+                $this->db->trans_complete();
+                return true;
+            }
+            else
+            {
+                $this->numbersErrors = $this->db->_error_number();
+                $this->rowsAffecteds = $this->db->affected_rows();
+                $this->messagesErros = $this->db->_error_message();
+                $this->db->trans_complete();
+                return false;
+            }
+        }
+        
+        public function deleteArquivoMultimidia($produtoId, $arquivoMultimidiaId)
+        {
+            //falta excluir o arquivo e registro se possível
+            $this->db->trans_start();
+            $dadosImage = $this->db->get_where('produtosarquivosmultimidias', array('produtoid' => $produtoId, 'arquivomultimidiaid' => $arquivoMultimidiaId, 'arquivoprincipal' => true));
+            echo $dadosImage->num_rows();
+            $this->db->where('produtoid', $produtoId);
+            $this->db->where('arquivomultimidiaid', $arquivoMultimidiaId);
+            $this->db->delete('produtosarquivosmultimidias');
+            if($this->db->affected_rows() > 0)
+            {
+                if($dadosImage->num_rows() > 0)
+                {
+                    $dadosImage = $this->getImagens($produtoId);
+                    if($dadosImage->num_rows() > 0)
+                    {
+                        if(!$this->setArquivoPrincipal($produtoId, $dadosImage->result_array()[0]['arquivomultimidiaid']))
+                        {
+                            $this->db->trans_complete();
+                            return false;
+                        }
+                    }
+                }
+                $this->db->trans_complete();
+                return true;
+            }
+            else
+            {
+                $this->numbersErrors = $this->db->_error_number();
+                $this->rowsAffecteds = $this->db->affected_rows();
+                $this->messagesErros = $this->db->_error_message();
+                $this->db->trans_complete();
+                return false;
+            }
         }
     }
 ?>

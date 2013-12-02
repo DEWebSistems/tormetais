@@ -130,20 +130,58 @@
         
         public function multimidias($produtoId)
         {
-            echo date('Ymdhms');
+            echo md5(date('YmdHis'));
             $datasBody['messages']['messagesErrors'] = '';
             $datasBody['messages']['messagesSuccess'] = '';
             $dadosPost = $this->input->post();
             if(isset($dadosPost['bsGravarImagem']))
             {
                 $resultsRecording = $this->gravarImagem($produtoId);
-                if($resultsRecording == true)
+                if($resultsRecording['messages'] != '')
+                {
+                    $datasBody['messages']['messagesErrors'] = $resultsRecording['messages'];
+                }
+                else if($resultsRecording == true)
                 {
                     $datasBody['messages']['messagesSuccess'] = 'A imagem foi salva com sucesso.';
                 }
                 else
                 {
-                    $datasBody['messages']['messagesErrors'] = $resultsRecording['messages'];
+                    $datasBody['messages']['messagesErrors'] = 'Ocorreu um erro não detectado.';
+                }
+            }
+            else if(isset($dadosPost['bsImagemPrincipal']))
+            {
+                $arquivoMultimidiaId = $dadosPost['ihArquivoMultimidiaId'];
+                $resultsSets = $this->setArquivoPrincipal($produtoId, $arquivoMultimidiaId);
+                if($resultsSets['messages'] != '')
+                {
+                    $datasBody['messages']['messagesErrors'] = $resultsSets['messages'];
+                }
+                else if($resultsSets == true)
+                {
+                    $datasBody['messages']['messagesSuccess'] = 'A imagem foi setada como principal.';
+                }
+                else
+                {
+                    $datasBody['messages']['messagesErrors'] = 'Ocorreu um erro não detectado.';
+                }
+            }
+            else if(isset($dadosPost['bsExcluirImagem']))
+            {
+                $arquivoMultimidiaId = $dadosPost['ihArquivoMultimidiaId'];
+                $resultsDeletes = $this->excluirArquivoMultimidia($produtoId, $arquivoMultimidiaId);
+                if($resultsDeletes['messages'] != '')
+                {
+                    $datasBody['messages']['messagesErrors'] = $resultsDeletes['messages'];
+                }
+                else if($resultsDeletes == true)
+                {
+                    $datasBody['messages']['messagesSuccess'] = 'A imagem foi excluída.';
+                }
+                else
+                {
+                    $datasBody['messages']['messagesErrors'] = 'Ocorreu um erro não detectado.';
                 }
             }
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
@@ -151,9 +189,6 @@
             $datasBody['dadosProduto'] = $returnsProdutos;
             $returnsImagens = $this->DAOProdutos->getImagens($returnsProdutos['id']);
             $datasBody['dadosImagens'] = $returnsImagens->result_array();
-            
-            
-            
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/produtosmultimidias', $datasBody);
             $this->load->view('fragmentos/rodape', $dadosEmpresa);
@@ -171,7 +206,8 @@
             $configsUploads['max_size'] = '1000';
             $configsUploads['max_width'] = '2000';
             $configsUploads['max_height'] = '2000';
-            $configsUploads['encrypt_name'] = true;
+            $configsUploads['encrypt_name'] = false;
+            $configsUploads['file_name'] = md5(date('YmdHis'));
             $this->load->library('upload', $configsUploads);
             if(!$this->upload->do_upload('ifImage'))
             {
@@ -181,12 +217,23 @@
             }
             else
             {
+                $returnsImagens = $this->DAOProdutos->getImagens($produtoId);
                 $datasUploads = $this->upload->data();
                 $this->MArquivosMultimidias->setNomeOriginal($datasUploads['orig_name']);
                 $this->MArquivosMultimidias->setLocalizacao('/tormetais/assets/imagesproductions/' . $datasUploads['file_name']);
                 $this->MArquivosMultimidias->setExtensao($datasUploads['file_ext']);
                 $this->MArquivosMultimidias->setTipoArquivo(0);
-                if($this->DAOProdutos->insertAM($produtoId, $this->MArquivosMultimidias, false))
+                $arquivoPrincipal = false;
+                if($returnsImagens->num_rows() == 0)
+                {
+                    $arquivoPrincipal = true;
+                }
+                $dadosPost = $this->input->post();
+                if(isset($dadosPost['icbImagemPrincipal']))
+                {
+                    $arquivoPrincipal = true;
+                }
+                if($this->DAOProdutos->insertAM($produtoId, $this->MArquivosMultimidias, $arquivoPrincipal))
                 {
                     return true;
                 }
@@ -195,6 +242,32 @@
                     $errors['messages'] = 'Erro ao gravar a imagem no banco de dados.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
                     return $errors;
                 }
+            }
+        }
+        
+        private function setArquivoPrincipal($produtoId, $arquivoMultimidiaId)
+        {
+            if($this->DAOProdutos->setArquivoPrincipal($produtoId, $arquivoMultimidiaId))
+            {
+                return true;
+            }
+            else
+            {
+                $errors['messages'] = 'Erro ao setar a imagem como principal.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
+                return $errors;
+            }
+        }
+        
+        private function excluirArquivoMultimidia($produtoId, $arquivoMultimidiaId)
+        {
+            if(!$this->DAOProdutos->deleteArquivoMultimidia($produtoId, $arquivoMultimidiaId))
+            {
+                $errors['messages'] = 'Erro ao excluir a imagem.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
+                return $errors;
+            }
+            else
+            {
+                return true;
             }
         }
     }
