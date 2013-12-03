@@ -10,7 +10,8 @@
             $this->load->model('producao/MArquivosMultimidias');
         }
         
-        public function getLastId() {
+        public function getLastId()
+        {
             return $this->lastId;
         }
         
@@ -28,12 +29,31 @@
             {
                 $this->db->select_max('id', 'thebiggestid');
                 $this->lastId = $this->db->get('arquivosmultimidias')->result_array()[0]['thebiggestid'];
-                //echo '<br/>' . $this->lastId;
                 return true;
             }
             else
             {
                 return false;
+            }
+        }
+        
+        public function getById($arquivoMultimidiaId)
+        {
+            $results = $this->db->get_where('arquivosmultimidias', array('id' => $arquivoMultimidiaId));
+            return $results;
+        }
+        
+        public function delete($arquivoMultimidiaId)
+        {
+            $returns = $this->getById($arquivoMultimidiaId);
+            if($returns->num_rows() > 0)
+            {
+                $this->db->where('id', $arquivoMultimidiaId);
+                $this->db->delete('arquivosmultimidias');
+                if(($this->db->affected_rows() > 0) and ($returns->result_array()[0]['tipoarquivo'] == 0))
+                {
+                    unlink('C:/xampp/htdocs' . $returns->result_array()[0]['localizacao']);
+                }
             }
         }
     }

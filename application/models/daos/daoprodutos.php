@@ -174,7 +174,20 @@
             $this->db->select('*');
             $this->db->from('produtosarquivosmultimidias pam');
             $this->db->join('arquivosmultimidias am', 'am.id = pam.arquivomultimidiaid');
-            $this->db->where(array('pam.produtoid' => $produtoId, 'am.tipoarquivo' => false));
+            $this->db->where(array('pam.produtoid' => $produtoId, 'am.tipoarquivo' => 0));
+            $returns = $this->db->get();
+            //echo '<pre>';
+            //print_r($returns->result_array());
+            //echo '</pre>';
+            return $returns;
+        }
+        
+        public function getVideos($produtoId)
+        {
+            $this->db->select('*');
+            $this->db->from('produtosarquivosmultimidias pam');
+            $this->db->join('arquivosmultimidias am', 'am.id = pam.arquivomultimidiaid');
+            $this->db->where(array('pam.produtoid' => $produtoId, 'am.tipoarquivo' => 1));
             $returns = $this->db->get();
             //echo '<pre>';
             //print_r($returns->result_array());
@@ -230,7 +243,6 @@
             //falta excluir o arquivo e registro se possível
             $this->db->trans_start();
             $dadosImage = $this->db->get_where('produtosarquivosmultimidias', array('produtoid' => $produtoId, 'arquivomultimidiaid' => $arquivoMultimidiaId, 'arquivoprincipal' => true));
-            echo $dadosImage->num_rows();
             $this->db->where('produtoid', $produtoId);
             $this->db->where('arquivomultimidiaid', $arquivoMultimidiaId);
             $this->db->delete('produtosarquivosmultimidias');
@@ -248,6 +260,8 @@
                         }
                     }
                 }
+                $this->DAOArquivosMultimidias->delete($arquivoMultimidiaId);
+                $this->db->trans_commit();
                 $this->db->trans_complete();
                 return true;
             }

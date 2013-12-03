@@ -28,15 +28,43 @@
         $('#bbFecharImagem').click(function(){
             $('#modalsImages').dialog('close');
         });
+        $('#divFieldVideo').hide();
+        $('#divPostVideo').hide();
+        $('#bbAdicionarVideo').click(function(){
+            $('#divFieldVideo').show();
+            $('#bbAdicionarVideo').hide();
+            $('#divPostVideo').show();
+            $('#iurlVideo').click();
+            }
+        );
+        $('#bbCancelarVideo').click(function(){
+            $('#divFieldVideo').hide();
+            $('#bbAdicionarVideo').show();
+            $('#divPostVideo').hide();
+        });
     });
-    function imagesProdutosOnClick(elementImage, arquivoMultimidiaId)
+    function imagesProdutosOnClick(elementImage, arquivoMultimidiaId, imagemPrincipal)
     {
         $('#modalsImages').dialog('open');
         $('#modalImage').attr('src', $(elementImage).attr('src'));
         $('#ihArquivoMultimidiaId').val(arquivoMultimidiaId);
+        if(imagemPrincipal === true)
+        {
+            $('#bsImagemPrincipal').attr('disabled', true);
+        }
+        else
+        {
+            $('#bsImagemPrincipal').removeAttr('disabled');
+        }
         $('#bbFecharImagem').focus();
     }
 </script>
+<style type="text/css">
+    .mainImage
+    {
+        border: #00f 1px solid;
+    }
+</style>
 <?php
     if($messages['messagesErrors'] != '')
     {
@@ -100,13 +128,57 @@
         {
             foreach($dadosImagens as $dadosImagem)
             {
-                echo '<img src="' . $dadosImagem['localizacao'] . '" style="width: 100px; height: 100px; margin-right: 10px; margin-bottom: 10px;" class="img-rounded" onclick="imagesProdutosOnClick(this, ' . $dadosImagem['arquivomultimidiaid'] .  ');"/>';
+                echo '<img src="' . $dadosImagem['localizacao'] . '" style="width: 100px; height: 100px; margin-right: 10px; margin-bottom: 10px;" ';
+                if($dadosImagem['arquivoprincipal'] == true)
+                {
+                    echo 'class="img-rounded mainImage" onclick="imagesProdutosOnClick(this, ' . $dadosImagem['arquivomultimidiaid'] .  ', true);"/>';
+                }
+                else
+                {
+                    echo 'class="img-rounded" onclick="imagesProdutosOnClick(this, ' . $dadosImagem['arquivomultimidiaid'] .  ', false);"/>';
+                }
             }
         }
     ?>
 </div>
 <h3 class="page-header-form-list">Vídeos</h3>
 <div style="margin-left: 10px; margin-right: 10px;">
+    <form action="<?php echo site_url('privado/produtos/multimidias/' . $dadosProduto['id']); ?>" method="post" role="form" class="form-horizontal">
+        <button id="bbAdicionarVideo" name="bbAdicionarVideo" type="button" class="btn btn-primary">Adicionar Vídeo</button>
+        <div id="divFieldVideo" class="form-group">
+            <!--<label for="iurlVideo" class="control-label">Link do Vídeo:</label>-->
+            <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
+                <input id="iurlVideo" name="iurlVideo" type="text" class="form-control"/>
+            </div>
+        </div>
+        <div id="divPostVideo" class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="bsGravarVideo" name="bsGravarVideo" type="submit" class="btn btn-primary">Gravar</button>
+                <button id="bbCancelarVideo" name="bbCancelarVideo" type="button" class="btn btn-default">Cancelar</button>
+            </div>
+        </div>
+    </form>
+    <br/>
+    <?php
+        if(empty($dadosVideos))
+        {
+    ?>
+    <div>
+        Nenhum vídeo deste produto foi cadastrado
+    </div>
+    <?php
+        }
+        else
+        {
+            foreach($dadosVideos as $dadosVideo)
+            {
+                //style="margin-right: 10px; margin-bottom: 10px;"
+                //echo '<div>';
+                echo '<iframe width="250" height="200" src="' . $dadosVideo['localizacao'] . '" frameborder="0" allowfullscreen style="margin-right: 10px; margin-bottom: 10px;"></iframe>';
+                //echo '</div>';
+            }
+        }
+    ?>
 </div>
 <br/>
 <div style="margin-left: 10px; margin-right: 10px;">

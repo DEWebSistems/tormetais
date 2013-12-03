@@ -130,7 +130,6 @@
         
         public function multimidias($produtoId)
         {
-            echo md5(date('YmdHis'));
             $datasBody['messages']['messagesErrors'] = '';
             $datasBody['messages']['messagesSuccess'] = '';
             $dadosPost = $this->input->post();
@@ -184,11 +183,42 @@
                     $datasBody['messages']['messagesErrors'] = 'Ocorreu um erro não detectado.';
                 }
             }
+            else if(isset($dadosPost['bsGravarVideo']))
+            {
+                if((isset($dadosPost['iurlVideo'])) and ($dadosPost['iurlVideo'] != ''))
+                {
+                    $iurlVideo = $dadosPost['iurlVideo'];
+                    //$this->MArquivosMultimidias->setNomeOriginal('');
+                    $this->MArquivosMultimidias->setLocalizacao($iurlVideo);
+                    //$this->MArquivosMultimidias->setExtensao('');
+                    $this->MArquivosMultimidias->setTipoArquivo(1);
+                    $arquivoPrincipal = false;
+                    $resultsRecording = $this->DAOProdutos->insertAM($produtoId, $this->MArquivosMultimidias, $arquivoPrincipal);
+                    if($resultsRecording == false)
+                    {
+                        $datasBody['messages']['messagesErrors'] = 'Erro ao gravar a imagem no banco de dados.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
+                    }
+                    else if($resultsRecording == true)
+                    {
+                        $datasBody['messages']['messagesSuccess'] = 'A vídeo foi salvo com sucesso.';
+                    }
+                    else
+                    {
+                        $datasBody['messages']['messagesErrors'] = 'Ocorreu um erro não detectado.';
+                    }
+                }
+                else
+                {
+                    $datasBody['messages']['messagesErrors'] = 'O link do vídeo não foi informado, por isso o mesmo não pode ser salvo.';
+                }
+            }
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $returnsProdutos = $this->DAOProdutos->getProdutoById($produtoId);
             $datasBody['dadosProduto'] = $returnsProdutos;
             $returnsImagens = $this->DAOProdutos->getImagens($returnsProdutos['id']);
+            $returnsVideos = $this->DAOProdutos->getVideos($returnsProdutos['id']);
             $datasBody['dadosImagens'] = $returnsImagens->result_array();
+            $datasBody['dadosVideos'] = $returnsVideos->result_array();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/produtosmultimidias', $datasBody);
             $this->load->view('fragmentos/rodape', $dadosEmpresa);
