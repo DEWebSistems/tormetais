@@ -36,6 +36,15 @@ function validations()
         isErrors = true;
         messagesHTML += '<br/>O campo "Categoria do Produto" é de seleção obrigatória.';
     }
+    if(allTrim($('#seLinhaProduto').val()) === '')
+    {
+        if(isErrors === false)
+        {
+            $('#seLinhaProduto').focus();
+        }
+        isErrors = true;
+        messagesHTML += '<br/>O campo "Linha do Produto" é de seleção obrigatória.';
+    }
     
     messagesHTML += '</div>';
     if(isErrors === true)
@@ -49,5 +58,14 @@ function validations()
         $('#divResultsValidations').html('');
         window.scrollTo(0, 0);
         return true;
+    }
+}
+
+function aExcluirOnClick(id)
+{
+    if(confirm('Você deseja excluir este registro?'))
+    {
+        $('#bsExcluir').val(id);
+        $('#bsExcluir').click();
     }
 }

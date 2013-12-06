@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/tormetais/assets/js/produtosprivate.js"></script>
+<script type="text/javascript" src="/tormetais/assets/js/categoriasprodutosprivate.js"></script>
 <div class="col-lg-10 col-lg-offset-1">
     <h3>Categorias de Produtos</h3>
     <br/>

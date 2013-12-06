@@ -121,9 +121,11 @@
         {
             $this->db->trans_start();
             $this->db->delete('produtos', array('id' => $id));
-            $numberLinesAffecteds = $this->db->affected_rows();
+            $this->numbersErrors = $this->db->_error_number();
+            $this->rowsAffecteds = $this->db->affected_rows();
+            $this->messagesErros = $this->db->_error_message();
             $this->db->trans_complete();
-            if($numberLinesAffecteds == 1)
+            if($this->rowsAffecteds == 1)
             {
                 return true;
             }

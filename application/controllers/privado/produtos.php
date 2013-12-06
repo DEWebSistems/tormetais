@@ -7,11 +7,14 @@
             $this->load->model('producao/MProdutos');
             $this->load->model('daos/DAOProdutos');
             
-            $this->load->model('daos/DAODadosEmpresa');
             $this->load->model('producao/MDadosEmpresa');
+            $this->load->model('daos/DAODadosEmpresa');
             
-            $this->load->model('daos/DAOCategoriasProdutos');
             $this->load->model('producao/MCategoriasProdutos');
+            $this->load->model('daos/DAOCategoriasProdutos');
+            
+            $this->load->model('producao/MLinhasProdutos');
+            $this->load->model('daos/DAOLinhasProdutos');
             
             $this->load->helper(array('url', 'form'));
         }
@@ -34,15 +37,30 @@
                 {
                     $messages['isSuccess'] = true;
                     $messages['isErrors'] = false;
-                    $messages['messagesSuccess'] = 'Registro salvo com sucesso';
+                    $messages['messagesSuccess'] = 'Registro salvo com sucesso.';
                 }
                 else
                 {
                     $messages['isSuccess'] = false;
                     $messages['isErrors'] = true;
-                    $messages['messagesErrors'] = 'Erro ao salvar o registro';
+                    $messages['messagesErrors'] = 'Erro ao salvar o registro.';
                 }
-            }            
+            }
+            else if(isset($dadosPost['bsExcluir']))
+            {
+                if($this->DAOProdutos->excluir($dadosPost['bsExcluir']))
+                {
+                    $messages['isSuccess'] = true;
+                    $messages['isErrors'] = false;
+                    $messages['messagesSuccess'] = 'Registro salvo com sucesso.';
+                }
+                else
+                {
+                    $messages['isSuccess'] = false;
+                    $messages['isErrors'] = true;
+                    $messages['messagesErrors'] = 'Erro ao excluir o registro.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
+                }
+            }
             else
             {
                 $messages['isErrors'] = false;
@@ -75,9 +93,11 @@
             $dadosProduto['nome'] = '';
             $dadosProduto['descricao'] = '';
             $dadosProduto['categoriaprodutoid'] = '';
+            $dadosProduto['linhaprodutoid'] = '';
             $datasBody['operation'] = 'i';
             $datasBody['dadosProduto'] = $dadosProduto;
             $datasBody['categoriasProduto'] = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
+            $datasBody['linhasProduto'] = $this->DAOLinhasProdutos->getAll()->result_array();
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);            
             $this->load->view('privado/producao/produtosform', $datasBody);
@@ -92,6 +112,7 @@
             $datasBody['operation'] = 'u';
             $datasBody['dadosProduto'] = $returns;
             $datasBody['categoriasProduto'] = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
+            $datasBody['linhasProduto'] = $this->DAOLinhasProdutos->getAll()->result_array();
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/produtosform', $datasBody);
@@ -103,7 +124,8 @@
             $this->MProdutos->setId($dadosPost['itId']);
             $this->MProdutos->setNome($dadosPost['itNome']);
             $this->MProdutos->setDescricao($dadosPost['taDescricao']);
-            $this->MProdutos->setCategoriaProdutoId($dadosPost['seCategoriaProduto']);            
+            $this->MProdutos->setCategoriaProdutoId($dadosPost['seCategoriaProduto']);
+            $this->MProdutos->setLinhaProdutoId($dadosPost['seLinhaProduto']);
             if($dadosPost['bsGravar'] == 'i')
             {
                 $results = $this->DAOProdutos->insert($this->MProdutos);
@@ -212,6 +234,23 @@
                     $datasBody['messages']['messagesErrors'] = 'O link do vídeo não foi informado, por isso o mesmo não pode ser salvo.';
                 }
             }
+            else if(isset($dadosPost['bsExcluirVideo']))
+            {
+                $arquivoMultimidiaId = $dadosPost['bsExcluirVideo'];
+                $resultsDeletes = $this->excluirArquivoMultimidia($produtoId, $arquivoMultimidiaId);
+                if($resultsDeletes['messages'] != '')
+                {
+                    $datasBody['messages']['messagesErrors'] = $resultsDeletes['messages'];
+                }
+                else if($resultsDeletes == true)
+                {
+                    $datasBody['messages']['messagesSuccess'] = 'O vídeo foi excluído.';
+                }
+                else
+                {
+                    $datasBody['messages']['messagesErrors'] = 'Ocorreu um erro não detectado.';
+                }
+            }
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $returnsProdutos = $this->DAOProdutos->getProdutoById($produtoId);
             $datasBody['dadosProduto'] = $returnsProdutos;
@@ -292,7 +331,7 @@
         {
             if(!$this->DAOProdutos->deleteArquivoMultimidia($produtoId, $arquivoMultimidiaId))
             {
-                $errors['messages'] = 'Erro ao excluir a imagem.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
+                $errors['messages'] = 'Erro ao excluir a imagem e/ou vídeo.<br/>Detalhes: ' . $this->DAOProdutos->getMessagesErros();
                 return $errors;
             }
             else

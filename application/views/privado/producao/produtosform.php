@@ -47,9 +47,34 @@
         </div>
     </div>
     <div class="form-group">
+        <label for="seLinhaProduto" class="col-sm-2 control-label">Linha do Produto:</label>
+        <div class="col-sm-6">
+            <select id="seLinhaProduto" name="seLinhaProduto" class="form-control">
+                <option value="">--Selecione uma Linha--</option>
+                <?php
+                    foreach($linhasProduto as $linhaProduto)
+                    {
+                        echo '<option ';
+                        echo 'value="' . $linhaProduto['id'] . '"';
+                        if($linhaProduto['id'] == $dadosProduto['linhaprodutoid'])
+                        {
+                            echo ' selected=""';
+                        }
+                        echo '>';
+                        echo $linhaProduto['id'] . ' - ' . $linhaProduto['nome'];
+                        echo '</option>';
+                    }
+                ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <button id="bsGravar" name="bsGravar" type="submit" value="<?php echo $operation; ?>" class="btn btn-primary" onclick="return validations();">Gravar</button>
             <button id="bsCancelar" name="bsCancelar" type="submit" class="btn btn-default">Cancelar</button>
         </div>
     </div>              
 </form>
+<script type="text/javascript">
+    CKEDITOR.replace('taDescricao');
+</script>

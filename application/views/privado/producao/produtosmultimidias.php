@@ -159,6 +159,7 @@
         </div>
     </form>
     <br/>
+    <form action="<?php echo site_url('privado/produtos/multimidias/' . $dadosProduto['id']); ?>" method="post">
     <?php
         if(empty($dadosVideos))
         {
@@ -170,15 +171,25 @@
         }
         else
         {
+            echo '<div class="row">';
             foreach($dadosVideos as $dadosVideo)
             {
                 //style="margin-right: 10px; margin-bottom: 10px;"
-                //echo '<div>';
-                echo '<iframe width="250" height="200" src="' . $dadosVideo['localizacao'] . '" frameborder="0" allowfullscreen style="margin-right: 10px; margin-bottom: 10px;"></iframe>';
-                //echo '</div>';
+                echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">';
+                echo '<div class="thumbnail">';
+                echo '<div align="center">';
+                echo '<iframe width="250" height="200" src="' . $dadosVideo['localizacao'] . '" frameborder="0" allowfullscreen></iframe>';
+                echo '</div>';
+                echo '<div class="caption">';
+                echo '<button name="bsExcluirVideo" value="' . $dadosVideo['arquivomultimidiaid'] . '" type="submit" onclick="return confirm(\'Você realmente deseja excluir este vídeo?\');" class="btn btn-default">Excluir Este Vídeo</button>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
             }
+            echo '</div>';
         }
     ?>
+    </form>
 </div>
 <br/>
 <div style="margin-left: 10px; margin-right: 10px;">

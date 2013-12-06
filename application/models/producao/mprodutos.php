@@ -12,6 +12,7 @@
         public $nome;
         public $descricao;
         public $categoriaProdutoId;
+        public $linhaProdutoId;
      
 
         function __construct()
@@ -57,6 +58,14 @@
         public function setCategoriaProdutoId($categoriaProdutoId)
         {
             $this->categoriaProdutoId = $categoriaProdutoId;
-        }      
+        }
+        
+        public function getLinhaProdutoId() {
+            return $this->linhaProdutoId;
+        }
+
+        public function setLinhaProdutoId($linhaProdutoId) {
+            $this->linhaProdutoId = $linhaProdutoId;
+        }
     }
 ?>

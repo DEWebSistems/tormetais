@@ -9,7 +9,7 @@
             parent::__construct();
             $this->load->database();
             $this->load->model('producao/MCategoriasProdutos');
-            $this->setLimitPage(20);
+            $this->setLimitPage(2);
         }
         
         public function getLimitPage() {

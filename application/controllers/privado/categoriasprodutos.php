@@ -64,7 +64,7 @@
             $datasBody['categoriasProdutos'] = $returns->result_array();
             $this->load->library('pagination');
             $config['use_page_numbers'] = TRUE;
-            $config['base_url'] = 'categoriasprodutos/index/';
+            $config['base_url'] = site_url('privado/categoriasprodutos/lista');
             $config['total_rows'] = $this->DAOCategoriasProdutos->getNumberRecords();
             $config['per_page'] = $this->DAOCategoriasProdutos->getLimitPage();
             $this->pagination->initialize($config);
