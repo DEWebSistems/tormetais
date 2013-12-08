@@ -171,6 +171,20 @@
             }
         }
         
+        public function getImagemPrincipal($produtoId)
+        {
+            
+            $imagens = $this->getImagens($produtoId)->result_array();
+            
+            foreach ($imagens as $imagem) {
+                
+                if($imagem['arquivoprincipal'] == true)
+                {   
+                    return $imagem;
+                }                
+            }            
+        }
+        
         public function getImagens($produtoId)
         {
             $this->db->select('*');

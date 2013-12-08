@@ -1,132 +1,184 @@
-        <div class="content-carousel">
-            <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item">
-                        <img src="/tormetais/assets/images/carreto abastecedor 13tn.png" style="width: 100%; height: 550px;" alt="First slide">
-                        <div class="carousel-caption">
-                            <h3>...</h3>
-                            <p>...</p>
-                            <p></p>
-                        </div>  
+<div class="content">
+    <div class="main">
+        <div class="main-content">   
+
+            <div class="row">
+                <div class="col-md-6">	
+
+                    <div class="page-header">
+                        <a href="<?php echo site_url('publico/produtosagricola/lista'); ?>"><h4>Tor Metais - A Solução no Campo</h4></a>                        
                     </div>
-                    <div class="item active">
-                        <img src="/tormetais/assets/images/carretor basculante 7tn.png" style="width: 100%; height: 550px;" alt="Second slide">
-                        <div class="carousel-caption">
-                            <h3>...</h3>
-                            <p>...</p>
-                            <p></p>
-                        </div>  
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/tormetais/assets/imagesproductions/34491e12130d9a6574706de0c6159559.jpg" alt="..." height="200" width="300" class="img-rounded">   
+                            <div align="center">
+                                <h4>meu produto</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            <a href="#">mais</a><p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>       
                     </div>
-                    <div class="item">
-                        <img src="/tormetais/assets/images/img2.png" style="width: 100%; height: 550px;" alt="Third slide">
-                        <div class="carousel-caption">
-                            <h3>...</h3>
-                            <p>...</p>
-                            <p></p>
-                        </div>  
-                    </div>
+
                 </div>
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                    <span class="icon-prev"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                    <span class="icon-next"></span>
-                </a>
+                <div class="col-md-6">	                        
+
+                    <div class="page-header">
+                        <a href="<?php echo site_url('publico/produtosreboque/lista'); ?>"><h4>Tor Metais - Reboques</h4></a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/tormetais/assets/imagesproductions/3a48c049a10b03d61453e2ea2e9f5137.jpg" alt="..." height="200" width="300" class="img-rounded">   
+                            <div align="center">
+                                <h4>meu produto</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            <a href="#">mais</a><p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>    
+
+                </div>                              
             </div>
-        </div>        
-                          
-        <br/>
 
-        <div class="main">
-
-            <div class="main-content">                
-                <div class="row">
-                    <div class="col-md-4">	                        
-                        <div class="thumbnail">                            
-                            <div class="caption">
-                                <h3>Sobre</h3>
-                                <p><?php echo $dadosEmpresa['descricaoempresa'];?></p>
-                                <div align="center">
-                                    <a href="#" class="btn btn-primary">Saiba Mais</a>
-                                </div>
-                            </div>
-                        </div>          
-                    </div>
-                    <div class="col-md-4">	                        
-                        <div class="thumbnail">                            
-                            <div class="caption">
-                                <h3>Produtos</h3>
-                                <p><?php echo $dadosEmpresa['descricaoprodutos'];?></p>
-                                <div align="center">
-                                    <a href="#" class="btn btn-primary">Saiba Mais</a>
-                                </div>
-                            </div>
-                        </div>          
-                    </div>
-                    <div class="col-md-4">	                        
-                        <div class="thumbnail">                            
-                            <div class="caption">
-                                <h3>Serviços</h3>
-                                <p><?php echo $dadosEmpresa ['descricaoservicos'];?></p>
-                                <div align="center">
-                                    <a href="#" class="btn btn-primary">Saiba Mais</a>
-                                </div>
-                            </div>
-                        </div>          
-                    </div>             
+            <div class="row">                    
+                <div class="col-md-5">
+                    <div class="page-header">
+                        <h4>Serviços</h4>
+                    </div>     
                 </div>
-                <br/>   
-                <hr/>
-                <br/>
-                <div class="row">
-                    <div class="col-md-4">	
-                        <div class="thumbnail">
-                            <img src="/tormetais/assets/images/carreto abastecedor 13tn.png" alt="..." height="200" width="300">
-                            <div class="caption">
-                                <h3>Carreto Abastecedor 13TN</h3>
-                                <p>Com ele você distribui adubo ou semente na plantadeira e ainda serve como graneleiro para o transporte de até 230 sacas de grãos. 
-                                    Tudo com funcionamento hidráulico requerindo somente um operador.</p>
-                                <div align="center">
-                                    <a href="#" class="btn btn-primary">Saiba Mais</a>
-                                </div>
-                            </div>
-                        </div>          
-                    </div>
-                    <div class="col-md-4">	                        
-                        <div class="thumbnail">
-                            <img src="/tormetais/assets/images/carretor basculante 5tn.png" alt="..." height="200" width="300">
-                            <div class="caption">
-                                <h3>Carreto basculante 5TN</h3>
-                                <p>De pedras no meio da lavoura aos grãos da produção. Os dois modelos, o 
-                                    5TN e o 7TN, podem transportar praticamente qualquer material e bascular aonde for necessário. </p>
-                                <div align="center">
-                                    <a href="#" class="btn btn-primary">Saiba Mais</a>
-                                </div>
-                            </div>
-                        </div>          
-                    </div>
-                    <div class="col-md-4">	
-                        <div class="thumbnail">
-                            <img src="/tormetais/assets/images/carreto abastecedor 13tn.png" alt="..." height="200" width="300">
-                            <div class="caption">
-                                <h3>Carreto Abastecedor 13TN</h3>
-                                <p>Com ele você distribui adubo ou semente na plantadeira e ainda serve como graneleiro para o transporte de até 230 sacas de grãos. 
-                                    Tudo com funcionamento hidráulico requerindo somente um operador.</p>
-                                <div align="center">
-                                    <a href="#" class="btn btn-primary">Saiba Mais</a>
-                                </div>
-                            </div>
-                        </div>          
-                    </div>
+                <div class="col-md-3">
+                    <div class="page-header">
+                        <h4>Notícias</h4>
+                    </div>     
+                </div>
+                <div class="col-md-4">
+                    <div class="page-header">
+                        <h4>Anúncios</h4>
+                    </div>     
                 </div>
             </div>
 
+
+
+            <div class="row">
+
+                <div class="col-md-5">	                        
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="<?php echo site_url('publico/servicos/detalhe/' . $servicoPrincipal['id']); ?>">
+                                <img src="<?php echo $servicoPrincipal['imagemprincipal'] ?>" alt="<?php echo $servicoPrincipal['nome'] ?>" style="width:100%;" class="img-rounded">   
+                            </a>
+                            <div align="center">
+                                <a href="<?php echo site_url('publico/servicos/detalhe/' . $servicoPrincipal['id']); ?>">
+                                    <h4><?php echo $servicoPrincipal['nome'] ?></h4>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p><?php echo $dadosEmpresa['descricaoservicos'] ?>
+                            <a href="<?php echo site_url('publico/servicos/lista'); ?>">mais</a><p>                            
+                        </div>
+                    </div>    
+
+                </div>           
+
+                 <div class="col-md-3">                     
+                         
+                         <?php
+            
+                            if(count($noticias) > 0) {                                                                
+                                foreach ($noticias as $noticia)
+                                {                                   
+                                    ?>
+                                    <div class="media">
+                                        <a class="pull-left" href="<?php echo site_url('publico/noticias/detalhe/' . $noticia['id']); ?>">
+                                          <img class="media-object" src="<?php echo $noticia['imagemprincipal']; ?>" alt="<?php echo $noticia['nome']; ?>" height="75" width="75" class="img-rounded">
+                                        </a>
+                                        <div class="media-body">
+                                            <a href="<?php echo site_url('publico/noticias/detalhe/' . $noticia['id']); ?>">
+                                                <h4><?php echo $noticia['nome']; ?></h4>                               
+                                            </a> 
+                                        </div>
+                                      </div>                                                                                                
+                        <?php
+                                }
+                            }
+                        ?>                                                                       
+                 </div>
+
+                <div class="col-md-4">	
+
+
+                <div id="carousel-anuncios" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <?php
+
+                            $num = 0;
+
+                            foreach ($anuncios as $anuncio)
+                            {
+                                if($num == 0)
+                                {
+                        ?>   
+                        <li data-target="#carousel-anuncios" data-slide-to="<?php echo $num; ?>" class="active"></li>
+                        <?php 
+                                    
+                                  } else
+                                  {
+                        ?>                                                           
+                        <li data-target="#carousel-anuncios" data-slide-to="<?php echo $num; ?>" class=""></li>                     
+                        <?php
+                                  }
+                                  $num ++;
+                            }
+                        ?>         
+                    </ol>
+                    <div class="carousel-inner">
+
+                        <?php
+
+                            $isActive = true;
+
+                            foreach ($anuncios as $anuncio)
+                            {
+                                if($isActive)
+                                {
+                        ?>                                                
+                                    <div class="item active">
+                                        <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo $anuncio['imagemprincipal'];?>">
+                                        <div class="carousel-caption">                              
+                                            <p><strong><?php echo $anuncio['nome'];?></strong>></p>
+                                        </div>
+                                    </div>
+                        <?php 
+                                    $isActive = false;
+                                } else
+                                {
+                        ?>            
+                                <div class="item">
+                                    <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo $anuncio['imagemprincipal'];?>">
+                                    <div class="carousel-caption">                              
+                                        <p><?php echo $anuncio['nome'];?></p>
+                                    </div>
+                                </div>    
+                        <?php
+                                }
+                            }
+                        ?>                                                                                                                                                                                                            
+                    </div>
+                  </div>                                                                                               
+                </div>                                                            
+            </div>                               
         </div>
-        
-        <br/>
-        <br/>
+    </div>        
+    <br/>
+    <br/>       
+</div>

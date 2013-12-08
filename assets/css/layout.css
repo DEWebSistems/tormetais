@@ -3,7 +3,7 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 12px;
-    color: #777;
+    color: rgb(46, 42, 42);
 }
 
 .top-line{
@@ -12,19 +12,34 @@ body {
     background-color: #3d4a31;
 }
 
+.top-line-reboque{
+    width: 100%;
+    height: 5px;
+    background: red;
+}
+
 .header {	    
-    background: #DFE5DF;
-    /*border-bottom: 1px solid #3d4a31;*/
+    background: #DFE5DF;   
+}
+
+.header > * {
+    color: rgb(46, 42, 42);
 }
 
 .site-header-logo {
-    padding: 2%;    
+    padding-top: 12px;    
 }
 
 .site-header-desc {
     text-align: left;
-    padding: 38px 0px;
-    font-size: 12px;
+    padding-top: 60px;
+    font: 'Ubuntu', sans-serif;
+    font-size: 40px;        
+}
+
+.site-header-desc-agricola {
+    text-align: left;
+    padding-top: 18px;    
 }
 
 .site-header-contato {
@@ -43,8 +58,28 @@ body {
     width: 100%;
     height: auto;
     margin-bottom: 0px;
+    background-color: #DFE5DF;
+    border-bottom: 1px solid #DFE5DF;    
+}
+
+.site-header-menu  > ul {  
+  background: #3d4a31;
+}
+
+.site-header-menu  > ul.nav > li > a {
+    /*color: black;*/
+}
+
+.site-header-menu-agricola {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
     background-color: #3d4a31;
     border-bottom: 1px solid #3d4a31;    
+}
+
+.site-header-menu-reboque  > ul {  
+  background: red;
 }
 
 .site-menu-lateral {
@@ -75,18 +110,18 @@ body {
     font-size: 16px;
 }
 
+.content {
+    background-image: linear-gradient(to bottom, white, #DFE5DF);
+}
+
 .main {
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left:5%;
     margin-right:5%;
     width: 90%;
-    height: auto;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
-    padding: 2px;
-    background-image: linear-gradient(to bottom, white, #DFE5DF);
-    
+    height: auto;    
+    padding: 2px;        
 }
 
 .footer {
@@ -186,11 +221,6 @@ body {
     font-size: 24px;
 }
 
-.page-header {
-       
-    border-bottom: 1px solid #3d4a31;
-}
-
 .link-menu-superior {
   color: #fff;
 }
@@ -199,3 +229,11 @@ a:hover, a:focus {
   color: #000;
 }
 
+.page-header {
+    
+    border-bottom: 1px dashed #3d4a31;
+}
+
+.font-agricola {
+    color: #3d4a31;
+}

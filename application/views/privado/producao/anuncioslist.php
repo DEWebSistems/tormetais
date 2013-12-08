@@ -4,23 +4,20 @@
 <script type="text/javascript" src="/tormetais/assets/js/anunciosprivate.js"></script>            
     
     <br/>
-    <form action="" method="post">
+    <form action="" method="post">        
+        <br/>
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
                     <th style="width: 100px;">Código</th>
                     <th>Nome</th>
                     <th style="width: 200px;">
-                        Opções
-                        <a href="<?php echo site_url('privado/anuncios/adicionar') ?>" class="btn btn-primary">Adicionar</a>
+                        Opções                        
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-//                    echo '<pre>';
-//                    print_r($anuncios);
-//                    echo '</pre>';
                     if(empty($anuncios))
                     {
                         echo '<tr>';
@@ -36,9 +33,13 @@
                             echo '<td>' . $anuncio['id'] . '</td>';
                             echo '<td>' . $anuncio['nome'] . '</td>';
                             echo '<td>';
-                            echo '<a href=" '. site_url("privado/anuncios/alterar/". $anuncio['id'])  . '" class="btn btn-default btn-sm">Alterar</a>';
-                            echo '&nbsp;&nbsp;&nbsp;';
-                            echo '<button name="bsExcluir" type="submit" value="' . $anuncio['id'] . '" class="btn btn-default btn-sm" onclick="return confirmaExclusao();">Excluir</button>';
+                            echo '<div class="btn-group">';
+                            echo '<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Opções <span class="caret"></span></button>';
+                            echo '<ul class="dropdown-menu" role="menu">';
+                            echo '<li><a href=" '. site_url("privado/anuncios/alterar/" . $anuncio['id']) . '">Alterar</a></li>';                            
+                            echo '<li><a href=" '. site_url("privado/anuncios/multimidias/" . $anuncio['id']) . '">Fotos</a></li>';
+                            echo '</ul>';
+                            echo '</div>';
                             echo '</td>';
                             echo '</tr>';
                         }
@@ -47,6 +48,3 @@
             </tbody>
         </table>
     </form>
-<div>
-    Exibindo 10 de 10 registros.
-</div>

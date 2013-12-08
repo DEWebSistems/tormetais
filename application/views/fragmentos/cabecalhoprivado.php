@@ -7,18 +7,22 @@
         <meta name="author" content="Everaldo Boccoli" >
         <meta name="author" content="Daniel Rockenbach Loro" >
 
-        <!-- Styles -->        
-        <!--<link href="/tormetais/assets/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">-->
-        <link href="/tormetais/assets/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/tormetais/assets/css/layout.css" rel="stylesheet">
+        <!-- Styles -->
+        
+        <link href="<?php echo base_url('/assets/bootstrap/3.0.0/css/bootstrap.css');?>" rel="stylesheet">
+        <link href="<?php echo base_url('/assets/css/layout.css');?>" rel="stylesheet">
+        
+        <link rel="stylesheet" href="<?php echo base_url('/assets/bootstrap-image-gallery-3.1.0/css/blueimp-gallery.min.css');?>">
+        <link rel="stylesheet" href="<?php echo base_url('/assets/bootstrap-image-gallery-3.1.0/css/netdna.bootstrapcdn.min.css');?>">
+        <link rel="stylesheet" href="<?php echo base_url('/assets/bootstrap-image-gallery-3.1.0/css/bootstrap-image-gallery.min.css');?>">
 
         <!-- Java Script -->
-        <script type="text/javascript" src="/tormetais/assets/jquery/jquery203/jquery-2.0.3.js"></script>
-        <script type="text/javascript" src="/tormetais/assets/bootstrap/3.0.0/js/bootstrap.js"></script>        
-        <script type="text/javascript" src="/tormetais/assets/bootstrap/3.0.0/js/transition.js"></script>
-        <script type="text/javascript" src="/tormetais/assets/bootstrap/3.0.0/js/carousel.js"></script>
-        <script type="text/javascript" src="/tormetais/assets/js/genericsfunctions.js"></script>
-        <script type="text/javascript" src="/tormetais/assets/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="<?php echo base_url('/assets/jquery/jquery203/jquery-2.0.3.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('/assets/bootstrap/3.0.0/js/bootstrap.js');?>"></script>        
+        <script type="text/javascript" src="<?php echo base_url('/assets/bootstrap/3.0.0/js/transition.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('/assets/bootstrap/3.0.0/js/carousel.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('/assets/js/genericsfunctions.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('/assets/ckeditor/ckeditor.js');?>"></script>                       
 
     </head>
 
@@ -32,7 +36,7 @@
                         <div class="row">      
                             <!-- HEADER LOGO -->
                             <div class="col-md-6 site-header-logo">
-                                <img src="/tormetais/assets/images/logo.png" alt="">
+                                <img src="<?php echo base_url('/assets/images/logoamarela.png');?>" alt="<?php echo $dadosEmpresa['nomefantasia'];?>">
                             </div>                        
                             <!-- / HEADER LOGO -->
 
@@ -70,10 +74,10 @@
                                             <ul class="dropdown-menu">
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/anuncios/lista'); ?>">Anúncios</a></li>
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/categoriasprodutos/lista'); ?>">Categoria dos Produtos</a></li>
-                                                <li><a class="link-menu-superior" href="#">Categoria dos Serviços</a></li>                                                
-                                                <li><a class="link-menu-superior" href="#">Notícias</a></li>   
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('privado/categoriasservicos/lista'); ?>">Categoria dos Serviços</a></li>                                                
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('privado/noticias/lista'); ?>">Notícias</a></li>   
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/produtos/lista'); ?>">Produtos</a></li>
-                                                <li><a class="link-menu-superior" href="#">Serviços</a></li>             
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('privado/servicos/lista'); ?>">Serviços</a></li>             
                                             </ul>
                                         </li>                                                                                                        
                                     </ul>	

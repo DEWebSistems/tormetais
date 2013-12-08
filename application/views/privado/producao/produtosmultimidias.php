@@ -67,19 +67,30 @@
 </style>
 <?php
     if($messages['messagesErrors'] != '')
-    {
-        echo '<div class="alert alert-danger alertcol-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
+    {        
+        echo '<br/>';
+        echo '<div class="alert alert-danger alert col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
         echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
         echo '<h4>Erro</h4>';
         echo $messages['messagesErrors'];
         echo '</div>';
+        echo '<br/>';
+        echo '<br/>';
+        echo '<br/>';        
+        echo '<br/>';       
+        echo '<br/>';
     }
     if($messages['messagesSuccess'] != '')
-    {
-        echo '<div class="alert alert-success alertcol-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
+    {       
+        echo '<br/>';
+        echo '<div class="alert alert-success alert col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">';
         echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
         echo '<h4>' . $messages['messagesSuccess'] . '</h4>';
         echo '</div>';
+        echo '<br/>';
+        echo '<br/>';        
+        echo '<br/>';       
+        echo '<br/>';  
     }
 ?>
 <h3 class="page-header-form-list">Dados do Produto</h3>
@@ -146,7 +157,7 @@
     <form action="<?php echo site_url('privado/produtos/multimidias/' . $dadosProduto['id']); ?>" method="post" role="form" class="form-horizontal">
         <button id="bbAdicionarVideo" name="bbAdicionarVideo" type="button" class="btn btn-primary">Adicionar Vídeo</button>
         <div id="divFieldVideo" class="form-group">
-            <!--<label for="iurlVideo" class="control-label">Link do Vídeo:</label>-->
+            <label for="iurlVideo" class="col-xs-2 col-sm-2 col-md-1 col-lg-1 control-label">Link do Vídeo:</label>
             <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
                 <input id="iurlVideo" name="iurlVideo" type="text" class="form-control"/>
             </div>

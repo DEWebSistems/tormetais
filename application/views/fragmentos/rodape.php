@@ -3,7 +3,7 @@
         <div class="row"></div>
             <div class="col-md-4 footer-content">
                 <div class="footer-sobre">
-                    <img src="/tormetais/assets/images/logo.png" alt="" width="107" height="53"><strong><?php echo $dadosEmpresa['nomefantasia'];?></strong>
+                    <img src="<?php echo base_url('/assets/images/logo.png'); ?>" alt="<?php echo $dadosEmpresa['nomefantasia'];?>" width="107" height="53"><strong><?php echo $dadosEmpresa['nomefantasia'];?></strong>
                     <p>
                         <span><?php echo $dadosEmpresa['descricaoempresa'];?></span>
                     </p>
@@ -64,7 +64,7 @@
         <p>©2013. Tor Metais. Todos os direitos reservados.</p>
     </div>
     <div class="col-md-6" style="padding-top: 20px;">
-        <p><a href="#">ServiTI</a></p>
+        <p>ServiTI</p>
     </div>
 </div>
 
