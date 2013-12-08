@@ -24,7 +24,9 @@
         ?>
     });
 </script>
-
+<div class="page-header-form-list">
+    <strong>Dados da Empresa</strong>
+</div>
 <?php
     if($messages['isErrors'] == true)
     {
@@ -42,9 +44,6 @@
         echo '</div>';
     }
 ?>
-<div class="page-header-form-list">
-    <strong>Dados da Empresa</strong>
-</div>
 <div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 </div>
 <!--<form action="" method="post" class="form-horizontal" role="form">-->
@@ -167,12 +166,14 @@
             <textarea id="taDescricaoEmpresa" name="taDescricaoEmpresa" maxlength="5000" rows="10" class="form-control"><?php echo $dadosEmpresa['descricaoempresa'];?></textarea>
         </div>
     </div>
+    <!--
     <div class="form-group">
         <label for="taDescricaoProdutos" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Descrição dos Produtos:</label>
         <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
             <textarea id="taDescricaoProdutos" name="taDescricaoProdutos" maxlength="5000" rows="10" class="form-control"><?php echo $dadosEmpresa['descricaoprodutos'];?></textarea>
         </div>
     </div>
+    -->
     <div class="form-group">
         <label for="taDescricaoServicos" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Descrição dos Serviços:</label>
         <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
@@ -191,7 +192,7 @@
     <div id="divImageLogoSite" class="form-group">
         <label for="" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Logo do Site:</label>
         <div class="col-xs-10 col-sm-8 col-md-7 col-lg-6">
-            <img src="<?php echo $dadosEmpresa['logosite']; ?>" width="300" heigth="110"/>
+            <img src="<?php echo base_url($dadosEmpresa['logosite']); ?>" width="300" heigth="110" class="img-rounded"/>
             <br/>
             <br/>
             <button id="bbAlterarImagem" name="bbAlterarImagem" type="button" class="btn btn-sm" onclick="bbAlterarImagemOnClick();">Alterar Imagem</button>
@@ -209,6 +210,6 @@
 <br/>
 <script type="text/javascript">
     CKEDITOR.replace('taDescricaoEmpresa');
-    CKEDITOR.replace('taDescricaoProdutos');
+    //CKEDITOR.replace('taDescricaoProdutos');
     CKEDITOR.replace('taDescricaoServicos');
 </script>

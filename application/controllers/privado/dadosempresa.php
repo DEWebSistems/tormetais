@@ -72,11 +72,11 @@
             $this->MDadosEmpresa->setEmailSecundario($dadosPost['iemEMailSecundario']);
             $this->MDadosEmpresa->setLinkLocalizacaoGoogleMaps($dadosPost['iurlLinkLocalizacaoGoogleMaps']);
             $this->MDadosEmpresa->setDescricaoEmpresa($dadosPost['taDescricaoEmpresa']);
-            $this->MDadosEmpresa->setDescricaoProdutos($dadosPost['taDescricaoProdutos']);
+            //$this->MDadosEmpresa->setDescricaoProdutos($dadosPost['taDescricaoProdutos']);
             $this->MDadosEmpresa->setDescricaoServicos($dadosPost['taDescricaoServicos']);
             if(($dadosPost['ihUpdateImage'] == 's') and ($_FILES['ifLogoSite']['name'] != ''))
             {
-                $configsUploads['upload_path'] = "C:/xampp/htdocs/tormetais/assets/images/";
+                $configsUploads['upload_path'] = "./assets/imagesproductions/";
                 $configsUploads['allowed_types'] = 'gif|jpg|png|jpeg';
                 $configsUploads['max_size'] = '1000';
                 $configsUploads['max_width'] = '2000';
@@ -98,7 +98,9 @@
                     //echo '<pre>';
                     //print_r($datasUploads);
                     //echo '</pre>';
-                    $this->MDadosEmpresa->setLogoSite('/tormetais/assets/images/' . $datasUploads['file_name']);
+                    //$this->MDadosEmpresa->setLogoSite('/tormetais/assets/imagesproductions/' . $datasUploads['file_name']);
+                    //base_url('/assets/imagesproductions/' . $datasUploads['file_name']);
+                    $this->MDadosEmpresa->setLogoSite(PATHIMAGESPRODUCTIONS . $datasUploads['file_name']);
                 }
             }
             else
@@ -112,6 +114,13 @@
             else if($this->DAODadosEmpresa->existsRegisterIdOne() == true)
             {
                 $returns = $this->DAODadosEmpresa->alterar($this->MDadosEmpresa);
+                if($returns == true)
+                {
+                    if(($dadosPost['ihUpdateImage'] == 's') and ($_FILES['ifLogoSite']['name'] != ''))
+                    {
+                        //unlink('.' . $dadosEmpresa['logosite']);
+                    }
+                }
             }
             return $returns;
         }
