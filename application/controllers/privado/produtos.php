@@ -17,6 +17,9 @@
             $this->load->model('daos/DAOLinhasProdutos');
             
             $this->load->helper(array('url', 'form'));
+            
+            $this->load->model('seguranca/MUsuarios');
+            $this->MUsuarios->validateUser();
         }
         
         public function index()
@@ -270,7 +273,7 @@
                 $errors['messages'] = 'A foto não foi selecionada.';
                 return $errors;
             }
-            $configsUploads['upload_path'] = "C:/xampp/htdocs/tormetais/assets/imagesproductions/";
+            $configsUploads['upload_path'] = "./assets/imagesproductions/";
             $configsUploads['allowed_types'] = 'gif|jpg|png|jpeg';
             $configsUploads['max_size'] = '1000';
             $configsUploads['max_width'] = '2000';
@@ -289,7 +292,7 @@
                 $returnsImagens = $this->DAOProdutos->getImagens($produtoId);
                 $datasUploads = $this->upload->data();
                 $this->MArquivosMultimidias->setNomeOriginal($datasUploads['orig_name']);
-                $this->MArquivosMultimidias->setLocalizacao('/tormetais/assets/imagesproductions/' . $datasUploads['file_name']);
+                $this->MArquivosMultimidias->setLocalizacao(PATHIMAGESPRODUCTIONS . $datasUploads['file_name']);
                 $this->MArquivosMultimidias->setExtensao($datasUploads['file_ext']);
                 $this->MArquivosMultimidias->setTipoArquivo(0);
                 $arquivoPrincipal = false;

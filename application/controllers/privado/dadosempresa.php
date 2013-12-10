@@ -7,6 +7,8 @@
             $this->load->helper(array('form', 'url'));
             $this->load->model('producao/MDadosEmpresa');
             $this->load->model('daos/DAODadosEmpresa');
+            $this->load->model('seguranca/MUsuarios');
+            $this->MUsuarios->validateUser();
         }
         
         public function index()
@@ -82,6 +84,7 @@
                 $configsUploads['max_width'] = '2000';
                 $configsUploads['max_height'] = '2000';
                 $configsUploads['encrypt_name'] = false;
+                $configsUploads['file_name'] = md5(date('YmdHis'));
                 $this->load->library('upload', $configsUploads);
                 if(!$this->upload->do_upload('ifLogoSite'))
                 {
@@ -118,7 +121,10 @@
                 {
                     if(($dadosPost['ihUpdateImage'] == 's') and ($_FILES['ifLogoSite']['name'] != ''))
                     {
-                        //unlink('.' . $dadosEmpresa['logosite']);
+                        if(($dadosEmpresa['logosite'] != '') and (file_exists('.' . $dadosEmpresa['logosite']) == true))
+                        {
+                            unlink('.' . $dadosEmpresa['logosite']);
+                        }
                     }
                 }
             }

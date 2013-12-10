@@ -77,7 +77,8 @@
         echo '<br/>';
         echo '<br/>';
         echo '<br/>';        
-        echo '<br/>';       
+        echo '<br/>';
+        echo '<br/>';
         echo '<br/>';
     }
     if($messages['messagesSuccess'] != '')
@@ -139,7 +140,7 @@
         {
             foreach($dadosImagens as $dadosImagem)
             {
-                echo '<img src="' . $dadosImagem['localizacao'] . '" style="width: 100px; height: 100px; margin-right: 10px; margin-bottom: 10px;" ';
+                echo '<img src="' . base_url($dadosImagem['localizacao']) . '" style="width: 150px; height: 150px; margin-right: 10px; margin-bottom: 10px;" ';
                 if($dadosImagem['arquivoprincipal'] == true)
                 {
                     echo 'class="img-rounded mainImage" onclick="imagesProdutosOnClick(this, ' . $dadosImagem['arquivomultimidiaid'] .  ', true);"/>';

@@ -36,7 +36,7 @@
     </div>
     <div class="col-md-6 ">
                       
-        <form action="" method="post" class="form-horizontal" role="form">
+        <form action="<?php echo site_url('publico/contato'); ?>" method="post" class="form-horizontal" role="form">
 
             <div class="form-group">
                 <label for="itNome" class="col-xs-3 control-label">Nome:</label>

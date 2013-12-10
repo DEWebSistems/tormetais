@@ -6,32 +6,48 @@
         function __construct()
         {
             parent::__construct();
-            $this->load->helper('url'); 
-            
+            $this->load->helper('url');
             $this->load->library('email');
-
-            $this->email->from('everaldo.boccoli@gmail.com', 'Your Name');
-            $this->email->to('everaldo.boccoli@gmail.com'); 
-//            $this->email->cc('another@another-example.com'); 
-//            $this->email->bcc('them@their-example.com'); 
-
-            $this->email->subject('Email Test');
-            $this->email->message('Testing the email class.');	
-
-            $this->email->send();
-
-//            echo $this->email->print_debugger();
+            //$this->email->from('everaldo.boccoli@gmail.com', 'Your Name');
+            //$this->email->to('everaldo.boccoli@gmail.com'); 
+            //$this->email->cc('another@another-example.com'); 
+            //$this->email->bcc('them@their-example.com');
+            //$this->email->subject('Email Test');
+            //$this->email->message('Testing the email class.');
+            //$this->email->send();
+            //echo $this->email->print_debugger();
         }
         
         public function index()
         {
-            
+            //$config['protocol'] = 'mail';
+            //$config['mailpath'] = '/usr/sbin/sendmail';
+            //$config['charset'] = 'iso-8859-1';
+            //$config['wordwrap'] = TRUE;
+            //$config['smtp_host'] = 'localhost';
+            //$this->email->initialize($config);
+            //$this->email->from('daniel_rockenbach_loro@gmail.com', 'Your Name');
+            //$this->email->to('daniel_rockenbach_loro@gmail.com'); 
+            //$this->email->cc('another@another-example.com'); 
+            //$this->email->bcc('them@their-example.com');
+            //$this->email->subject('Email Test');
+            //$this->email->message('Testing the email class.');
+            //$this->email->send();
+            //echo $this->email->print_debugger();
             $dadosPost = $this->input->post();
             $messages = array();
             $messages['isErrors'] = false;
             $messages['messagesErrors'] = '';
             $messages['isSuccess'] = false;
             $messages['messagesSuccess'] = '';
+            if(mail('daniel_rockenbach_loro@gmail.com', 'rogmoer erofmerifer', 'rtigiort erogijrotigjre erogijeroigjergoer reogjrotigre'))
+            {
+                //echo 'of course man';
+            }
+            else
+            {
+                //echo 'oh no';
+            }
             if(isset($dadosPost['bsEnviar']))
             {
                 $returns = $this->enviar($dadosPost);
@@ -76,17 +92,25 @@
             $this->DAOMensagemContato->inserir($this->MMensagemContato);
           
             $this->sendMail($dadosPost);
+            return true;
         }
         
         function sendMail($dadosPost)
         {
-            $para       = $dadosPost['itEmailDestino'];                        
-            $assunto    = $dadosPost['itAssunto'];
-            $mensagem   = $dadosPost['taMensagem'];
-            
-            $headers    = "Content-Type::text/html; charset=UTF-8\n";
-            
-            mail($para, $assunto, $mensagem, $headers);                        
+            //$para       = $dadosPost['itEmailDestino'];
+            //$para = 'daniel.loro@hotmail.com';
+            //$assunto    = $dadosPost['itAssunto'];
+            //$mensagem   = $dadosPost['taMensagem'];
+            //$headers    = "Content-Type::text/html; charset=UTF-8\n";
+            //mail($para, $assunto, $mensagem, $headers);
+            //if(mail($para, $assunto, $mensagem))
+            //{
+            //    echo 'went guys';
+            //}
+            //else
+            //{
+            //    echo 'don\'t it work';
+            //}
         }
     }
 ?>

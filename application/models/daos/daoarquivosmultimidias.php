@@ -52,7 +52,10 @@
                 $this->db->delete('arquivosmultimidias');
                 if(($this->db->affected_rows() > 0) and ($returns->result_array()[0]['tipoarquivo'] == 0))
                 {
-                    unlink('C:/xampp/htdocs' . $returns->result_array()[0]['localizacao']);
+                    if(($returns->result_array()[0]['localizacao'] != '') and (file_exists('.' . $returns->result_array()[0]['localizacao']) == true))
+                    {
+                        unlink('.' . $returns->result_array()[0]['localizacao']);
+                    }
                 }
             }
         }
