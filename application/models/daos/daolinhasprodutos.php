@@ -48,5 +48,30 @@
             $results = $this->db->get('linhasprodutos');
             return $results;
         }
+        
+        public function getById($id)
+        {
+            $results = $this->db->get_where('linhasprodutos', array('id' => $id));
+            return $results;
+        }
+        
+        public function alterar($object)
+        {
+            $this->MLinhasProdutos = $object;
+            $this->db->trans_start();
+            $this->db->update('linhasprodutos', $this->MLinhasProdutos, 'id = ' . $this->MLinhasProdutos->getId());
+            $this->numbersErrors = $this->db->_error_number();
+            $this->messagesErros = $this->db->_error_message();
+            $this->rowsAffecteds = $this->db->affected_rows();
+            $this->db->trans_complete();
+            if($this->numbersErrors == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return $this->messagesErros;
+            }
+        }
     }
 ?>
