@@ -2,17 +2,17 @@
 
     <div class="main">
     
-        <div class="page-header-form-list">
-            <h3><?php echo $dadosNoticia['nome'];?></h3>
+        <div class="page-header">
+            <h3><?php echo $dadosAnuncio['nome'];?></h3>
         </div>
         <div class="row">
             <div class="col-md-6">  
-                <img src="<?php echo $dadosNoticia['imagemprincipal'];?>" alt="<?php echo $dadosNoticia['nome'];?>" style="width: 100%;" class="media-object img-rounded">
+                <img src="<?php echo $dadosAnuncio['imagemprincipal'];?>" alt="<?php echo $dadosAnuncio['nome'];?>" style="width: 100%;" class="media-object img-rounded">
                 <br/>
                 <p><a class="btn btn-success" href="<?php echo site_url('publico/inicial/'); ?>">Início</a></p>
             </div>
             <div class="col-md-6" style="font-size: 14px;">
-                <p><?php echo $dadosNoticia['descricao'];?></p>                    
+                <p><?php echo $dadosAnuncio['descricao'];?></p>                    
             </div>
         </div>            
         <div class="row">
@@ -22,11 +22,11 @@
                 </div>
                 <div id="links">            
                     <?php                                                                 
-                        foreach ($imagensnoticia as $imagemnoticia)
+                        foreach ($imagensanuncio as $imagemanuncio)
                         {
                     ?>                                                                        
-                            <a href="<?php echo $imagemnoticia['localizacao']; ?>" title="<?php echo $dadosNoticia['nome'];?>" data-gallery>
-                                <img src="<?php echo $imagemnoticia['localizacao']; ?>" alt="<?php echo $dadosNoticia['nome'];?>" height="100" width="100" class="img-rounded">
+                            <a href="<?php echo $imagemanuncio['localizacao']; ?>" title="<?php echo $dadosAnuncio['nome'];?>" data-gallery>
+                                <img src="<?php echo $imagemanuncio['localizacao']; ?>" alt="<?php echo $dadosAnuncio['nome'];?>" height="100" width="100" class="img-rounded">
                             </a>                                                                              
                     <?php
                         }
@@ -36,7 +36,7 @@
                 
             <div class="col-md-6">
                 <?php 
-                    if(count($videosnoticia) > 0)
+                    if(count($videosanuncio) > 0)
                     {
                 ?>
 
@@ -46,11 +46,11 @@
 
                 <div class="row">
                     <?php                                                                 
-                        foreach ($videosnoticia as $videonoticia)
+                        foreach ($videosanuncio as $videoanuncio)
                         {
                             ?>  
                     <div class="col-md-12" align="center">
-                        <iframe width="450" height="300" src="<?php echo $videonoticia['localizacao']; ?>" frameborder="0" allowfullscreen></iframe>                                                
+                        <iframe width="450" height="300" src="<?php echo $videoanuncio['localizacao']; ?>" frameborder="0" allowfullscreen></iframe>                                                
                     </div>
                     <?php
                         }

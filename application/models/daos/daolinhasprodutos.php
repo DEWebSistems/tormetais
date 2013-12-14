@@ -48,5 +48,14 @@
             $results = $this->db->get('linhasprodutos');
             return $results;
         }
+        
+        public function getLinhaProdutoById($id)
+        {
+            $results = $this->db->get_where('linhasprodutos', array('id' => $id), 1);            
+            if($results->num_rows() > 0)
+            {
+                return $results->result_array()[0];            
+            }
+        }     
     }
 ?>

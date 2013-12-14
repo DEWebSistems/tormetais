@@ -16,6 +16,9 @@
 
             $this->load->model('daos/DAOProdutos');
             $this->load->model('producao/MProdutos');             
+            
+            $this->load->model('daos/DAOLinhasProdutos');
+            $this->load->model('producao/MLinhasProdutos');
         }
         
         public function index()
@@ -37,6 +40,7 @@
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
             $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();                      
             $produtos                           = $this->DAOProdutos->getProdutos()->result_array();                        
+            $datasBody['linhaAgricola']          = $this->DAOLinhasProdutos->getLinhaProdutoById(1);                      
             
             $produtosComImagem = array();                       
             
@@ -51,7 +55,7 @@
             
             $datasBody['produtos']              = $produtosComImagem;
                         
-            $this->load->view('fragmentos/cabecalhoagricola',   $dadosEmpresa);
+            $this->load->view('fragmentos/cabecalho',   $dadosEmpresa);
             $this->load->view('publico/produtosagricola',       $datasBody);
             $this->load->view('fragmentos/rodape',      $dadosEmpresa);
         }
@@ -79,17 +83,21 @@
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
             $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();                       
             $produtos                           = $this->DAOProdutos->getProdutosByCategoriaProdutoId($idCategoriaProduto);                   
+            $datasBody['linhaAgricola']          = $this->DAOLinhasProdutos->getLinhaProdutoById(1);                      
             
             $produtosComImagem = array();                       
             
-            foreach ($produtos as $produto) {
-                                                                                
-                $imagemPrincipal = $this->DAOProdutos->getImagemPrincipal($produto['id']);
-                
-                $produto['imagemprincipal'] = $imagemPrincipal['localizacao'];
-                
-                $produtosComImagem[] = $produto;
-            }            
+            if($produtos != NULL) 
+            {   
+                foreach ($produtos as $produto) {
+
+                    $imagemPrincipal = $this->DAOProdutos->getImagemPrincipal($produto['id']);
+
+                    $produto['imagemprincipal'] = $imagemPrincipal['localizacao'];
+
+                    $produtosComImagem[] = $produto;
+                }            
+            }
             
             $datasBody['produtos']              = $produtosComImagem;
             

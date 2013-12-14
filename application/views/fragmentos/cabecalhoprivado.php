@@ -41,8 +41,8 @@
                             <!-- / HEADER LOGO -->
 
                             <!-- HEADER DESCRICAO SITE-->
-                            <div class="col-md-6 site-header-desc">
-                                <strong><?php echo $dadosEmpresa['nomefantasia'];?></strong>
+                            <div class="col-md-6 site-header-desc" >
+                                <strong>Metais</strong>
                             </div>
                             <!-- / HEADER DESCRICAO SITE --> 
                         </div>                                                                                                                                                                                             

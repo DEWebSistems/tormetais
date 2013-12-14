@@ -83,11 +83,14 @@
             }
         }
         
-        public function getCategoriaProduto($id)
+        public function getCategoriaProdutoById($id)
         {
-            $results = $this->db->get_where('categoriasprodutos', array('id' => $id), 1);
-            return $results;
-        }
+            $results = $this->db->get_where('categoriasprodutos', array('id' => $id), 1);            
+            if($results->num_rows() > 0)
+            {
+                return $results->result_array()[0];            
+            }
+        }     
         
         public function excluir($id)
         {

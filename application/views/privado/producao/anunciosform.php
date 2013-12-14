@@ -1,6 +1,4 @@
-<div class="page-header-form-list">
-    <strong>Manutenção de Anúncio</strong>
-</div>
+<h3 class="page-header-form-list">Manutenção de Anúncio</h3>
 <script type="text/javascript" src="/tormetais/assets/js/anunciosprivate.js"></script>
 
 <div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
@@ -21,7 +19,7 @@
     <div class="form-group">
         <label for="taDescricaoServicos" class="col-xs-8 col-sm-2 col-md-2 col-lg-2 control-label">Descrição:</label>
         <div class="col-xs-10 col-sm-6 col-md-6 col-lg-6">
-            <textarea id="taDescricao" name="taDescricao" maxlength="5000" rows="10" class="form-control"><?php echo $dadosAnuncio['descricao'];?><br/></textarea>
+            <textarea id="taDescricao" name="taDescricao" maxlength="2000" rows="10" class="form-control"><?php echo $dadosAnuncio['descricao'];?><br/></textarea>
         </div>
     </div>        
     <div class="form-group">

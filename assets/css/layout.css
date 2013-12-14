@@ -15,7 +15,7 @@ body {
 .top-line-reboque{
     width: 100%;
     height: 5px;
-    background: red;
+    background: rgb(213, 39, 39);
 }
 
 .header {	    
@@ -74,12 +74,12 @@ body {
     width: 100%;
     height: auto;
     margin-bottom: 0px;
-    background-color: #3d4a31;
-    border-bottom: 1px solid #3d4a31;    
+    background-color: rgb(213, 39, 39);;
+    border-bottom: 1px solid rgb(213, 39, 39);;    
 }
 
 .site-header-menu-reboque  > ul {  
-  background: red;
+  background: rgb(213, 39, 39);
 }
 
 .site-menu-lateral {
@@ -229,11 +229,22 @@ a:hover, a:focus {
   color: #000;
 }
 
-.page-header {
-    
+.page-header {   
     border-bottom: 1px dashed #3d4a31;
 }
 
 .font-agricola {
     color: #3d4a31;
+}
+
+.font-agricola:hover {
+    color: #3d4a31;
+}
+
+.font-reboque {
+    color: rgb(213, 39, 39);
+}
+
+.font-reboque:hover {
+    color: rgb(213, 39, 39);
 }
