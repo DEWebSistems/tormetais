@@ -24,7 +24,9 @@
         ?>
     });
 </script>
-<h3 class="page-header-form-list">Dados da Empresa</h3>
+<div class="page-header-form-list">
+    <strong>Dados da Empresa</strong>
+</div>
 <?php
     if($messages['isErrors'] == true)
     {

@@ -1,4 +1,6 @@
-<h3 class="page-header-form-list">Cadastro de Produtos</h3>
+<div class="page-header-form-list">
+    <strong>Cadastro de Produtos</strong>
+</div>
 <script type="text/javascript" src="/tormetais/assets/js/produtosprivate.js"></script>
 
 <div id="divResultsValidations" class="col-md-12">

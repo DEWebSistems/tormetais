@@ -19,7 +19,7 @@
     <div class="form-group">
         <label for="taDescricao" class="col-sm-2 control-label">Descrição:</label>
         <div class="col-sm-6">
-            <textarea id="taDescricao" name="taDescricao" maxlength="2000" class="form-control"><?php echo $dadosNoticia['descricao'];?></textarea>
+            <textarea id="taDescricao" name="taDescricao" maxlength="255" class="form-control"><?php echo $dadosNoticia['descricao'];?></textarea>
         </div>
     </div>    
     <div class="form-group">

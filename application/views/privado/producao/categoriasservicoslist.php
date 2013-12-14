@@ -4,8 +4,9 @@
         $('#bsExcluir').hide();
     });
 </script>
-
-<h3 class="page-header-form-list">Manutenção de Categorias de Produtos</h3>
+<div class="page-header-form-list">
+    <strong>Manutenção de Categorias de Serviços</strong>
+</div>
 <?php
     if($messages['isErrors'] == true)
     {

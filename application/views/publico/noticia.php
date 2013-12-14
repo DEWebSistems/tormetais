@@ -9,7 +9,7 @@
             <div class="col-md-6">  
                 <img src="<?php echo $dadosNoticia['imagemprincipal'];?>" alt="<?php echo $dadosNoticia['nome'];?>" style="width: 100%;" class="media-object img-rounded">
                 <br/>
-                <p><a class="btn btn-success" href="<?php echo site_url('publico/inicial/'); ?>">Início</a></p>
+                <p><a class="btn btn-success" href="<?php echo site_url('publico/inicial/'); ?>">Voltar</a></p>
             </div>
             <div class="col-md-6" style="font-size: 14px;">
                 <p><?php echo $dadosNoticia['descricao'];?></p>                    

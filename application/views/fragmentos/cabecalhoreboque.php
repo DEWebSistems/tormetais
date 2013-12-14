@@ -45,8 +45,8 @@
                                     <!-- / HEADER LOGO -->
 
                                     <!-- HEADER DESCRICAO SITE-->
-                                    <div class="col-md-6 site-header-desc" >
-                                        <strong>Metais</strong>
+                                    <div class="col-md-6">
+                                        <span>Metais</span>
                                     </div>
                                     <!-- / HEADER DESCRICAO SITE --> 
                                 </div>                                                                                                                                                                                             

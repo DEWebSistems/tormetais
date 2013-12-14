@@ -1,4 +1,6 @@
-<h3 class="page-header-form-list">Cadastro de Categoria de Serviços</h3>
+<div class="page-header-form-list">
+    <strong>Cadastro de Categoria de Serviços</strong>
+</div>
 <script type="text/javascript" src="/tormetais/assets/js/categoriasservicosprivate.js"></script>
 
 <div id="divResultsValidations" class="col-md-12">

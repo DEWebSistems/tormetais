@@ -4,7 +4,9 @@
         $('#bsExcluir').hide();
     });
 </script>
-<h3 class="page-header-form-list">Manutenção de Serviços</h3>
+<div class="page-header-form-list">
+    <strong>Manutenção de Serviços</strong>
+</div>
 <?php
     if($messages['isErrors'] == true)
     {
@@ -78,4 +80,17 @@
         </table>
         <button id="bsExcluir" name="bsExcluir" type="submit" value="">Excluir</button>
     </form>
+<div>
+    Exibindo 10 de 10 registros.
+</div>
+<?php
+    echo $paginations;
+?>
+<ul class="pagination">
+    <li><a><<</a></li>
+    <li><a><</a></li>
+    <li><a>1</a></li>
+    <li><a>></a></li>
+    <li><a>>></a></li>
+</ul>
 </div>

@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-9">
             <div class="page-header">
-                <h4 class="font-agricola"><?php echo $linhaAgricola['nome']; ?></h4>
+                <h4 class="font-agricola">Produtos - Linha Agrícola</h4>
             </div>      
             
             <div class="row">                                       
