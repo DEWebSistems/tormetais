@@ -1,31 +1,31 @@
-
+<div class="content">
 
 <div class="main">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="page-header">
-                <h4>Categorias</h4>
+                <h4 class="font-reboque">Categorias</h4>
             </div>
             <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
                 <?php                    
                     foreach ($categoriasProdutos as $categoriaProduto)
                     {
-                        echo '<li><a href=" '. site_url('publico/produtosagricola/filtro/' . $categoriaProduto['id']) . '">'. $categoriaProduto['nome'].'</a></li>';                                
+                        echo '<li><a href=" '. site_url('publico/produtosreboque/filtro/' . $categoriaProduto['id']) . '">'. $categoriaProduto['nome'].'</a></li>';                                
                     }
                 ?>
              </ul>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9">
             <div class="page-header">
                 
-                <h4><?php echo $dadosProduto['nome'];?></h4>
+                <h4 class="font-reboque"><?php echo $dadosProduto['nome'];?></h4>
             </div>
             <div class="row">
                 <div class="col-md-6">  
-                    <img src="<?php echo $dadosProduto['imagemprincipal'];?>" alt="<?php echo $dadosProduto['nome'];?>" height="336" width="500" class="media-object img-rounded">
+                    <img src="<?php echo $dadosProduto['imagemprincipal'];?>" alt="<?php echo $dadosProduto['nome'];?>" style="width: 100%;" class="media-object img-rounded">
                        
                     <br/>
-                    <p><a class="btn btn-primary" href="<?php echo site_url('publico/produtosagricola/lista/'); ?>">Voltar</a></p>
+                    <p><a class="btn btn-success" href="<?php echo site_url('publico/produtosreboque/lista/'); ?>">Voltar</a></p>
                 </div>
                 <div class="col-md-6" style="font-size: 14px;">
                     <p><?php echo $dadosProduto['descricao'];?></p>                    
@@ -34,21 +34,28 @@
             
             <div class="row">
                 <div class="col-md-6">
-                    <div class="page-header">
-                        <h4>Imagens</h4>
-                    </div>
-                    <div id="links">            
-                        <?php                                                                 
-                            foreach ($imagensproduto as $imagemproduto)
-                            {
-                        ?>                                                                        
-                                <a href="<?php echo $imagemproduto['localizacao']; ?>" title="<?php echo $dadosProduto['nome'];?>" data-gallery>
-                                    <img src="<?php echo $imagemproduto['localizacao']; ?>" alt="<?php echo $dadosProduto['nome'];?>" height="100" width="100" class="img-rounded">
-                                </a>                                                                              
-                        <?php
-                            }
+                    <?php 
+                        if(count($imagensproduto) > 0)
+                        {
+                    ?>
+                        <div class="page-header">
+                            <h4 class="font-reboque">Imagens</h4>
+                        </div>
+                        <div id="links">            
+                            <?php                                                                 
+                                foreach ($imagensproduto as $imagemproduto)
+                                {
+                            ?>                                                                        
+                                    <a href="<?php echo $imagemproduto['localizacao']; ?>" title="<?php echo $dadosProduto['nome'];?>" data-gallery>
+                                        <img src="<?php echo $imagemproduto['localizacao']; ?>" alt="<?php echo $dadosProduto['nome'];?>" height="100" width="100" class="img-rounded">
+                                    </a>                                                                              
+                            <?php
+                                }
+                            ?>
+                        </div>     
+                    <?php 
+                        }
                         ?>
-                    </div>      
                 </div>
                 
                 <div class="col-md-6">
@@ -58,7 +65,7 @@
                     ?>
 
                     <div class="page-header">
-                        <h4>Vídeos</h4>
+                        <h4 class="font-reboque">Vídeos</h4>
                     </div>
 
                     <div class="row">
