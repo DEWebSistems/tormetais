@@ -68,14 +68,4 @@
         </table>
         <button id="bsExcluir" name="bsExcluir" type="submit" value="">Excluir</button>
     </form>
-<?php
-    echo $paginations;
-?>
-<ul class="pagination">
-    <li><a><<</a></li>
-    <li><a><</a></li>
-    <li><a>1</a></li>
-    <li><a>></a></li>
-    <li><a>>></a></li>
-</ul>
 </div>
