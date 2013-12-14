@@ -95,10 +95,7 @@
             $returns = $this->DAOCategoriasServicos->getCategoriaServicoById($id);
             $datasBody['operation'] = 'u';
             $datasBody['dadosCategoriasServico'] = $returns;            
-            $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
-            echo '<pre>';
-            print_r($returns);
-            echo '</pre>';
+            $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();           
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/categoriasservicosform', $datasBody);
             $this->load->view('fragmentos/rodape', $dadosEmpresa);

@@ -80,16 +80,19 @@
             $datasBody['categoriasServicos']    = $this->DAOCategoriasServicos->getCategoriasServicos()->result_array();                       
             $servicos                           = $this->DAOServicos->getServicosByCategoriaServicoId($idCategoriaServico);                   
             
-            $servicosComImagem = array();                       
+            $servicosComImagem = array();                                               
             
-            foreach ($servicos as $servico) {
-                                                                                
-                $imagemPrincipal = $this->DAOServicos->getImagemPrincipal($servico['id']);
-                
-                $servico['imagemprincipal'] = $imagemPrincipal['localizacao'];
-                
-                $servicosComImagem[] = $servico;
-            }            
+            if($servicos != NULL) 
+            {            
+                foreach ($servicos as $servico) {
+
+                    $imagemPrincipal = $this->DAOServicos->getImagemPrincipal($servico['id']);
+
+                    $servico['imagemprincipal'] = $imagemPrincipal['localizacao'];
+
+                    $servicosComImagem[] = $servico;
+                }            
+            }
             
             $datasBody['servicos']              = $servicosComImagem;
             

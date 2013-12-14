@@ -21,16 +21,25 @@
             $this->load->model('daos/DAOServicos');
             $this->load->model('producao/MServicos');  
             
+            $this->load->model('daos/DAOLinhasProdutos');
+            $this->load->model('producao/MLinhasProdutos');
+            
         }
         
         public function index()
         {
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
+            $dadosInicial['linhasProdutos']     = $this->DAOLinhasProdutos->getAll()->result_array();                        
+            
             $dadosInicial['anuncios']           = $this->getAnuncios();
             $dadosInicial['noticias']           = $this->getNoticias();
+            
             $dadosInicial['dadosEmpresa']       = $dadosEmpresa['dadosEmpresa'];                         
             
-            $dadosInicial['servicoPrincipal']   = $this->getServicoPrincipal();                                    
+            if($this->getServicoPrincipal() != NULL)
+            {    
+                $dadosInicial['servicoPrincipal']   = $this->getServicoPrincipal();                                    
+            }
                      
             $this->load->view('fragmentos/cabecalho', $dadosEmpresa);            
             $this->load->view('publico/inicial', $dadosInicial);
@@ -77,11 +86,16 @@
         
         private function getServicoPrincipal(){
             
-            $servico = $this->DAOServicos->getServicoPrincipal()->result_array()[0];            
-            $imagemPrincipal = $this->DAOServicos->getImagemPrincipal($servico['id']);                                     
-            $servico['imagemprincipal'] = $imagemPrincipal['localizacao'];
             
-            return $servico;
+            if($this->DAOServicos->getNumberRecords() > 0)
+            {
+                $servico = $this->DAOServicos->getServicoPrincipal()->result_array()[0];            
+                $imagemPrincipal = $this->DAOServicos->getImagemPrincipal($servico['id']);                                     
+                $servico['imagemprincipal'] = $imagemPrincipal['localizacao'];
+                return $servico;
+            } 
+            
+            return NULL;                                    
         }
     }
 ?>
