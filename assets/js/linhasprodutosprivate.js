@@ -1,6 +1,5 @@
 function validations()
 {
-    alert('');
     var isErrors;
     var messagesHTML;
     isErrors = false;

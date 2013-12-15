@@ -21,13 +21,13 @@
                 <h4 class="font-reboque"><?php echo $dadosProduto['nome'];?></h4>
             </div>
             <div class="row">
-                <div class="col-md-6">  
-                    <img src="<?php echo $dadosProduto['imagemprincipal'];?>" alt="<?php echo $dadosProduto['nome'];?>" style="width: 100%;" class="media-object img-rounded">
+                <div class="col-md-6 col-lg-6">  
+                    <img src="<?php echo base_url($dadosProduto['imagemprincipal']); ?>" alt="<?php echo $dadosProduto['nome'];?>" style="width: 100%;" class="media-object img-rounded">
                        
                     <br/>
                     <p><a class="btn btn-success" href="<?php echo site_url('publico/produtosreboque/lista/'); ?>">Voltar</a></p>
                 </div>
-                <div class="col-md-6" style="font-size: 14px;">
+                <div class="col-md-6 col-lg-6" style="font-size: 14px;">
                     <p><?php echo $dadosProduto['descricao'];?></p>                    
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                 {
                             ?>                                                                        
                                     <a href="<?php echo $imagemproduto['localizacao']; ?>" title="<?php echo $dadosProduto['nome'];?>" data-gallery>
-                                        <img src="<?php echo $imagemproduto['localizacao']; ?>" alt="<?php echo $dadosProduto['nome'];?>" height="100" width="100" class="img-rounded">
+                                        <img src="<?php echo base_url($imagemproduto['localizacao']); ?>" alt="<?php echo $dadosProduto['nome'];?>" height="100" width="100" class="img-rounded">
                                     </a>                                                                              
                             <?php
                                 }
@@ -74,7 +74,7 @@
                             {
                                 ?>  
                         <div class="col-md-12" align="center">
-                            <iframe width="450" height="300" src="<?php echo $videoproduto['localizacao']; ?>" frameborder="0" allowfullscreen></iframe>                                                
+                            <iframe width="380" height="300" src="<?php echo $videoproduto['localizacao']; ?>" frameborder="0" allowfullscreen></iframe>                                                
                         </div>
                         <?php
                             }

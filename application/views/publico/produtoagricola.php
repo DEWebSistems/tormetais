@@ -22,7 +22,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">  
-                    <img src="<?php echo $dadosProduto['imagemprincipal'];?>" alt="<?php echo $dadosProduto['nome'];?>" style="width: 100%;" class="media-object img-rounded">
+                    <img src="<?php echo base_url($dadosProduto['imagemprincipal']); ?>" alt="<?php echo $dadosProduto['nome'];?>" style="width: 100%;" class="media-object img-rounded">
                        
                     <br/>
                     <p><a class="btn btn-success" href="<?php echo site_url('publico/produtosagricola/lista/'); ?>">Voltar</a></p>
@@ -46,8 +46,8 @@
                                 foreach ($imagensproduto as $imagemproduto)
                                 {
                             ?>                                                                        
-                                    <a href="<?php echo $imagemproduto['localizacao']; ?>" title="<?php echo $dadosProduto['nome'];?>" data-gallery>
-                                        <img src="<?php echo $imagemproduto['localizacao']; ?>" alt="<?php echo $dadosProduto['nome'];?>" height="100" width="100" class="img-rounded">
+                                    <a href="<?php echo base_url($imagemproduto['localizacao']); ?>" title="<?php echo $dadosProduto['nome'];?>" data-gallery>
+                                        <img src="<?php echo base_url($imagemproduto['localizacao']); ?>" alt="<?php echo $dadosProduto['nome'];?>" height="100" width="100" class="img-rounded">
                                     </a>                                                                              
                             <?php
                                 }

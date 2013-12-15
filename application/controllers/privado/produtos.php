@@ -275,9 +275,9 @@
             }
             $configsUploads['upload_path'] = "./assets/imagesproductions/";
             $configsUploads['allowed_types'] = 'gif|jpg|png|jpeg';
-            $configsUploads['max_size'] = '1000';
-            $configsUploads['max_width'] = '2000';
-            $configsUploads['max_height'] = '2000';
+            $configsUploads['max_size'] = '3000';
+            $configsUploads['max_width'] = '4000';
+            $configsUploads['max_height'] = '4000';
             $configsUploads['encrypt_name'] = false;
             $configsUploads['file_name'] = md5(date('YmdHis'));
             $this->load->library('upload', $configsUploads);
