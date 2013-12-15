@@ -68,6 +68,7 @@
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/anuncios/lista'); ?>">Anúncios</a></li>
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/categoriasprodutos/lista'); ?>">Categoria dos Produtos</a></li>
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/categoriasservicos/lista'); ?>">Categoria dos Serviços</a></li>                                                
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('privado/linhasprodutos/lista'); ?>">Linhas de Produtos</a></li>                                                
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/noticias/lista'); ?>">Notícias</a></li>   
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/produtos/lista'); ?>">Produtos</a></li>
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('privado/servicos/lista'); ?>">Serviços</a></li>             

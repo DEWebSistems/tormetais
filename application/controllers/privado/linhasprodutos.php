@@ -65,8 +65,9 @@
                 $dadosLP = $this->DAOLinhasProdutos->getById($id);
                 if($dadosLP->num_rows() > 0)
                 {
-                    $datasBody['dadosLP'] = $dadosLP->result_array()[0];
-                    $datasBody['produtos'] = $this->DAOProdutos->getProdutos()->result_array();
+                    $linhaProduto = $dadosLP->result_array()[0];
+                    $datasBody['dadosLP'] = $linhaProduto;
+                    $datasBody['produtos'] = $this->DAOProdutos->getProdutosByLinhaProdutoId($linhaProduto['id']);
                     $datasBody['operation'] = 'u';
                     $this->load->view('fragmentos/cabecalhoprivado', $datasCR);
                     $this->load->view('privado/producao/linhasprodutosform', $datasBody);

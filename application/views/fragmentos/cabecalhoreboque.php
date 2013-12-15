@@ -44,7 +44,7 @@
                                     <!-- / HEADER LOGO -->
                                     <!-- HEADER DESCRICAO SITE-->
                                     <div class="col-lg-8 col-md-5 col-md-offset-1 col-sm-5 site-header-desc" >
-                                        <strong>Metais Agrícola</strong>
+                                        <strong>Metais Reboque</strong>
                                     </div>
                                     <!-- / HEADER DESCRICAO SITE --> 
                                 </div>                                                                                                                                                                                             
@@ -69,8 +69,7 @@
                                                         <li><a class="link-menu-superior" href="<?php echo site_url('publico/produtosreboque/lista'); ?> ">Reboques</a></li>                                                
                                                     </ul>
                                                 </li>
-                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/servicos/lista'); ?>">Serviços</a></li>
-                                                <li><a class="link-menu-superior" href="#">Sobre</a></li>
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/servicos/lista'); ?>">Serviços</a></li>                                               
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('publico/contato'); ?>">Contato</a></li>
                                             </ul>	
                                 </div>                                

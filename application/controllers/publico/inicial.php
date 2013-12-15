@@ -32,8 +32,19 @@
         public function index()
         {
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
-            $dadosInicial['linhasProdutos']     = $this->DAOLinhasProdutos->getAll()->result_array();                        
             
+            $linhasProdutos                     = $this->DAOLinhasProdutos->getAll()->result_array();  
+            
+            $linhasComProduto;
+            foreach ($linhasProdutos as $linhaProduto)
+            {        
+                
+                $produtoPrincipal = $this->getProdutoPrincipal($linhaProduto['produtoid']);
+                $linhaProduto['produtoprincipal'] = $produtoPrincipal;                
+                $linhasComProduto[] = $linhaProduto;
+            }
+            
+            $dadosInicial['linhasProdutos']     = $linhasComProduto;
             $dadosInicial['anuncios']           = $this->getAnuncios();
             $dadosInicial['noticias']           = $this->getNoticias();
             
@@ -101,9 +112,11 @@
             return NULL;                                    
         }
         
-        private function getProdutoAgricolaPrincipal($idProduto) {
+        private function getProdutoPrincipal($idProduto) {
             
             $produto = $this->DAOProdutos->getProdutoById($idProduto);
+            $imagemPrincipal = $this->DAOProdutos->getImagemPrincipal($produto['id']); 
+            $produto['imagemprincipal'] = $imagemPrincipal['localizacao'];
             
             return $produto;
         }

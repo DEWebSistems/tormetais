@@ -69,8 +69,7 @@
                                                 <li><a class="link-menu-superior" href="<?php echo site_url('publico/produtosreboque/lista'); ?> ">Reboques</a></li>                                                
                                             </ul>
                                         </li>
-                                        <li><a class="link-menu-superior" href="<?php echo site_url('publico/servicos/lista'); ?>">Serviços</a></li>
-                                        <li><a class="link-menu-superior" href="#">Sobre</a></li>
+                                        <li><a class="link-menu-superior" href="<?php echo site_url('publico/servicos/lista'); ?>">Serviços</a></li>                                        
                                         <li><a class="link-menu-superior" href="<?php echo site_url('publico/contato'); ?>">Contato</a></li>
                                     </ul>	
                                 </div>                                

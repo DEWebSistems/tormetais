@@ -62,6 +62,15 @@
             return $results;
         }
         
+        public function getProdutosByLinhaProdutoId($linhaProdutoId)
+        {
+            $results = $this->db->get_where('produtos', array('linhaprodutoid' => $linhaProdutoId));            
+            if($results->num_rows() > 0)
+            {
+                return $results->result_array();            
+            }
+        }
+        
         public function getProdutosByCategoriaProdutoId($categoriaProdutoId)
         {
             $results = $this->db->get_where('produtos', array('categoriaprodutoid' => $categoriaProdutoId));            

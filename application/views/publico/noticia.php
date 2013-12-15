@@ -1,10 +1,9 @@
 <div class="content">
 
     <div class="main">
-    
-        <div class="page-header-form-list">
+        <div class="page-header">
             <h3><?php echo $dadosNoticia['nome'];?></h3>
-        </div>
+        </div>       
         <div class="row">
             <div class="col-md-6">  
                 <img src="<?php echo $dadosNoticia['imagemprincipal'];?>" alt="<?php echo $dadosNoticia['nome'];?>" style="width: 100%;" class="media-object img-rounded">
