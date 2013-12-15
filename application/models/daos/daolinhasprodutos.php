@@ -80,7 +80,7 @@
             {
                 return $results->result_array()[0];
             }
-    }
+        }
 
 }
 ?>

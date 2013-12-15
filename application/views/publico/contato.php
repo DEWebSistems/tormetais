@@ -5,6 +5,7 @@
     <div class="col-md-12 contato-mapa" id="mapa-localizacao"></div>
 </div>
 
+<div class="content">
 <div class="row">
     
     <br>
@@ -143,6 +144,7 @@
             </div>  
         </div>
     </div>   
+</div>
 </div>
 
  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>

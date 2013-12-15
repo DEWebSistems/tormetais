@@ -46,7 +46,7 @@
 
                                     <!-- HEADER DESCRICAO SITE-->
                                     <div class="col-md-6 site-header-desc-agricola" >
-                                        <strong style="font-size: 40px;">Metais</strong>
+                                        <strong>Metais Agrícola</strong>
                                         <p><strong style="font-style:italic; font-size: 20px;">A Solução no Campo</strong></p>
                                     </div>
                                     <!-- / HEADER DESCRICAO SITE --> 

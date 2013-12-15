@@ -2,7 +2,7 @@
 <html lang="pt">
     <head>
         <meta charset="utf-8">
-        <title>Tor Metais</title>
+        <title>Tor Metais - Administração</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Everaldo Boccoli" >
         <meta name="author" content="Daniel Rockenbach Loro" >
@@ -22,51 +22,44 @@
         <script type="text/javascript" src="<?php echo base_url('/assets/bootstrap/3.0.0/js/transition.js');?>"></script>
         <script type="text/javascript" src="<?php echo base_url('/assets/bootstrap/3.0.0/js/carousel.js');?>"></script>
         <script type="text/javascript" src="<?php echo base_url('/assets/js/genericsfunctions.js');?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('/assets/ckeditor/ckeditor.js');?>"></script>                       
+        <script type="text/javascript" src="<?php echo base_url('/assets/ckeditor/ckeditor.js');?>"></script>
 
     </head>
 
     <body>
+        <div class="content">
+            
             <!-- <CABECALHO> -->
             <div class="top-line"></div>
-            <div class="header">
-            <div class="container">               
-                <div class="row">                        
-                    <div class="col-md-6">      
-                        <div class="row">      
-                            <!-- HEADER LOGO -->
-                            <div class="col-md-6 site-header-logo">
-                                <img src="<?php echo base_url('/assets/images/logoamarela.png');?>" alt="<?php echo $dadosEmpresa['nomefantasia'];?>">
-                            </div>                        
-                            <!-- / HEADER LOGO -->
-
-                            <!-- HEADER DESCRICAO SITE-->
-                            <div class="col-md-6 site-header-desc" >
-                                <strong>Metais</strong>
-                            </div>
-                            <!-- / HEADER DESCRICAO SITE --> 
-                        </div>                                                                                                                                                                                             
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-2">
-
-                                <!-- HEADER CONTATO -->
-                                <div class="site-header-contato row">                                    
-                                    <div class="col-md-6">
-                                        <span class="header-contato-fone">Telefone: </span>
-                                        <strong><?php echo $dadosEmpresa['telefoneprincipal'];?></strong>
+                <div class="header">                                
+                        <div class="row header-content">                        
+                            <div class="col-lg-7 col-md-5 col-sm-8">      
+                                <div class="row">      
+                                    <!-- HEADER LOGO -->
+                                    <div class="col-lg-3 col-md-6 col-sm-5" style="padding-left: 0px; padding-right: 0px;">
+                                        <div class="site-header-logo">
+                                            <img src="<?php echo base_url('/assets/images/logoamarela.png');?>" alt="Tor Metais" width="220">
+                                        </div>
+                                    </div>                        
+                                    <!-- / HEADER LOGO -->
+                                    <!-- HEADER DESCRICAO SITE-->
+                                    <div class="col-lg-8 col-md-5 col-md-offset-1 col-sm-5 site-header-desc" >
+                                        <strong>Metais Agrícola</strong>
                                     </div>
-                                    <div class="col-md-6">
-                                        <span class="header-contato-email">E-mail: </span>
-                                        <strong><?php echo $dadosEmpresa['emailprincipal'];?></strong>                                
+                                    <!-- / HEADER DESCRICAO SITE --> 
+                                </div>                                                                                                                                                                                             
+                            </div>
+                            <div class="col-lg-5 col-md-7 col-sm-4 site-header-direita">
+                                <div class="row">
+                                    <div class="col-lg-offset-7 col-lg-5 col-md-offset-6 col-md-6 col-sm-6 site-header-direita">
+                                        <div class="site-header-contato">                                    
+                                            <strong>Telefone: </strong>
+                                            <span><?php echo $dadosEmpresa['telefoneprincipal']; ?></span>                                                                        
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- / HEADER CONTATO -->
-
-                                <!-- HEADER MENU -->
-                                <div class="site-header-menu">
+                                       
+                                <div class="col-lg-12 col-md-12 col-sm-12 site-header-menu">
                                     <ul class="nav nav-justified menu-superior">
                                         <li class="active" ><a class="link-menu-superior" href="<?php echo site_url('privado/dadosempresa'); ?>">Empresa</a></li>
                                         <li class="dropdown">
@@ -82,13 +75,13 @@
                                         </li>                                                                                                        
                                     </ul>	
                                 </div>                                
-                                <!-- / HEADER CONTATO -->
+                                        <!-- / HEADER CONTATO -->                                                                                           
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>               
+                        </div>  
             </div>
+        </div>
+
+        
  
 
         

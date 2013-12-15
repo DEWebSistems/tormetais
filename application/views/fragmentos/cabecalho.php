@@ -31,67 +31,52 @@
             
             <!-- <CABECALHO> -->
             <div class="top-line"></div>
-                <div class="header">
-                    <div class="container">               
+                <div class="header">                                
                         <div class="row header-content">                        
-                            <div class="col-md-6">      
+                            <div class="col-lg-7 col-md-5 col-sm-8">      
                                 <div class="row">      
                                     <!-- HEADER LOGO -->
-                                    <div class="col-md-6" style="padding-left: 0px; padding-right: 0px;">
+                                    <div class="col-lg-3 col-md-6 col-sm-5" style="padding-left: 0px; padding-right: 0px;">
                                         <div class="site-header-logo">
-                                            <img src="<?php echo base_url('/assets/images/logoamarela.png');?>" alt="Tor Metais" style="width: 100%;">
+                                            <img src="<?php echo base_url('/assets/images/logoamarela.png');?>" alt="Tor Metais" width="220">
                                         </div>
                                     </div>                        
                                     <!-- / HEADER LOGO -->
-
                                     <!-- HEADER DESCRICAO SITE-->
-                                    <div class="col-md-6 site-header-desc" >
-                                        <strong>Metais</strong>
+                                    <div class="col-lg-8 col-md-5 col-md-offset-1 col-sm-5 site-header-desc" >
+                                        <strong>Metais Agrícola</strong>
                                     </div>
                                     <!-- / HEADER DESCRICAO SITE --> 
                                 </div>                                                                                                                                                                                             
                             </div>
-
-                            <div class="col-md-6">
+                            <div class="col-lg-5 col-md-7 col-sm-4 site-header-direita">
                                 <div class="row">
-                                    <div class="col-md-10 col-md-offset-2">
-
-                                        <!-- HEADER CONTATO -->
-                                        <div class="site-header-contato row">                                    
-                                            <div class="col-md-6">
-                                                <strong class="header-contato-fone">Telefone: </strong>
-                                                <span>(54) 3383-2222</span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <strong class="header-contato-email">E-mail: </strong>
-                                                <span><a style="color: black;" href="mailto:<?php echo $dadosEmpresa['emailprincipal']; ?>"><?php echo $dadosEmpresa['emailprincipal']; ?></a></span>                                    
-                                            </div>
+                                    <div class="col-lg-offset-7 col-lg-5 col-md-offset-6 col-md-6 col-sm-6 site-header-direita">
+                                        <div class="site-header-contato">                                    
+                                            <strong>Telefone: </strong>
+                                            <span><?php echo $dadosEmpresa['telefoneprincipal']; ?></span>                                                                        
                                         </div>
-                                        <!-- / HEADER CONTATO -->
-
-                                        <!-- HEADER MENU -->
-                                        <div class="site-header-menu">
-                                            <ul class="nav nav-justified menu-superior">
-                                                <li><a class="active link-menu-superior" href="<?php echo site_url('publico/inicial'); ?> ">Inicial</a></li>
-                                                <li class="dropdown">
-                                                    <a href="#" class="dropdown-toggle link-menu-superior" data-toggle="dropdown">Produtos <b class="caret"></b></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="link-menu-superior" href="<?php echo site_url('publico/produtosagricola/lista'); ?> ">Agricolas</a></li>
-                                                        <li><a class="link-menu-superior" href="<?php echo site_url('publico/produtosreboque/lista'); ?> ">Reboques</a></li>                                                
-                                                    </ul>
-                                                </li>
-                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/servicos/lista'); ?>">Serviços</a></li>
-                                                <li><a class="link-menu-superior" href="#">Sobre</a></li>
-                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/contato'); ?>">Contato</a></li>
-                                            </ul>	
-                                        </div>                                
-                                        <!-- / HEADER CONTATO -->
-
                                     </div>
                                 </div>
+                                       
+                                <div class="col-lg-12 col-md-12 col-sm-12 site-header-menu">
+                                    <ul class="nav nav-justified menu-superior">
+                                        <li><a class="active link-menu-superior" href="<?php echo site_url('publico/inicial'); ?> ">Inicial</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle link-menu-superior" data-toggle="dropdown">Produtos <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/produtosagricola/lista'); ?> ">Agricolas</a></li>
+                                                <li><a class="link-menu-superior" href="<?php echo site_url('publico/produtosreboque/lista'); ?> ">Reboques</a></li>                                                
+                                            </ul>
+                                        </li>
+                                        <li><a class="link-menu-superior" href="<?php echo site_url('publico/servicos/lista'); ?>">Serviços</a></li>
+                                        <li><a class="link-menu-superior" href="#">Sobre</a></li>
+                                        <li><a class="link-menu-superior" href="<?php echo site_url('publico/contato'); ?>">Contato</a></li>
+                                    </ul>	
+                                </div>                                
+                                        <!-- / HEADER CONTATO -->                                                                                           
                             </div>
-                        </div>
-                    </div>  
+                        </div>  
             </div>
         </div>
 

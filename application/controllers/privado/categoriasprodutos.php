@@ -11,6 +11,9 @@
             $this->load->model('daos/DAODadosEmpresa');                                                
             
             $this->load->helper(array('url', 'form'));
+            
+            $this->load->model('seguranca/MUsuarios');
+            $this->MUsuarios->validateUser();
         }
         
         public function index()

@@ -24,6 +24,9 @@
             $this->load->model('daos/DAOLinhasProdutos');
             $this->load->model('producao/MLinhasProdutos');
             
+            $this->load->model('daos/DAOProdutos');
+            $this->load->model('producao/MProdutos');   
+            
         }
         
         public function index()
@@ -96,6 +99,13 @@
             } 
             
             return NULL;                                    
+        }
+        
+        private function getProdutoAgricolaPrincipal($idProduto) {
+            
+            $produto = $this->DAOProdutos->getProdutoById($idProduto);
+            
+            return $produto;
         }
     }
 ?>

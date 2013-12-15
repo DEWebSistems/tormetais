@@ -6,7 +6,7 @@
             <div class="page-header">
                 <h4 class="font-reboque">Categorias</h4>
             </div>
-            <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+            <ul class="nav nav-pills nav-stacked nav-reboque" style="max-width: 300px;">
                 <?php                    
                     foreach ($categoriasProdutos as $categoriaProduto)
                     {

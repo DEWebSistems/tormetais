@@ -19,7 +19,9 @@ body {
 }
 
 .header {	    
-    background: #DFE5DF;   
+    background-image: linear-gradient(to bottom, white, #DFE5DF);
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .header > * {
@@ -27,14 +29,16 @@ body {
 }
 
 .site-header-logo {
-    padding-top: 12px;    
+    padding-top: 25px;    
 }
 
 .site-header-desc {
-    text-align: left;
-    padding-top: 60px;
+    text-align: left;    
     font: 'Ubuntu', sans-serif;
-    font-size: 40px;        
+    font-size: 18px;    
+    padding: 5px 0 5px 20px;    
+    border-left: 1px solid #e8e8e8;    
+    margin-top: 70px;
 }
 
 .site-header-desc-agricola {
@@ -42,24 +46,22 @@ body {
     padding-top: 18px;    
 }
 
-.site-header-contato {
-    padding: 38px 0px;    
+.site-header-direita {
+    padding-top: 23px;
 }
 
-.header-contato-fone {
-    width: 50%;
-}
-
-.header-contato-email {
-    width: 50%;   
+.site-header-contato {    
+    padding: 5px 0 5px 20px;    
+    border-left: 1px solid #e8e8e8;    
+    margin-top: 4px;
+    margin-right: 0px;
+    width: 170px;    
 }
 
 .site-header-menu {
     width: 100%;
     height: auto;
-    margin-bottom: 0px;
-    background-color: #DFE5DF;
-    border-bottom: 1px solid #DFE5DF;    
+    margin-top: 2px;
 }
 
 .site-header-menu  > ul {  
@@ -247,4 +249,8 @@ a:hover, a:focus {
 
 .font-reboque:hover {
     color: rgb(213, 39, 39);
+}
+
+.nav-reboque {    
+    background: rgb(213, 39, 39);
 }

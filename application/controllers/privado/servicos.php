@@ -14,6 +14,9 @@
             $this->load->model('daos/DAOCategoriasServicos');
                         
             $this->load->helper(array('url', 'form'));
+            
+            $this->load->model('seguranca/MUsuarios');
+            $this->MUsuarios->validateUser();
         }
         
         public function index()

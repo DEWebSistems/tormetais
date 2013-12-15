@@ -6,14 +6,14 @@
                 <h4 class="font-reboque">Categorias</h4>
             </div>
             <div>
-            <ul class="nav nav-pills nav-stacked " style="max-width: 300px;">
-                <?php
-                    foreach ($categoriasProdutos as $categoriaProduto)
-                    {
-                        echo '<li><a href=" '. site_url('publico/produtosreboque/filtro/' . $categoriaProduto['id']) . '">' . $categoriaProduto['nome'] . '</a></li>';                                
-                    }                    
-                ?>                                                
-             </ul>
+                <ul class="nav nav-pills nav-stacked nav-reboque" style="max-width: 300px;">
+                    <?php
+                        foreach ($categoriasProdutos as $categoriaProduto)
+                        {
+                            echo '<li><a href=" '. site_url('publico/produtosreboque/filtro/' . $categoriaProduto['id']) . '">' . $categoriaProduto['nome'] . '</a></li>';                                
+                        }                    
+                    ?>                                                
+                 </ul>
             </div>
         </div>
         <div class="col-md-9">
