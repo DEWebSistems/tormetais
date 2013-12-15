@@ -6,21 +6,25 @@
                 
                 <?php
             
-                if(count($linhasProdutos) > 0) {                                                                
+                if(count($linhasProdutos) > 0) {                         
                     foreach ($linhasProdutos as $linhaProduto)
-                    {          
+                    {                                  
                         if($linhaProduto['id'] == 1)
                         {
-                        ?>                        
+                            $produtoPrincipal = $linhaProduto['produtoprincipal']
+                        ?>                                     
                         <div class="col-md-6">	
                             <div class="page-header">
                                 <a class="font-agricola" href="<?php echo site_url('publico/produtosagricola/lista'); ?>"><h4><?php echo $linhaProduto['nome']?></h4></a>                        
                             </div>
                             <div class="row">                                                
                                     <div class="col-md-6">
-                                        <img src="/tormetais/assets/images/agricola.jpg" alt="..." style="width: 100%;" class="img-rounded">   
+                                        
+                                        <img src="<?php echo base_url($produtoPrincipal['imagemprincipal']);?>" alt="<?php echo $produtoPrincipal['nome'];?>" style="width: 100%;" class="img-rounded">   
                                         <div align="center">
-                                            <a class="font-agricola" href="#"><h4><?php echo $linhaProduto['nome'];?></h4></a>
+                                            <a class="font-agricola" href="<?php echo site_url('publico/produtosagricola/detalhe/'.$produtoPrincipal['id']); ?>">
+                                                <h4><?php echo  $produtoPrincipal['nome'];?></h4>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -31,6 +35,7 @@
                         </div>
                        <?php
                         } else {
+                            $produtoPrincipal = $linhaProduto['produtoprincipal']
                         ?>
                             <div class="col-md-6">	
                                 <div class="page-header">
@@ -38,9 +43,11 @@
                                 </div>
                                 <div class="row">                                                
                                         <div class="col-md-6">
-                                            <img src="/tormetais/assets/images/reboque.jpg" alt="..." style="width: 100%;" class="img-rounded">   
+                                            <img src="<?php echo base_url($produtoPrincipal['imagemprincipal']);?>" alt="<?php echo $produtoPrincipal['nome'];?>" style="width: 100%;" class="img-rounded">   
                                             <div align="center">
-                                                <a class="font-reboque" href="#"><h4><?php echo $linhaProduto['nome'];?></h4></a>
+                                                <a class="font-agricola" href="<?php echo site_url('publico/produtosreboque/detalhe/'.$produtoPrincipal['id']); ?>">
+                                                <h4><?php echo $produtoPrincipal['nome'];?></h4>
+                                            </a>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -86,7 +93,7 @@
                         ?>
                                 <div class="col-md-6">
                                     <a href="<?php echo site_url('publico/servicos/detalhe/' . $servicoPrincipal['id']); ?>">
-                                        <img src="<?php echo $servicoPrincipal['imagemprincipal'] ?>" alt="<?php echo $servicoPrincipal['nome'] ?>" style="width:100%;" class="img-rounded">   
+                                        <img src="<?php echo base_url($servicoPrincipal['imagemprincipal']); ?>" alt="<?php echo $servicoPrincipal['nome'] ?>" style="width:100%;" class="img-rounded">   
                                     </a>
                                     <div align="center">
                                         <a class="font-agricola" href="<?php echo site_url('publico/servicos/detalhe/' . $servicoPrincipal['id']); ?>">
@@ -123,7 +130,7 @@
                                     ?>
                                     <div class="media">
                                         <a class="pull-left" href="<?php echo site_url('publico/noticias/detalhe/' . $noticia['id']); ?>">
-                                          <img class="media-object" src="<?php echo $noticia['imagemprincipal']; ?>" alt="<?php echo $noticia['nome']; ?>" height="75" width="75" class="img-rounded">
+                                          <img class="media-object" src="<?php echo base_url($noticia['imagemprincipal']); ?>" alt="<?php echo $noticia['nome']; ?>" height="75" width="75" class="img-rounded">
                                         </a>
                                         <div class="media-body">
                                             <a class="font-agricola" href="<?php echo site_url('publico/noticias/detalhe/' . $noticia['id']); ?>">
@@ -171,7 +178,7 @@
                                 {
                         ?>                                                
                                     <div class="item active">
-                                        <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo $anuncio['imagemprincipal'];?>" class="img-rounded">
+                                        <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo base_url($anuncio['imagemprincipal']);?>" class="img-rounded">
                                         <div align="center" >        
                                             <a class="font-agricola" href="<?php echo site_url('publico/anuncios/detalhe/' . $anuncio['id']); ?>">
                                                 <p><h3><?php echo $anuncio['nome'];?></h3></p>
@@ -184,7 +191,7 @@
                                 {
                         ?>            
                                     <div class="item">
-                                        <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo $anuncio['imagemprincipal'];?>" class="img-rounded">                                        
+                                        <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo base_url($anuncio['imagemprincipal']);?>" class="img-rounded">                                        
                                         
                                         <div align="center" >       
                                             <a class="font-agricola" href="<?php echo site_url('publico/anuncios/detalhe/' . $anuncio['id']); ?>">

@@ -64,7 +64,7 @@
         <p>©2013. Tor Metais. Todos os direitos reservados.</p>
     </div>
     <div class="col-md-6" style="padding-top: 20px;">
-        <p>ServiTI</p>
+        <a href="http://www.serviti.com.br" target="_blank" title="ServiTI" style="color: #fff;" ><p>ServiTI</p></a>
     </div>
 </div>
 
