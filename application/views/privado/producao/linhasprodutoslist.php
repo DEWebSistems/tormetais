@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/tormetais/assets/js/linhasprodutosprivate.js"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/js/linhasprodutosprivate.js'); ?>"></script>
 <div class="col-lg-12" style="padding-top: 10px;">
     <?php
         if($messages['isErrors'] == true)

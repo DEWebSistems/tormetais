@@ -1,5 +1,5 @@
-<script type="text/javascript" src="/tormetais/assets/plugins/jquerymask/jquerymask1.3.1.min.js"></script>
-<script type="text/javascript" src="/tormetais/assets/js/dadosempresa.js"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/plugins/jquerymask/jquerymask1.3.1.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/js/dadosempresa.js'); ?>"></script>
 <script type="text/javascript">
     $(function(){
         $(".maskCNPJ").mask("99.999.999/9999-99");

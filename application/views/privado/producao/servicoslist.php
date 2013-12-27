@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/tormetais/assets/js/servicosprivate.js"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/js/servicosprivate.js'); ?>"></script>
 <script type="text/javascript">
     $(function(){
         $('#bsExcluir').hide();

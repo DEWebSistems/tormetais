@@ -1,5 +1,5 @@
-<script type="text/javascript" src="/tormetais/assets/plugins/jquerymask/jquerymask1.3.1.min.js"></script>
-<script type="text/javascript" src="/tormetais/assets/js/contato.js"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/plugins/jquerymask/jquerymask1.3.1.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/js/contato.js'); ?>"></script>
 
 <div class="row">
     <div class="col-md-12 contato-mapa" id="mapa-localizacao"></div>

@@ -1,5 +1,5 @@
 <h3 class="page-header-form-list">Manutenção de Anúncio</h3>
-<script type="text/javascript" src="/tormetais/assets/js/anunciosprivate.js"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/js/anunciosprivate.js'); ?>"></script>
 
 <div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 </div>

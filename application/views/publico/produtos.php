@@ -38,7 +38,7 @@
 
                         <div class="col-md-4">	
                             <div class="thumbnail">
-                                <img src="/tormetais/assets/images/carreto abastecedor 13tn.png" alt="..." height="200" width="300">                                                           
+                                <img src="<?php echo base_url('/assets/images/carreto abastecedor 13tn.png'); ?>" alt="..." height="200" width="300">                                                           
                                 <div class="caption">
                                     <h3><?php echo $produto['nome']; ?></h3>
                                     <p><?php echo $produto['descricao']; ?></p>

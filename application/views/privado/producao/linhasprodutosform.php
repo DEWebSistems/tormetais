@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/tormetais/assets/js/linhasprodutosprivate.js"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/js/linhasprodutosprivate.js'); ?>"></script>
 <div class="col-lg-10 col-lg-offset-1">
     <h3>Linhas de Produtos</h3>
     <br/>

@@ -1,5 +1,5 @@
 <h3 class="page-header-form-list">Cadastro de Serviços</h3>
-<script type="text/javascript" src="/tormetais/assets/js/servicosprivate.js"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/js/servicosprivate.js'); ?>"></script>
 
 <div id="divResultsValidations" class="col-md-12">
 </div>

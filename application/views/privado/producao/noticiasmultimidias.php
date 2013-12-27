@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="/tormetais/assets/jquery/jqueryui1103/themes/base/jquery-ui.css"/>
-<script type="text/javascript" src="/tormetais/assets/jquery/jqueryui1103/ui/jquery-ui.js"></script>
+<link rel="stylesheet" href="<?php echo base_url('/assets/jquery/jqueryui1103/themes/base/jquery-ui.css'); ?>"/>
+<script type="text/javascript" src="<?php echo base_url('/assets/jquery/jqueryui1103/ui/jquery-ui.js'); ?>"></script>
 <script type="text/javascript">
     $(function(){
         $('#divFieldImage').hide();

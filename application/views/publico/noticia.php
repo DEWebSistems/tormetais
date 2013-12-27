@@ -96,6 +96,5 @@
         </div>
     </div>
 </div>
-
-<script src="/tormetais/assets/bootstrap-image-gallery-3.1.0/js/jquery.blueimp-gallery.min.js"></script>
-<script src="/tormetais/assets/bootstrap-image-gallery-3.1.0/js/bootstrap-image-gallery.min.js"></script>
+<script src="<?php echo base_url('/assets/bootstrap-image-gallery-3.1.0/js/jquery.blueimp-gallery.min.js'); ?>"></script>
+<script src="<?php echo base_url('/assets/bootstrap-image-gallery-3.1.0/js/bootstrap-image-gallery.min.js'); ?>"></script>
