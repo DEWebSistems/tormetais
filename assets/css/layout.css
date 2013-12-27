@@ -134,6 +134,13 @@ body {
     color: #fff !important;   
 }
 
+.footer-content {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 20px;
+}
+
 .footer-sobre {
     margin-top: 20px;
     width: 100%;
@@ -155,10 +162,6 @@ body {
 	/*background-image: url(/tormetais/assets/images/footer-contato-mapa.png);*/
 	/*background-size: 100% auto;*/
 	/*background-repeat: no-repeat;*/
-}
-
-.footer-content {
-    margin-bottom: 20px;
 }
 
 .sub-footer {

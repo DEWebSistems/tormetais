@@ -55,6 +55,7 @@
                         echo '<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Opções <span class="caret"></span></button>';
                         echo '<ul class="dropdown-menu" role="menu">';
                         echo '<li><a href=" '. site_url("privado/anuncios/alterar/" . $anuncio['id']) . '">Alterar</a></li>';                                                
+                        echo '<li><a href=" '. site_url("privado/anuncios/multimidias/" . $anuncio['id']) . '">Fotos</a></li>';
                         echo '</ul>';
                         echo '</div>';
                         echo '</td>';

@@ -7,6 +7,8 @@
         <meta name="author" content="Everaldo Boccoli" >
         <meta name="author" content="Daniel Rockenbach Loro" >
         
+        <link rel="shortcut icon" href="<?php echo base_url('/assets/images/favicon.ico');?>" />
+        
         <!-- Styles -->
         
         <link href="<?php echo base_url('/assets/bootstrap/3.0.0/css/bootstrap.css');?>" rel="stylesheet">

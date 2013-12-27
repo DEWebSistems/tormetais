@@ -45,7 +45,7 @@
                                         <div class="col-md-6">
                                             <img src="<?php echo base_url($produtoPrincipal['imagemprincipal']);?>" alt="<?php echo $produtoPrincipal['nome'];?>" style="width: 100%;" class="img-rounded">   
                                             <div align="center">
-                                                <a class="font-agricola" href="<?php echo site_url('publico/produtosreboque/detalhe/'.$produtoPrincipal['id']); ?>">
+                                                <a class="font-reboque" href="<?php echo site_url('publico/produtosreboque/detalhe/'.$produtoPrincipal['id']); ?>">
                                                 <h4><?php echo $produtoPrincipal['nome'];?></h4>
                                             </a>
                                             </div>
