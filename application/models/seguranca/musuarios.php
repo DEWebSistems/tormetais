@@ -3,6 +3,7 @@
     {
         public $id;
         public $nome;
+        public $eMail;
         public $login;
         public $senha;
         private $encryptionKey = "MySuperSecretKeys";
@@ -18,19 +19,27 @@
         public function getId() {
             return $this->id;
         }
-
+        
         public function setId($id) {
             $this->id = $id;
         }
-
+        
         public function getNome() {
             return $this->nome;
         }
-
+        
         public function setNome($nome) {
             $this->nome = $nome;
         }
-
+        
+        public function getEMail() {
+            return $this->eMail;
+        }
+        
+        public function setEMail($eMail) {
+            $this->eMail = $eMail;
+        }
+        
         public function getLogin() {
             return $this->login;
         }
@@ -81,13 +90,13 @@
             return $returns;
         }
         
-        private function encodePassword()
+        public function encodePassword()
         {
             $encode = $this->encrypt->encode($this->senha, $this->encryptionKey);
             return $encode;
         }
         
-        private function decodePassword($encryptPassword)
+        public function decodePassword($encryptPassword)
         {
             $decode = $this->encrypt->decode($encryptPassword, $this->encryptionKey);
             return $decode;

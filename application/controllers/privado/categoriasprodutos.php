@@ -11,6 +11,7 @@
             $this->load->model('daos/DAODadosEmpresa');                                                
             
             $this->load->helper(array('url', 'form'));
+            $this->load->library('paginationsable');
             
             $this->load->model('seguranca/MUsuarios');
             $this->MUsuarios->validateUser();
@@ -65,13 +66,18 @@
             $datasBody['messages'] = $messages;
             $returns = $this->DAOCategoriasProdutos->listPagination($numberPage);            
             $datasBody['categoriasprodutos'] = $returns->result_array();
-            $this->load->library('pagination');
-            $config['use_page_numbers'] = TRUE;
-            $config['base_url'] = 'categoriasprodutos/index/';
-            $config['total_rows'] = $this->DAOCategoriasProdutos->getNumberRecords();
-            $config['per_page'] = $this->DAOCategoriasProdutos->getLimitPage();
-            $this->pagination->initialize($config);
-            $datasBody['paginations'] = $this->pagination->create_links();
+            $this->paginationsable->setBaseURL('privado/categoriasprodutos/lista');
+            $this->paginationsable->setTotalRows($this->DAOCategoriasProdutos->getNumberRecords());
+            $this->paginationsable->setRowsPerPage($this->DAOCategoriasProdutos->getLimitPage());
+            $this->paginationsable->setAccessedPage($numberPage);
+            if($this->paginationsable->createLinks() == false)
+            {
+                $datasBody['paginations'] = '';
+            }
+            else
+            {
+                $datasBody['paginations'] = $this->paginationsable->getHtmlLinks();
+            }
             $dadosEmpresa['dadosEmpresa'] = $this->DAODadosEmpresa->getDadosEmpresa();
             $this->load->view('fragmentos/cabecalhoprivado', $dadosEmpresa);
             $this->load->view('privado/producao/categoriasprodutoslist', $datasBody);

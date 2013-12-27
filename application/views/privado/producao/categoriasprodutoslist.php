@@ -5,7 +5,7 @@
     });
 </script>
 
-<h3 class="page-header-form-list">Manutenção de Categorias de Serviços</h3>
+<h3 class="page-header-form-list">Manutenção de Categorias de Produtos</h3>
 <?php
     if($messages['isErrors'] == true)
     {
@@ -67,4 +67,7 @@
         </table>
         <button id="bsExcluir" name="bsExcluir" type="submit" value="">Excluir</button>
     </form>
+    <?php
+        echo $paginations;
+    ?>
 </div>

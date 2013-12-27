@@ -38,8 +38,13 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "publico/inicial";
 $route['404_override'] = '';
+$route['publico'] = 'publico/inicial';
+$route['inicial'] = 'publico/inicial';
+$route['inicio'] = 'publico/inicial';
+$route['privado'] = 'privado/login';
+$route['login'] = 'privado/login';
 
 
 /* End of file routes.php */
