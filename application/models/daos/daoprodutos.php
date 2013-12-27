@@ -299,5 +299,14 @@
                 return false;
             }
         }
+        
+        public function getProdutosLPCP($linhaProdutoId, $categoriaProdutoId)
+        {
+            $results = $this->db->get_where('produtos', array('linhaprodutoid' => $linhaProdutoId, 'categoriaprodutoid' => $categoriaProdutoId));            
+            if($results->num_rows() > 0)
+            {
+                return $results->result_array();            
+            }
+        }
     }
 ?>

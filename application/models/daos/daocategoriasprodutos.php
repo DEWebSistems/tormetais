@@ -112,6 +112,15 @@
                 return $results->result_array()[0];
             }
         }
-
+        
+        public function getCategoriasProdutosNELP($idLinhasProdutos)
+        {
+            $this->db->select('cp.id, cp.nome');
+            $this->db->from('categoriasprodutos cp');
+            $this->db->join('produtos pr', 'cp.id = pr.categoriaprodutoid');
+            $this->db->where(array('pr.linhaprodutoid' => $idLinhasProdutos));
+            $returns = $this->db->get();
+            return $returns;
+        }
     }
 ?>

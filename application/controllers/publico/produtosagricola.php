@@ -38,8 +38,8 @@
         public function lista()
         {          
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
-            $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();                      
-            $produtos                           = $this->DAOProdutos->getProdutos()->result_array();                        
+            $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutosNELP(1)->result_array();                      
+            $produtos                           = $this->DAOProdutos->getProdutosByLinhaProdutoId(1);
             $datasBody['linhaAgricola']          = $this->DAOLinhasProdutos->getLinhaProdutoById(1);                      
             
             $produtosComImagem = array();                       
@@ -63,7 +63,7 @@
         public function detalhe($idProduto)
         {            
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
-            $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();
+            $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutosNELP(1)->result_array();
             
             $produto                            = $this->DAOProdutos->getProdutoById($idProduto);            
             $imagemPrincipal                    = $this->DAOProdutos->getImagemPrincipal($produto['id']);                
@@ -81,8 +81,8 @@
         public function filtro($idCategoriaProduto) {
             
             $dadosEmpresa['dadosEmpresa']       = $this->DAODadosEmpresa->getDadosEmpresa();
-            $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutos()->result_array();                       
-            $produtos                           = $this->DAOProdutos->getProdutosByCategoriaProdutoId($idCategoriaProduto);                   
+            $datasBody['categoriasProdutos']    = $this->DAOCategoriasProdutos->getCategoriasProdutosNELP(1)->result_array();                       
+            $produtos                           = $this->DAOProdutos->getProdutosLPCP(1, $idCategoriaProduto);
             $datasBody['linhaAgricola']          = $this->DAOLinhasProdutos->getLinhaProdutoById(1);                      
             
             $produtosComImagem = array();                       
