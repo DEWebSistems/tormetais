@@ -40,7 +40,7 @@
             $messages['messagesErrors'] = '';
             $messages['isSuccess'] = false;
             $messages['messagesSuccess'] = '';
-            if(mail('daniel_rockenbach_loro@gmail.com', 'rogmoer erofmerifer', 'rtigiort erogijrotigjre erogijeroigjergoer reogjrotigre'))
+            if(mail('daniel.rockenbach.loro@gmail.com', 'rogmoer erofmerifer', 'rtigiort erogijrotigjre erogijeroigjergoer reogjrotigre'))
             {
                 //echo 'of course man';
             }
@@ -81,13 +81,13 @@
             $this->MMensagemContato->setNome($dadosPost['itNome']);
             $this->MMensagemContato->setTelefone($dadosPost['itTelefone']);
             $this->MMensagemContato->setFromEmail($dadosPost['itEmailOrigem']);
-            $this->MMensagemContato->setToEmail('teste@tormetais.com.br');
+            $this->MMensagemContato->setToEmail('daniel.rockenbach.loro@gmail.com');
             $this->MMensagemContato->setAssunto($dadosPost['itAssunto']);
             $this->MMensagemContato->setMensagem($dadosPost['taMensagem']);
             $this->MMensagemContato->setIpOrigem('ip');
             $this->MMensagemContato->setMacAddressOrigem('itMacAddressOrigem');
             $this->MMensagemContato->setDataHoraMensagem(date(0));
-           
+            
             $this->load->model('daos/DAOMensagemContato');
             $this->DAOMensagemContato->inserir($this->MMensagemContato);
           

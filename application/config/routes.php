@@ -43,7 +43,7 @@ $route['404_override'] = '';
 $route['publico'] = 'publico/inicial';
 $route['inicial'] = 'publico/inicial';
 $route['inicio'] = 'publico/inicial';
-$route['privado'] = 'privado/login';
+$route['privado'] = 'privado/inicio';
 $route['login'] = 'privado/login';
 
 
