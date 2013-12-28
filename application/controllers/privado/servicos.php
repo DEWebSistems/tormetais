@@ -285,7 +285,7 @@
                 $errors['messages'] = 'A foto não foi selecionada.';
                 return $errors;
             }
-            $configsUploads['upload_path'] = "C:/xampp/htdocs/tormetais/assets/imagesproductions/";
+            $configsUploads['upload_path'] = "./assets/imagesproductions/";
             $configsUploads['allowed_types'] = 'gif|jpg|png|jpeg';
             $configsUploads['max_size'] = '1000';
             $configsUploads['max_width'] = '2000';
