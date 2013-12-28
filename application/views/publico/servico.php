@@ -25,7 +25,7 @@
                     <img src="<?php echo $dadosServico['imagemprincipal'];?>" alt="<?php echo $dadosServico['nome'];?>" height="336" width="500" class="media-object img-rounded">
                        
                     <br/>
-                    <p><a class="btn btn-success" href="<?php echo site_url('publico/servicos/lista/'); ?>">Voltar</a></p>
+                    <p><a class="btn btn-success" href="<?php echo site_url('publico/servicos/lista/'); ?>">Serviços</a></p>
                 </div>
                 <div class="col-md-6" style="font-size: 14px;">
                     <p><?php echo $dadosServico['descricao'];?></p>                    

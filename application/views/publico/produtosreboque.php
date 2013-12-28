@@ -38,8 +38,8 @@
                         ?>
 
                         <div class="col-md-3">	                            
-                            <a href="<?php echo site_url('publico/produtosreboque/detalhe/' . $produto['id']); ?>">
-                                <img src="<?php echo base_url($produto['imagemprincipal']); ?>" alt="<?php echo $produto['nome']; ?>" height="150" width="200" class="img-rounded">                                                           
+                            <a href="<?php echo site_url('publico/produtosreboque/detalhe/' . $produto['id']); ?>" >
+                                <img src="<?php echo base_url($produto['imagemprincipal']); ?>" alt="<?php echo $produto['nome']; ?>" style="width: 100%;" class="img-rounded">                                                           
                             </a>
                             <div align="center" >
                                 <a class="font-reboque" href="<?php echo site_url('publico/produtosreboque/detalhe/' . $produto['id']); ?>">

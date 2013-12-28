@@ -7,7 +7,7 @@
             </div>
             <div>
             <ul class="nav nav-pills nav-stacked " style="max-width: 300px;">
-                <?php
+                <?php                
                     foreach ($categoriasProdutos as $categoriaProduto)
                     {
                         echo '<li><a href=" '. site_url('publico/produtosagricola/filtro/' . $categoriaProduto['id']) . '">' . $categoriaProduto['nome'] . '</a></li>';                                
@@ -39,7 +39,7 @@
 
                         <div class="col-md-3">	                            
                             <a href="<?php echo site_url('publico/produtosagricola/detalhe/' . $produto['id']); ?>">
-                                <img src="<?php echo base_url($produto['imagemprincipal']); ?>" alt="<?php echo $produto['nome']; ?>" height="150" width="200" class="img-rounded">                                                           
+                                <img src="<?php echo base_url($produto['imagemprincipal']); ?>" alt="<?php echo $produto['nome']; ?>" style="width: 100%;" class="img-rounded">                                                           
                             </a>
                             <div align="center" >
                                 <a href="<?php echo site_url('publico/produtosagricola/detalhe/' . $produto['id']); ?>">

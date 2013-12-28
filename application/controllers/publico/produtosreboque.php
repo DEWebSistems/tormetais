@@ -76,7 +76,7 @@
             $datasBody['videosproduto']         = $this->DAOProdutos->getVideos($idProduto)->result_array();
             $datasBody['imagensproduto']        = $this->DAOProdutos->getImagens($idProduto)->result_array();            
             
-            $this->load->view('fragmentos/cabecalho',   $dadosEmpresa);
+            $this->load->view('fragmentos/cabecalhoreboque',   $dadosEmpresa);
             $this->load->view('publico/produtoreboque',        $datasBody);
             $this->load->view('fragmentos/rodape',      $dadosEmpresa);            
         }
@@ -104,7 +104,7 @@
             
             $datasBody['produtos']              = $produtosComImagem;
             
-            $this->load->view('fragmentos/cabecalho',   $dadosEmpresa);
+            $this->load->view('fragmentos/cabecalhoreboque',   $dadosEmpresa);
             $this->load->view('publico/produtosreboque',       $datasBody);
             $this->load->view('fragmentos/rodape',      $dadosEmpresa);
         }                                

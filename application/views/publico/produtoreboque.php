@@ -25,7 +25,7 @@
                     <img src="<?php echo base_url($dadosProduto['imagemprincipal']); ?>" alt="<?php echo $dadosProduto['nome'];?>" style="width: 100%;" class="media-object img-rounded">
                        
                     <br/>
-                    <p><a class="btn btn-success" href="<?php echo site_url('publico/produtosreboque/lista/'); ?>">Voltar</a></p>
+                    <p><a class="btn btn-danger" href="<?php echo site_url('publico/produtosreboque/lista/'); ?>">Produtos</a></p>
                 </div>
                 <div class="col-md-6 col-lg-6" style="font-size: 14px;">
                     <p><?php echo $dadosProduto['descricao'];?></p>                    

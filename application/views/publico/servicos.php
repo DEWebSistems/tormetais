@@ -39,7 +39,7 @@
 
                         <div class="col-md-3">	                            
                             <a href="<?php echo site_url('publico/servicos/detalhe/' . $servico['id']); ?>">
-                                <img src="<?php echo $servico['imagemprincipal']; ?>" alt="<?php echo $servico['nome']; ?>" height="150" width="200" class="img-rounded">                                                           
+                                <img src="<?php echo $servico['imagemprincipal']; ?>" alt="<?php echo $servico['nome']; ?>" style="width: 100%;" class="img-rounded">                                                           
                             </a>
                             <div align="center" >
                                 <a href="<?php echo site_url('publico/servicos/detalhe/' . $servico['id']); ?>">

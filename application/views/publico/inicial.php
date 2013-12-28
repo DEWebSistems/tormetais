@@ -173,12 +173,12 @@
                         <?php
                             $isActive = true;
                             foreach ($anuncios as $anuncio)
-                            {
+                            {                                
                                 if($isActive)
                                 {
                         ?>                                                
                                     <div class="item active">
-                                        <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo base_url($anuncio['imagemprincipal']);?>" class="img-rounded">
+                                        <img  alt="<?php echo $anuncio['nome'];?>"  src="<?php echo base_url($anuncio['imagemprincipal']);?>" class="img-rounded"> 
                                         <div align="center" >        
                                             <a class="font-agricola" href="<?php echo site_url('publico/anuncios/detalhe/' . $anuncio['id']); ?>">
                                                 <p><h3><?php echo $anuncio['nome'];?></h3></p>

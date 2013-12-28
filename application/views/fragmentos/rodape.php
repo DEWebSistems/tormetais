@@ -58,11 +58,13 @@
     </div>           
 </div>
 <div class="row sub-footer">
-    <div class="col-md-6" style="padding-top: 20px;">
-        <p>©2013. Tor Metais. Todos os direitos reservados.</p>
-    </div>
-    <div class="col-md-6" style="padding-top: 20px;">
-        <a href="http://www.serviti.com.br" target="_blank" title="ServiTI" style="color: #fff;" ><p>ServiTI</p></a>
+    <div class="sub-footer-content">
+        <div class="col-md-6" style="padding-top: 14px;">
+            <p>©2013. Tor Metais. Todos os direitos reservados.</p>
+        </div>
+        <div class="col-md-6" style="padding-top: 14px; text-align: center;">
+            <a href="http://www.serviti.com.br" target="_blank" title="ServiTI" style="color: #fff;" ><p>ServiTI</p></a>
+        </div>
     </div>
 </div>
 
