@@ -115,6 +115,7 @@
         
         public function getCategoriasProdutosNELP($idLinhasProdutos)
         {
+            $this->db->distinct();
             $this->db->select('cp.id, cp.nome');
             $this->db->from('categoriasprodutos cp');
             $this->db->join('produtos pr', 'cp.id = pr.categoriaprodutoid');
