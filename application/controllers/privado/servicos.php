@@ -304,7 +304,7 @@
                 $returnsImagens = $this->DAOServicos->getImagens($servicoId);
                 $datasUploads = $this->upload->data();
                 $this->MArquivosMultimidias->setNomeOriginal($datasUploads['orig_name']);
-                $this->MArquivosMultimidias->setLocalizacao('/tormetais/assets/imagesproductions/' . $datasUploads['file_name']);
+                $this->MArquivosMultimidias->setLocalizacao(PATHIMAGESPRODUCTIONS . $datasUploads['file_name']);
                 $this->MArquivosMultimidias->setExtensao($datasUploads['file_ext']);
                 $this->MArquivosMultimidias->setTipoArquivo(0);
                 $arquivoPrincipal = false;
