@@ -40,7 +40,8 @@
             $messages['messagesErrors'] = '';
             $messages['isSuccess'] = false;
             $messages['messagesSuccess'] = '';
-            if(mail('daniel.rockenbach.loro@gmail.com', 'rogmoer erofmerifer', 'rtigiort erogijrotigjre erogijeroigjergoer reogjrotigre'))
+            mail('daniel.loro@hotmail.com', 'rogmoererofmerifer', 'rtigiorterogijrotigjreortjgoirjg');
+            if(mail('daniel.loro@hotmail.com', 'rogmoer erofmerifer', 'rtigiort erogijrotigjre erogijeroigjergoer reogjrotigre'))
             {
                 //echo 'of course man';
             }

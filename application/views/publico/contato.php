@@ -1,13 +1,12 @@
 <script type="text/javascript" src="<?php echo base_url('/assets/plugins/jquerymask/jquerymask1.3.1.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/js/contato.js'); ?>"></script>
 
-<div class="row">
+<div class="row" style="margin-left: 0px; margin-right: 0px;">
     <div class="col-md-12 contato-mapa" id="mapa-localizacao"></div>
 </div>
 
 <div class="content">
-<div class="row">
-    
+<div class="row" style="margin-left: 0px; margin-right: 0px;">
     <br>
     <hr>
     <div id="divResultsValidations" class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
@@ -154,7 +153,8 @@
             var mapOptions = {
                 zoom: 17,
                 center: new google.maps.LatLng(-28.736824, -52.836978),
-                mapTypeId: google.maps.MapTypeId.SATELLITE 
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
+                scrollwheel: false
             };
             map = new google.maps.Map(document.getElementById('mapa-localizacao'),
                     mapOptions);
