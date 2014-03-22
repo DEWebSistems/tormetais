@@ -39,7 +39,9 @@
                                     <!-- HEADER LOGO -->
                                     <div class="col-lg-3 col-md-6 col-sm-5" style="padding-left: 0px; padding-right: 0px;">
                                         <div class="site-header-logo">
-                                            <img src="<?php echo base_url('/assets/images/logoamarela.png');?>" alt="Tor Metais" width="220">
+                                            <a href="<?php echo site_url('publico/inicial'); ?> ">
+                                                <img src="<?php echo base_url('/assets/images/logoamarela.png');?>" alt="Tor Metais" width="220">
+                                            </a>
                                         </div>
                                     </div>                        
                                     <!-- / HEADER LOGO -->

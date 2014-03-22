@@ -4,12 +4,12 @@
             <div class="footer-sobre">
                 <div class="row">
                     <div class="col-lg-4 col-md-5" >
-                        <img src="<?php echo base_url('/assets/images/logoamarela.png'); ?>" alt="<?php echo $dadosEmpresa['nomefantasia'];?>" width="150">                        
+                        <img src="<?php echo base_url('/assets/images/logovermelha.png'); ?>" alt="<?php echo $dadosEmpresa['nomefantasia'];?>" width="180">                        
                     </div>
                     <div class="col-lg-4 col-md-6 col-md-offset-1 footer-nome-fantasia" >
-                        <strong>Metais Agrícola</strong>
-                    </div>
-                </div>                
+                        <strong>Metais Reboques</strong>
+                    </div>                    
+                </div>
                 <p>
                     <span><?php echo $dadosEmpresa['descricaoempresa'];?></span>
                 </p>

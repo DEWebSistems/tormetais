@@ -60,7 +60,7 @@
                         
             $this->load->view('fragmentos/cabecalhoreboque',   $dadosEmpresa);
             $this->load->view('publico/produtosreboque',       $datasBody);
-            $this->load->view('fragmentos/rodape',      $dadosEmpresa);
+            $this->load->view('fragmentos/rodapereboque',      $dadosEmpresa);
         }
         
         public function detalhe($idProduto)
@@ -78,7 +78,7 @@
             
             $this->load->view('fragmentos/cabecalhoreboque',   $dadosEmpresa);
             $this->load->view('publico/produtoreboque',        $datasBody);
-            $this->load->view('fragmentos/rodape',      $dadosEmpresa);            
+            $this->load->view('fragmentos/rodapereboque',      $dadosEmpresa);            
         }
                   
         public function filtro($idCategoriaProduto) {
@@ -106,7 +106,7 @@
             
             $this->load->view('fragmentos/cabecalhoreboque',   $dadosEmpresa);
             $this->load->view('publico/produtosreboque',       $datasBody);
-            $this->load->view('fragmentos/rodape',      $dadosEmpresa);
+            $this->load->view('fragmentos/rodapereboque',      $dadosEmpresa);
         }                                
     }
 ?>
